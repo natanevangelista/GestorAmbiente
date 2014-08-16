@@ -14,12 +14,13 @@
 			<h:inputHidden value="#{turmaBean.turma.id}" />
 
 			<p:messages/>
+			
 			<h:panelGrid columns="2">
-
-				<h:outputLabel value="Evento:" />
-				<p:selectOneMenu id="evento" value="#{turmaBean.turma.evento}" > 
-					<f:selectItems value="#{eventoBean.lista}" var="evento" itemLabel="#{evento.nome}" />
-				</p:selectOneMenu>
+		        <p:outputLabel value="Evento:" for="themePojo" />
+        		<p:autoComplete id="themePojo" value="#{turmaBean.turma.evento}" 
+        				completeMethod="#{eventoBean.completeTheme}"
+                        var="evento" itemLabel="#{evento.nome}" itemValue="#{evento}" 
+                         forceSelection="true" />
 				
 				<h:outputLabel value="Nome:" />
 				<p:inputText id="nome" value="#{turmaBean.turma.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
@@ -37,9 +38,10 @@
 				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
 					<f:validateLength maximum="500"   />
 				</p:inputTextarea>
-				
 			</h:panelGrid>
+		
 			<p:commandButton value="Salvar" ajax="false" action="#{responsavelBean.salvar(responsavelBean.responsavel)}" ></p:commandButton>
+		
 		</h:form>	
 	</ui:define>
 </ui:composition>
