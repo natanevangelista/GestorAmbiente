@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateInterno.xhtml">
+	
+	<ui:define name="tituloPagina">Listagem de Categorias</ui:define>
+	
+	<ui:define name="corpo">
+		<h:form>
+			<p:commandButton value="Cadastrar nova Categoria" icon="ui-icon-plus" action="#{categoriaBean.novo()}" ajax="false"></p:commandButton>
+		</h:form>
+		<br />
+		<h:form id="listagem">
+			<p:growl id="mensagem" closable="true"/>
+			
+			<p:dataTable var="categoria" value="#{categoriaBean.allCategorias}" rendered="#{not empty categoriaBean.lista}" id="tabelaCategoria" paginator="true" rows="10"
+                         paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                         rowsPerPageTemplate="5,10,15"   lazy="true" 
+                           >
+				<f:facet name="header">Listagem de Categorias</f:facet>
+				
+				<p:column headerText="Categoria" filterBy="#{categoria.descricao}">
+					<p:outputLabel id="descricao" value="#{categoria.descricao}" />
+				</p:column>
+				
+				<p:column headerText="Manutenção" style="text-align:center">
+					<p:commandButton id="visualizar" icon="ui-icon-contact" oncomplete="modalCategoriaDialog.show()" update="modalCategoria"  >
+						<f:setPropertyActionListener target="#{categoriaBean.categoria}" value="#{categoria}"/>
+						<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+						<ui:include src="/pages/restrito/modal/modalVisualizarCategoria.xhtml" />
+					</p:commandButton>
+					
+					<p:commandButton action="#{categoriaBean.editar('manterCategoria')}" ajax="false" id="editar" icon="ui-icon-pencil">
+	    				<f:setPropertyActionListener target="#{categoriaBean.categoria}" value="#{categoria}"/>
+						<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"></p:tooltip>
+					</p:commandButton>
+
+					<p:commandButton id="excluir" icon="ui-icon-trash" onclick="cd.show()" > 
+						<f:setPropertyActionListener target="#{categoriaBean.categoria}" value="#{categoria}" />
+						<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+					</p:commandButton>
+					<p:confirmDialog message="Confirma Exclusão de Categoria?" 
+						header="Excluir Categoria" severity="alert" widgetVar="cd"  >
+						<p:commandButton value="Confirmar"  ajax="false" oncomplete="cd.hide()" update="listagem" actionListener="#{categoriaBean.excluir()}" />
+						<p:commandButton value="Cancelar" onclick="cd.hide()" type="button" />
+					</p:confirmDialog>
+					
+				</p:column>
+				
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

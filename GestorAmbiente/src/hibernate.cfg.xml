@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    
+    <session-factory>
+
+		<!-- SQL dialect -->
+<!-- SQL SERVER 2008
+        <property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+-->
+		<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!-- configuração para apontar para o data source JNDI 
+        <property name="connection.datasource">java:/comp/env/jdbc/AmbienteDB</property>
+        -->
+        
+        <!-- Database connection settings -->
+<!-- SQL SERVER 2008
+         <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=ambiente2</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">admin1234</property>  
+ -->   
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/ambiente2</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">admin</property>
+
+
+		<property name="generatedDdl"></property>
+		
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+		
+		
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+		
+		
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+		<property name="hibernate.hbm2ddl.auto">update</property> 
+		
+		<property name="hibernate.default_schema">ambiente2</property>
+
+        <!-- Mapeamento das entidades -->
+		<mapping class="br.com.gestor.entidade.Agendamento"/>
+        <mapping class="br.com.gestor.entidade.Ambiente"/>
+		<mapping class="br.com.gestor.entidade.Categoria"/>
+		<mapping class="br.com.gestor.entidade.Evento"/>
+		<mapping class="br.com.gestor.entidade.Responsavel"/>
+		<mapping class="br.com.gestor.entidade.Turma"/>
+		
+    </session-factory>
+</hibernate-configuration>

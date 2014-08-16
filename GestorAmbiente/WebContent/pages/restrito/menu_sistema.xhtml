@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+      
+	<ui:composition>
+	
+		<h:form id="menu">
+			<p:menubar>
+				
+				<p:menuitem value="Home" action="/pages/restrito/principal.xhtml" ajax="false"></p:menuitem>
+				
+				<p:menuitem value="Agendamento" action="/pages/restrito/agendamento.xhtml" ajax="false"></p:menuitem>
+
+				<p:submenu label="Ambientes">
+					<p:menuitem value="Ambiente" action="/pages/restrito/ambiente.xhtml" ajax="false"></p:menuitem>
+					<p:menuitem value="Categoria" action="/pages/restrito/categoria.xhtml" ajax="false" ></p:menuitem>
+				</p:submenu>
+
+				<p:submenu label="Turmas">
+					<p:menuitem value="Turma" action="/pages/restrito/manterTurma.xhtml" ajax="false"></p:menuitem>
+					<p:menuitem value="Evento" action="/pages/restrito/evento.xhtml" ajax="false"></p:menuitem>
+				</p:submenu>
+						
+				<p:menuitem value="Pessoa" action="/pages/restrito/responsavel.xhtml" ajax="false"></p:menuitem>
+												
+				<p:menuitem value="Sair" action="/pages/restrito/ambiente.xhtml" ajax="false"></p:menuitem>
+				
+				<p:menuitem value="Dialog" action="/pages/restrito/dialog.xhtml" ajax="false"></p:menuitem>
+			</p:menubar>		
+		
+		</h:form>
+	</ui:composition>
+</html>

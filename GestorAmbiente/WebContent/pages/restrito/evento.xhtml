@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateInterno.xhtml">
+
+	<ui:define name="tituloPagina">Listagem de Eventos</ui:define>
+
+	<ui:define name="corpo">
+		<h:form>
+			<p:commandButton value="Cadastrar novo Evento" icon="ui-icon-plus" action="#{eventoBean.novo()}" ajax="false"></p:commandButton>
+		</h:form>
+		<br />
+		<h:form id="listagem">
+						
+			<p:growl id="mensagem"></p:growl>
+			
+			<p:dataTable var="evento" value="#{eventoBean.allEventos}" rendered="#{not empty eventoBean.lista}" id="tabelaEvento" paginator="true" rows="10"
+						 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                         rowsPerPageTemplate="5,10,15"   lazy="true" >			
+				<f:facet name="header">Listagem de Eventos</f:facet>
+
+				<p:column headerText="Nome" filterBy="#{evento.nome}" >
+					<h:outputText value="#{evento.nome}" />
+				</p:column>
+				
+				<p:column headerText="Modalidade" filterBy="#{evento.modalidade}" >
+					<h:outputText value="#{evento.modalidade}" />
+				</p:column>
+
+				<p:column headerText="Manutenção" style="text-align:center">
+					<p:commandButton  id="visualizar" icon="ui-icon-contact" oncomplete="modalEventoDialog.show()" update="modalEvento" >
+						<f:setPropertyActionListener target="#{eventoBean.evento}" value="#{evento}"/>
+						<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+						<ui:include src="/pages/restrito/modal/modalVisualizarEvento.xhtml" />
+					</p:commandButton>
+
+					<p:commandButton action="#{eventoBean.editar('manterEvento')}" ajax="false" id="editar" icon="ui-icon-pencil" update="listagem tabelaEvento">
+	    				<p:ajax></p:ajax>
+	    				<f:param name="id" value="#{evento.id}"></f:param>
+	    				<f:setPropertyActionListener target="#{eventoBean.evento}" value="#{evento}"/>
+						<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"/>
+					</p:commandButton>
+
+					<p:commandButton id="excluir" icon="ui-icon-trash" onclick="cd.show()" > 
+						<f:setPropertyActionListener target="#{eventoBean.evento}" value="#{evento}" />
+						<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+					</p:commandButton>
+					<p:confirmDialog message="Confirma Exclusão do Evento?" 
+						header="Excluir Evento" severity="alert" widgetVar="cd"  >
+						<p:commandButton value="Confirmar"  ajax="false" oncomplete="cd.hide()" update="listagem" actionListener="#{eventoBean.excluir()}" />
+						<p:commandButton value="Cancelar" onclick="cd.hide()" type="button" />
+					</p:confirmDialog>
+	
+				</p:column>
+			</p:dataTable>
+		</h:form>
+
+	</ui:define>
+
+</ui:composition>
+</html>

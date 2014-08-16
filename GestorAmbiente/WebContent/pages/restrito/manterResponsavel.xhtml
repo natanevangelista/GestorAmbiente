@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateExterno.xhtml">
+	
+	<ui:define name="titulo">Listagem de Responsável</ui:define>
+	
+	<ui:define name="corpo">
+	
+		<h:form id="cadastro">
+			<h:inputHidden value="#{responsavelBean.responsavel.id}" />
+
+			<p:messages/>
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome:" />
+				<p:inputText id="nome" value="#{responsavelBean.responsavel.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
+				
+				<h:outputLabel value="Email:" />
+				<p:inputText id="email" value="#{responsavelBean.responsavel.email}"></p:inputText>
+				
+				<h:outputLabel value="Telefone:" />
+				<p:inputText id="telefone" value="#{responsavelBean.responsavel.telefone}"></p:inputText>
+				
+				<h:outputLabel value="Receber SMS:" />
+				<p:selectBooleanButton id="sms" value="#{responsavelBean.responsavel.sms}" onLabel="Sim" offLabel="Não" onIcon="ui-icon-check" offIcon="ui-icon-close"></p:selectBooleanButton>
+				
+				<h:outputLabel value="Status:" />
+				<p:selectBooleanButton id="status" value="#{responsavelBean.responsavel.status}" onLabel="Ativo" offLabel="Inativo" onIcon="ui-icon-check" offIcon="ui-icon-close"></p:selectBooleanButton>
+			
+				<h:outputLabel value="Senha Atual:" />
+				<p:inputText id="senhaA" value="#{responsavelBean.responsavel.senha}"></p:inputText>
+				
+				<h:outputLabel value="Nova Senha:" />
+				<p:inputText id="senhaN" value="#{responsavelBean.responsavel.senha}"></p:inputText>
+				
+				<h:outputLabel value="Confirma Senha:" />
+				<p:inputText id="senhaNC" value="#{responsavelBean.responsavel.senha}"></p:inputText>
+				
+			
+			</h:panelGrid>
+			<p:commandButton value="Salvar" ajax="false" action="#{responsavelBean.salvar(responsavelBean.responsavel)}" ></p:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>	 
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateInterno.xhtml">
+	
+	<ui:define name="tituloPagina"> <h:outputLabel value="#{categoriaBean.acaoTituloPagina}" /> </ui:define>
+	
+	<ui:define name="corpo">
+	
+		<h:form id="cadastro">
+			<h:inputHidden value="#{categoriaBean.categoria.id}" />
+			<p:messages/>
+			<h:panelGrid columns="2">
+			
+				<h:outputLabel value="Categoria:" />
+				<p:inputText id="descricao" value="#{categoriaBean.categoria.descricao}" required="true" requiredMessage="É necessário informar o nome da Categoria."></p:inputText>
+				
+				<h:outputLabel value="Observação:" />
+				<p:inputText id="observacao" value="#{categoriaBean.categoria.observacao}" ></p:inputText>
+				
+			</h:panelGrid>
+			<p:commandButton value="Salvar" icon="ui-icon-arrowstop-1-e" ajax="false" action="#{categoriaBean.salvar()}" >
+				<p:ajax></p:ajax>
+			</p:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>	 
+</html>

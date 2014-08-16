@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+		
+	<title>
+		<ui:insert name="titulo">Financeiro Web do NATÃ</ui:insert>
+	</title> <!-- (2) -->
+	
+	<!-- importação do estilo CSS -->
+	<h:outputStylesheet library="css" name="estilo.css"/>  
+	<style type="text/css"><!--
+	#logotipo {
+		text-align: right; 
+		float: right;
+	} -->
+    </style>
+    
+</h:head>
+<h:body>
+
+	<!-- melhor exeplificação na página 310 -->
+	<div id="container">
+		
+		<div id="titulo">
+			<ui:insert name="titulo">Financeiro Web</ui:insert><!-- (4) -->  
+		</div>
+		
+		<div id="logotipo">
+			logo
+		</div>
+		
+		<!-- inserção de uma página -->
+		<div id="barra_menu">
+	    	<ui:insert name="barra_menu">
+	    		menu
+	   		</ui:insert>  
+		</div>
+		
+		<div id="corpo">
+			<ui:insert name="corpo"/>
+		</div>
+		
+		<!-- inserção de uma página -->
+		<div id="rodape">
+	    	<ui:insert name="rodape">
+	    		teste rodape
+	    	</ui:insert> 
+		</div>
+	</div>
+</h:body>
+</html>

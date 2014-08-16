@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateInterno.xhtml">
+	
+	<ui:define name="tituloPagina"><h:outputLabel value="#{eventoBean.acaoTituloPagina}" /> </ui:define>
+	
+	<ui:define name="corpo">
+	
+		<h:form id="cadastro">
+			<h:inputHidden value="#{eventoBean.evento.id}" />
+			
+			<h:panelGrid columns="3">
+			
+				<h:outputLabel value="Nome do Evento:" />
+				<p:inputText id="nome" value="#{eventoBean.evento.nome}" required="true" requiredMessage="É necessário informar o nome do Evento" validatorMessage="50 #{msg.maximo_caracteres}" >
+					<f:validateLength maximum="50" />
+					<p:ajax update="msgNome"></p:ajax>
+				</p:inputText>
+				<p:message id="msgNome" for="nome"></p:message>
+
+				<h:outputLabel value="Modalidade:" />
+				<p:inputText id="modalidade" value="#{eventoBean.evento.modalidade}"  validatorMessage="50 #{msg.maximo_caracteres}" >
+					<f:validateLength maximum="50" />
+					<p:ajax update="msgModalidade"></p:ajax>		
+				</p:inputText>
+				<p:message id="msgModalidade" for="modalidade"></p:message>
+				
+				<h:outputLabel value="Observação:" />
+				<p:inputTextarea id="observacao" value="#{eventoBean.evento.observacao}" cols="50" validatorMessage="250 #{msg.maximo_caracteres}" maxlength="250">
+					<f:validateLength maximum="250" />
+					<p:ajax update="msgObservacao"></p:ajax>
+				</p:inputTextarea>
+				<p:message id="msgObservacao" for="modalidade"></p:message>
+				
+			</h:panelGrid>
+
+			<p:commandButton value="Salvar" ajax="false" icon="ui-icon-arrowstop-1-e" action="#{eventoBean.salvar()}" >
+				<p:ajax></p:ajax>
+			</p:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>	 
+</html>

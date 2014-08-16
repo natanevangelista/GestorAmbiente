@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateExterno.xhtml">
+	
+	<ui:define name="titulo">Listagem de Ambientes</ui:define>
+	
+	<ui:define name="corpo">
+		<h:form>
+			<p:commandButton value="Cadastrar novo Agendamento" action="#{agendamentoBean.novo()}" ajax="false"></p:commandButton>
+		</h:form>
+		<p:messages  closable="true" />
+		<h:form id="listagem">
+				
+		<p:dataTable var="agendamento" value="#{agendamentoBean.lista}" rowKey="#{agendamento.id}" selectionMode="single" selection="#{agendamentoBean.agendamentoSelecionado}" paginator="true" rows="20"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="10,25,75,50,100">
+			<f:facet name="caption">Relação de todos os Agendamentos Cadastrados</f:facet>
+				<f:facet name="header">Listagem de Agendamentos</f:facet>
+				<f:facet name="footer">Final da Listagem de Agendamentos</f:facet>
+				
+				<p:column headerText="Data" filterBy="#{agendamento.data}" filterMatchMode="contains">
+					<h:outputText value="#{agendamento.data}">
+						<f:convertDateTime dateStyle="medium"/>
+					</h:outputText>
+				</p:column>
+				
+				<p:column headerText="Reser/Lib" filterBy="#{agendamento.reservado == true ? 'Reservado' : 'Liberado' }" filterMatchMode="contains" style="text-align:center">
+						<h:graphicImage id="reservado" library="imagens" name="reservado_#{agendamento.reservado}.png" style="border:0" />
+					<p:tooltip for="reservado" value="#{agendamento.reservado == true ? 'Reservado' : 'Liberado' }"></p:tooltip>
+				</p:column>
+				
+				<p:column headerText="Ambiente" filterBy="#{agendamento.ambiente.identificacao}" filterMatchMode="contains">
+					<h:outputText value="#{agendamento.ambiente.identificacao}" />
+				</p:column>
+				
+				<p:column headerText="Pessoa" filterBy="#{agendamento.pessoa.nome}" filterMatchMode="contains">
+					<h:outputText value="#{agendamento.pessoa.nome}" />
+				</p:column>
+				
+				<p:column headerText="Evento" filterBy="#{agendamento.evento.nome}" filterMatchMode="contains">
+					<h:outputText value="#{agendamento.evento.nome}" />
+				</p:column>
+				
+				<p:column headerText="Turno" filterBy="#{agendamento.turno}" filterMatchMode="contains">
+					<h:outputText value="#{agendamento.turno == 'M' ? 'Matutino' : agendamento.turno == 'V' ? 'Vespertino' : 'Noturno'}" />
+				</p:column>
+		
+		</p:dataTable>
+		</h:form>		
+		
+	</ui:define>
+</ui:composition>
+</html>

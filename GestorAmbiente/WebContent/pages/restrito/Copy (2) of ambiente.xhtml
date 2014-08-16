@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+
+<!-- chama o template -->
+<h:body>
+<ui:composition template="/templates/templateExterno.xhtml">
+	
+	<ui:define name="titulo">Listagem de Ambientes</ui:define>
+	
+	<ui:define name="corpo">
+		<h:form>
+			<p:commandButton value="Cadastrar novo Ambiente" icon="ui-icon-plus" action="#{ambienteBean.novo()}" ajax="false"></p:commandButton>
+		</h:form>
+		<br />
+		<h:form id="listagem">
+			<p:messages id="mensagem" closable="true" />
+			<p:dataTable var="ambiente" value="#{ambienteBean.lista}" id="tabelaAmbiente" rendered="#{!empty ambienteBean.lista}"
+							rows="10" paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                          paginator="true" >
+				<f:facet name="header">Listagem de Ambientes</f:facet>
+				
+				<p:column headerText="Identificação" filterBy="#{ambiente.identificacao}" filterMatchMode="contains">
+					<h:outputText value="#{ambiente.identificacao}" />
+				</p:column>
+				<p:column headerText="Descrição" filterBy="#{ambiente.descricao}" filterMatchMode="contains">
+					<h:outputText value="#{ambiente.descricao}" />		
+				</p:column>
+				<p:column headerText="Categoria" filterBy="#{ambiente.categoria.descricao}" filterMatchMode="contains">
+					<h:outputText value="#{ambiente.categoria.descricao}" />		
+				</p:column>
+				
+				<p:column headerText="Situação" style="text-align:center" filterBy="#{ambiente.status == true ? 'Ativo' : 'Inativo'}">
+						<p:commandLink action="#{ambienteBean.ativar(ambiente)}" id="status" update="tabelaAmbiente" >
+							<h:graphicImage  library="imagens" name="ativo_#{ambiente.status}.png" style="border:0" />
+						</p:commandLink>
+						<p:tooltip for="status" value="#{ambiente.status == true ? 'Inativar' : 'Ativar' }"></p:tooltip>
+				</p:column>
+				
+				<p:column headerText="Manutenção" style="text-align:center">
+					<p:commandButton id="visualizar" icon="ui-icon-contact" oncomplete="modalAmbienteDialog.show()" update="modalAmbiente"  >
+						<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}"/>
+						<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+						<ui:include src="/pages/restrito/modal/modalVisualizarAmbiente.xhtml" />
+					</p:commandButton>
+
+					<p:commandButton icon="ui-icon-pencil" id="editar" action="#{ambienteBean.editar('manterAmbiente')}" ajax="false" >
+	    				<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}"/>
+						<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"></p:tooltip>
+					</p:commandButton>
+
+					<p:commandButton id="excluir" icon="ui-icon-trash" action="#{ambienteBean.excluir()}" ajax="false" onclick="if (!confirm('Confirma a exclusão do ambiente #{ambiente.identificacao}?')) return false;">
+						<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}" />
+						<p:ajax></p:ajax>
+					</p:commandButton>
+					<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+				</p:column>
+								
+			</p:dataTable>
+	
+		</h:form>
+		
+		
+		
+		
+	</ui:define>
+</ui:composition>
+</h:body>
+</html>

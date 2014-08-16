@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+<h:body>
+	<p:dialog style="text-align:left" header="Editar Ambiente" id="modalAmbienteEditar" 
+				widgetVar="modalAmbienteDialogEditar" modal="true" draggable="false" 
+				closable="true" resizable="false" height="200" width="600">
+		  <h:form id="modalAmbienteFormEditar" prependId="false">
+			
+			<h:inputHidden value="#{ambienteBean.ambiente.id}" />
+			<p:panelGrid columns="2" >
+				
+				<h:outputText value="Identificação" />
+				<p:inputText  value="#{ambienteBean.ambiente.identificacao}"/> 
+				
+				<h:outputText value="Bloco"/>
+				<p:inputText  value="#{ambienteBean.ambiente.bloco}"/>
+				
+				<h:outputText value="Descrição:"/>
+				<p:inputText  value="#{ambienteBean.ambiente.descricao}"/>
+				
+				<h:outputText value="Observação:"/>
+				<p:inputTextarea  value="#{ambienteBean.ambiente.observacao}"/>
+				
+				<h:outputLabel value="Categoria:" />
+				<p:selectOneMenu id="categoria" value="#{ambienteBean.ambiente.categoria}" > 
+					<f:selectItems value="#{categoriaBean.lista}" var="categoria" itemLabel="#{categoria.categoria}" />
+				</p:selectOneMenu>
+				
+				<p:commandButton value="Salvar" action="#{ambienteBean.salvar()}" ajax="false" oncomplete="closeDialogIfSucess(xhr, status, args, modalAmbienteDialogEditar, 'modalAmbienteEditar')" update="tabelaAmbiente mensagem listagem">
+					<p:ajax></p:ajax>
+				</p:commandButton>
+			
+			</p:panelGrid>
+			
+			
+		</h:form>
+	</p:dialog>
+</h:body>
+</html>

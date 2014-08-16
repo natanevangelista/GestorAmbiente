@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context reloadable="true" >
+
+    <!-- Pag: 236 - Criação de dataSource JNDI - para dividir o acesso ao banco para o Hibernate e o Spring  
+         name:      nome que foi dado ao DataSource JNDI  
+         maxActive: numero maximo de conexões ativas  
+         maxIdle:   máximo de conexões aguardando uso.  
+         maxWait:   tempo máximo de esperar por uma conexão disponível -->
+    <Resource  
+        name="jdbc/AmbienteDB"          
+        auth="Container"
+        type="javax.sql.DataSource"
+        maxActive="100"
+        maxIdle="30"
+        maxWait="10000"
+        username="sa" 
+        password="admin1234"
+        driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver"
+        url="jdbc:sqlserver://localhost:1433;databaseName=ambiente"
+        />
+
+   
+</Context>

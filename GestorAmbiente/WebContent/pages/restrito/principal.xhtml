@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateInterno.xhtml">
+		
+		<!-- definição do titulo -->
+		
+		
+		<ui:define name="corpo">
+			<p:messages/>			
+			<center> Página Inicial </center> 
+			#{bundle.maximo_caracteres}
+			<p:commandLink action="ambiente/consultarAmbiente" value="Consultar"></p:commandLink>
+		</ui:define>
+		
+</ui:composition>
+</html>

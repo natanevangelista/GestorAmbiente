@@ -1,0 +1,15 @@
+Configurações
+
+
+
+Lib:
+
+el-impl-2.2.jar = utilizada para evitar o erro: Parece que a versão do JSP do contêiner é mais antiga que a 2.1 e não pode localizar o gerador de expressões EL RI, ''{0}''. Se não estiver usando o JSP ou o EL RI, verifique se o parâmetro de inicialização de contexto, ''{1}'', está definido corretamente.
+
+javax.servlet = utilizada para criar as sessões de requisição.
+
+
+
+
+
+

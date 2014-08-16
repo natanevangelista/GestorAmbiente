@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+
+<!-- chama o template -->
+<h:body>
+<ui:composition template="/templates/templateExterno.xhtml">
+	
+	<ui:define name="titulo">Listagem de Ambientes</ui:define>
+	
+	<ui:define name="corpo">
+		<h:form>
+			<p:commandButton value="Cadastrar novo Ambiente" icon="ui-icon-plus" action="#{ambienteBean.novo()}" ajax="false"></p:commandButton>
+		</h:form>
+		
+		
+		<h:form id="listagem">
+			
+			<p:commandButton action="#{ambienteBean.procurarAmbiente()}"  value="Consultar" ajax="false">
+				<p:ajax  update="listagem" />
+			</p:commandButton>
+		
+			<p:messages id="mensagem" closable="true" />
+			<!-- <ui:include src="/pages/restrito/modal/modalAjaxStatus.xhtml" />  -->
+			
+			<p:dataTable var="ambiente" value="#{ambienteBean.lista}" id="tabelaAmbiente" rendered="#{!empty ambienteBean.lista}">
+				<f:facet name="caption">Relação de todos os Ambientes Cadastrados</f:facet>
+				<f:facet name="header">Listagem de Ambientes</f:facet>
+				<f:facet name="footer">Final da Listagem de Ambientes</f:facet>				
+				
+				<p:column headerText="Identificação">
+					<h:outputText value="#{ambiente.identificacao}" />
+				</p:column>
+				<p:column headerText="Descrição">
+					<h:outputText value="#{ambiente.descricao}" />		
+				</p:column>
+				<p:column headerText="Categoria">
+					<h:outputText value="#{ambiente.categoria.descricao}" />		
+				</p:column>
+				<p:column headerText="Situação" style="text-align:center">
+					<p:commandLink action="#{ambienteBean.ativar()}" id="situacao" ajax="false">
+						<h:graphicImage library="imagens" name="ativo_#{ambiente.status}.png" style="border:0" />
+						<!-- esta linha faz com que seja aplicado a alteração no ambiente correspondente -->
+						<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}" />
+						<p:ajax ></p:ajax>
+					</p:commandLink>
+					<p:tooltip for="situacao" value="#{ambiente.status == true ? 'Inativar' : 'Ativar' }"></p:tooltip>
+				</p:column>
+				
+				<p:column headerText="Visualizar" style="text-align:center">
+					<p:commandButton id="visualizar" icon="ui-icon-contact" oncomplete="modalAmbienteDialog.show()" update="modalAmbiente"  >
+						<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}"/>
+					</p:commandButton>
+					<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+					<ui:include src="/pages/restrito/modal/modalVisualizarAmbiente.xhtml" />
+				</p:column>
+				
+				<p:column headerText="Editar" style="text-align:center">
+					<p:commandButton action="#{ambienteBean.editar()}" icon="ui-icon-pencil" id="editar" ajax="false" >
+	    				<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}"/>
+	    				<p:ajax></p:ajax>
+					</p:commandButton>
+					<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"></p:tooltip>
+				</p:column>
+				
+				<p:column headerText="Excluir" style="text-align:center" >
+					<p:commandButton id="excluir" icon="ui-icon-trash" action="#{ambienteBean.excluir()}" ajax="false" onclick="if (!confirm('Confirma a exclusão do ambiente #{ambiente.identificacao}?')) return false;">
+						<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}" />
+						<p:ajax></p:ajax>
+					</p:commandButton>
+					<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+				</p:column>
+								
+			</p:dataTable>
+	
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+</h:body>
+</html>

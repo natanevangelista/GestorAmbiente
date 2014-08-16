@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateInterno.xhtml">
+	
+	<ui:define name="tituloPagina"> <h:outputLabel value="#{ambienteBean.acaoTituloPagina}" /> </ui:define>
+	
+	<ui:define name="corpo">
+	
+		<h:form id="cadastro">
+			<p:messages/>
+			<h:inputHidden value="#{ambienteBean.ambiente.id}" />
+			
+			<h:panelGrid columns="2">
+				<h:outputLabel value="Identificação:" />
+				<p:inputText id="identificacao" value="#{ambienteBean.ambiente.identificacao}" required="true" requiredMessage="É necessário informar uma Identificação para o Ambiente.">
+					<f:validateLength maximum="20" />
+				</p:inputText>
+				
+				<h:outputLabel value="Status:" />
+				<p:selectBooleanButton id="status" value="#{ambienteBean.ambiente.status}" onLabel="Ativo" offLabel="Inativo" onIcon="ui-icon-check" offIcon="ui-icon-close"></p:selectBooleanButton>
+				
+				<h:outputLabel value="Quantidade Vagas:" />
+				<p:inputText id="qtdVagas" value="#{ambienteBean.ambiente.qtdVagas}"  validatorMessage="10 #{msg.maximo_caracteres}">
+					<f:validateLength maximum="10" />
+				</p:inputText>
+				
+				<h:outputLabel value="Descrição:" />
+				<p:inputText id="descricao" value="#{ambienteBean.ambiente.descricao}"  validatorMessage="150 #{msg.maximo_caracteres}">
+					<f:validateLength maximum="150" />
+				</p:inputText>
+				
+				<h:outputLabel value="Observação" />
+				<p:inputTextarea id="observacao" value="#{ambienteBean.ambiente.observacao}" counter="display" maxlength="500" counterTemplate="{0} caracteres restantes." validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
+					<f:validateLength maximum="500"   />
+				</p:inputTextarea>
+				<h:outputText />
+				<h:outputText id="display" />
+				
+				<h:outputLabel value="Categoria:" />
+				<p:selectOneMenu id="categoria" value="#{ambienteBean.ambiente.categoria}" > 
+					<f:selectItems value="#{categoriaBean.lista}" var="categoria" itemLabel="#{categoria.descricao}" />
+				</p:selectOneMenu>
+
+			</h:panelGrid>
+
+			<p:commandButton value="Salvar" ajax="false" icon="ui-icon-arrowstop-1-e"  action="#{ambienteBean.salvar()}" >
+				<p:ajax ></p:ajax>
+			</p:commandButton>
+
+		</h:form>
+	</ui:define>
+</ui:composition>	 
+</html>

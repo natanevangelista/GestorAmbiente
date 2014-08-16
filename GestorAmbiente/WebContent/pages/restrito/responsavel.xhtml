@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<!-- chama o template -->
+<ui:composition template="/templates/templateExterno.xhtml">
+	
+	<ui:define name="titulo">Listagem de Responsável</ui:define>
+	
+	<ui:define name="corpo">
+		<h:form>
+			<p:commandButton value="Cadastrar Responsavel" action="#{responsavelBean.novo()}" ajax="false"></p:commandButton>
+		</h:form>
+		
+		<h:form id="listagem">
+			<p:messages id="mensagem" closable="true"/>
+			<p:dataTable var="responsavel" value="#{responsavelBean.lista}" id="tabelaResponsavel" rendered="#{!empty responsavelBean.lista}"  >
+				<f:facet name="caption">Relação de todos as Pessoas Cadastrados</f:facet>
+				<f:facet name="header">Listagem de Pessoas</f:facet>
+				<f:facet name="footer">Final da Listagem de Pessoas</f:facet>
+				
+				<p:column headerText="Nome" filterBy="#{responsavel.nome}" footerText="contains" filterMatchMode="contains">
+					<h:outputText value="#{responsavel.nome}" />
+				</p:column>
+				<p:column headerText="Email">
+					<h:outputText value="#{responsavel.email}" />		
+				</p:column>
+				<p:column headerText="Telefone">
+					<h:outputText value="#{responsavel.telefone}" />		
+				</p:column>
+
+				<p:column headerText="Situação" style="text-align:center">
+					<p:commandLink action="#{responsavelBean.ativar()}" id="status" update="tabelaResponsavel">
+						<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}" />
+						<p:selectBooleanButton onLabel="Ativo" offLabel="Inativo" value="#{responsavel.status}" />
+						<p:ajax></p:ajax>
+						<p:tooltip for="status" value="#{responsavel.status == true ? 'Inativar' : 'Ativar' }"></p:tooltip>
+					</p:commandLink>
+				</p:column>
+
+				<p:column headerText="Editar" style="text-align:center">
+					<p:commandButton action="#{responsavelBean.editar('manterResponsavel')}" id="editar" ajax="false" icon="ui-icon-pencil">
+	    				<p:ajax></p:ajax>	
+	    				<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}"/>
+					</p:commandButton>
+					<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"></p:tooltip>
+				</p:column>
+				
+				<p:column headerText="Excluir" style="text-align:center">
+					<p:commandButton id="excluir" icon="ui-icon-trash" ajax="false" update="listagem" action="#{responsavelBean.excluir()}" >
+						<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}" />
+					</p:commandButton>
+					<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

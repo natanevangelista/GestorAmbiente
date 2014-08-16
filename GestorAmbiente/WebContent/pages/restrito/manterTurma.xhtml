@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/templates/templateExterno.xhtml">
+	<ui:define name="tituloPagina"><h:outputLabel value="#{turmaBean.acaoTituloPagina}" /> </ui:define>
+	
+	<ui:define name="corpo">	
+	
+	<h:form id="cadastro">
+			<h:inputHidden value="#{turmaBean.turma.id}" />
+
+			<p:messages/>
+			<h:panelGrid columns="2">
+
+				<h:outputLabel value="Evento:" />
+				<p:selectOneMenu id="evento" value="#{turmaBean.turma.evento}" > 
+					<f:selectItems value="#{eventoBean.lista}" var="evento" itemLabel="#{evento.nome}" />
+				</p:selectOneMenu>
+				
+				<h:outputLabel value="Nome:" />
+				<p:inputText id="nome" value="#{turmaBean.turma.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
+				
+				<h:outputLabel value="Descrição:" />
+				<p:inputText id="email" value="#{turmaBean.turma.descricao}"></p:inputText>
+				
+				<h:outputLabel value="Quantidade de Vagas:" />
+				<p:inputText id="telefone" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
+				
+				<h:outputLabel value="Status:" />
+				<p:selectOneListbox></p:selectOneListbox>
+				
+				<h:outputLabel value="Observação" />
+				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
+					<f:validateLength maximum="500"   />
+				</p:inputTextarea>
+				
+			</h:panelGrid>
+			<p:commandButton value="Salvar" ajax="false" action="#{responsavelBean.salvar(responsavelBean.responsavel)}" ></p:commandButton>
+		</h:form>	
+	</ui:define>
+</ui:composition>
+</html>

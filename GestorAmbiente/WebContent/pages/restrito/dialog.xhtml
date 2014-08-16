@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+
+	<ui:composition template="/templates/templateExterno.xhtml">
+	
+		<ui:define name="titulo">Listagem de Ambientes</ui:define>
+	
+			<ui:define name="corpo">
+			
+				<p:commandButton id="showDialogButton" type="button" value="Show" onclick="dlg.show()" />  
+          
+				<p:dialog header="Enter FirstName" widgetVar="dlg" resizable="false" modal="true">  
+				    <h:form id="form">  
+				  
+				        <h:outputLabel value="Nome do Evento:" />  
+			            <p:inputText value="#{eventoBean.evento.nome}" />  
+				    
+				    	<h:outputLabel  value="Modalidade do Evento:" />
+						<p:inputText value="#{eventoBean.evento.modalidade}"/>		    	
+				    	
+				    	<h:outputLabel  value="Observação do Evento:" />
+				    	<p:inputText value="#{eventoBean.evento.observacao}"/>
+				  
+				        <p:commandButton id="submitButton" value="Submit" update=":display" oncomplete="dlg.hide();"/>  
+				              
+				    </h:form>  
+				</p:dialog>  
+				      
+				<p:outputPanel id="display" style="display:block;margin-top:10px;">  
+				    <h:outputText id="name" value="Hello #{pprBean.firstname}" rendered="#{not empty pprBean.firstname}"/>  
+				</p:outputPanel> 
+
+                       
+		</ui:define>	
+	
+	</ui:composition>
+</html>
