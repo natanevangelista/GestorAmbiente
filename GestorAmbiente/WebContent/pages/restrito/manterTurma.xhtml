@@ -25,16 +25,16 @@
                 </p:autoComplete>
 				
 				<h:outputLabel value="Nome:" />
-				<p:inputText title="#{bundle.informe_evento}" id="nome" value="#{turmaBean.turma.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
+				<p:inputText style="font-weight: bold;" id="nome" value="#{turmaBean.turma.nome}" readonly="true" ></p:inputText>
 				
 				<h:outputLabel value="Descrição:" />
-				<p:inputText id="email" value="#{turmaBean.turma.descricao}"></p:inputText>
+				<p:inputText id="descricao" value="#{turmaBean.turma.descricao}"></p:inputText>
 				
 				<h:outputLabel value="Quantidade de Vagas:" />
-				<p:inputText id="telefone" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
+				<p:inputText id="qtdVagas" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
 				
 				<h:outputLabel value="Status:" />
-				<p:inputText style="color: #{turmaBean.turma.status == 'N' ? 'red' : turmaBean.turma.status == 'I' ? 'blue' : 'black' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" disabled="true" > </p:inputText>
+				<p:inputText id="texto" style="color: #{turmaBean.turma.status == 'N' ? 'black' : turmaBean.turma.status == 'I' ? 'blue' : 'red' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" readonly="true" > </p:inputText>
 				
 				<h:outputLabel value="Observação" />
 				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >

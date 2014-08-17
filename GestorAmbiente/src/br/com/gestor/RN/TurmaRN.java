@@ -1,5 +1,6 @@
 package br.com.gestor.RN;
 
+import java.util.GregorianCalendar;
 import java.util.List;
 
 import br.com.gestor.DAO.DAOFactory;
@@ -32,4 +33,26 @@ public class TurmaRN {
 		return (List<Turma>) this.turmaDAO.listar();
 	}
 	
+	/**
+	 * Regra para criar o Nome nome da Turma que está sendo Inserida
+	 * 
+	 * @return
+	 */
+	public String criarNomeTurma(){
+		String anoAtual = String.valueOf(new GregorianCalendar().get(GregorianCalendar.YEAR));
+		Turma turma = turmaDAO.findUltimaTurmabyAno(anoAtual);
+		String nomeTurmaNovo = null;
+		
+		if(turma != null){
+			int numeroUltimaTurma = Integer.parseInt(turma.getNome().substring(0, turma.getNome().length() - 4));
+			nomeTurmaNovo = (numeroUltimaTurma + 1) + anoAtual;
+		} else {
+			nomeTurmaNovo = 1 + anoAtual;
+		}
+		return nomeTurmaNovo;
+	}
+
+	public List<Turma> findByParametros(Turma turma) {
+		return turmaDAO.findByParametros(turma);
+	}
 }

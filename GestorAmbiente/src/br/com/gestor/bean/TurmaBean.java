@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 import br.com.gestor.RN.TurmaRN;
 import br.com.gestor.entidade.Turma;
@@ -14,7 +14,7 @@ import br.com.gestor.web.util.RNException;
 import com.sun.faces.context.flash.ELFlash;
 
 @ManagedBean(name="turmaBean")
-@RequestScoped
+@SessionScoped
 public class TurmaBean extends AbstractBean {
 
 	private static final String SELECTED_TURMA = "selectedTurma";
@@ -22,6 +22,7 @@ public class TurmaBean extends AbstractBean {
 	private static final String TITULO_EDITAR = "Editar Turma";
 
 	private Turma turma = new Turma();
+	private Turma turmaPesquisa = new Turma();
 	private List<Turma> lista;
 	private TurmaRN turmaRN;
 	
@@ -30,9 +31,10 @@ public class TurmaBean extends AbstractBean {
 	private static final Character NAO_INICIALIZADO_KEY = 'N';
 	private static final Character FINALIZADO_KEY = 'F';
 	
-	private static final String INICIALIZADO = "INICIALIZADO";
-	private static final String NAO_INICIALIZADO = "NÃO INICIALIZADO";
-	private static final String FINALIZADO = "FINALIZADO";
+	private static final String INICIALIZADO = "INICIALIZADA";
+	private static final String NAO_INICIALIZADO = "NÃO INICIALIZADA";
+	private static final String FINALIZADO = "FINALIZADA";
+	
 	
 	public TurmaBean() {
 		status.put(INICIALIZADO_KEY, INICIALIZADO);
@@ -43,20 +45,18 @@ public class TurmaBean extends AbstractBean {
 	public String novo(){
 		this.turma = new Turma();
 		this.turma.setStatus(NAO_INICIALIZADO_KEY);
-		ELFlash.getFlash().put(SELECTED_TURMA, turma);
+		criarNomeTurma(this.turma);
+//		ELFlash.getFlash().put(SELECTED_TURMA, turma);
 		ELFlash.getFlash().put(TITULO_PAGINA, TITULO_CADASTRAR);
 		return "manterTurma";
 	}
 	
 	public String salvar(){
 		turmaRN = new TurmaRN();
-		if(turma.getId() == null){
-			turma.setStatus(NAO_INICIALIZADO_KEY);
-		}
 		turmaRN.salvar(this.turma);
 		MensagemUtil.mensagemAtencao("operacao_sucesso");
 		this.turma = null;
-		return "turma";
+		return "turmaPesquisa";
 	}
 	
 	public String excluir(){
@@ -75,10 +75,6 @@ public class TurmaBean extends AbstractBean {
 	}
 
 	public List<Turma> getLista(){
-		if(this.lista == null){
-			turmaRN = new TurmaRN();
-			this.lista = turmaRN.listar();
-		}
 		return this.lista;
 	}
 	
@@ -86,6 +82,22 @@ public class TurmaBean extends AbstractBean {
 		return pagina;
 	}
 
+	/**
+	 * Chama a regra que cria o Nome da Turma
+	 * 
+	 * @param turma
+	 */
+	private void criarNomeTurma(Turma turma){
+		turmaRN = new TurmaRN();
+		turma.setNome(turmaRN.criarNomeTurma());
+	}
+	
+	public void pesquisarTurma(Turma turma){
+		turmaRN = new TurmaRN();
+		lista = turmaRN.findByParametros(turma);
+		System.out.println("cabuloso");
+	}
+	
 	public Turma getTurma() {
 		return turma;
 	}
@@ -97,5 +109,14 @@ public class TurmaBean extends AbstractBean {
 	public String getStatusNome(Character key) {
 		return status.get(key).toString();
 	}
+
+	public Turma getTurmaPesquisa() {
+		return turmaPesquisa;
+	}
+
+	public void setTurmaPesquisa(Turma turmaPesquisa) {
+		this.turmaPesquisa = turmaPesquisa;
+	}
+
 	
 }
