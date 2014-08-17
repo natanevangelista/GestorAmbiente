@@ -7,13 +7,13 @@
       xmlns:p="http://primefaces.org/ui"> 
 
 <!-- chama o template -->
-<ui:composition template="/templates/templateExterno.xhtml">
+<ui:composition template="/templates/templateInterno.xhtml">
 	
-	<ui:define name="titulo">Listagem de Responsável</ui:define>
+	<ui:define name="tituloPagina">Listagem de Responsável</ui:define>
 	
 	<ui:define name="corpo">
 		<h:form>
-			<p:commandButton value="Cadastrar Responsavel" action="#{responsavelBean.novo()}" ajax="false"></p:commandButton>
+			<p:commandButton value="Cadastrar Responsável" action="#{responsavelBean.novo()}" ajax="false"></p:commandButton>
 		</h:form>
 		
 		<h:form id="listagem">

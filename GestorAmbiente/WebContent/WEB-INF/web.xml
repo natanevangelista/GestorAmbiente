@@ -65,10 +65,11 @@
   </context-param>
   -->
   
+  <!-- Utilizado para chamar o Schedule, que executará o envio de SMS, e a Inicialização e Finalização de Turmas. 
   <servlet>
-  <servlet-name>asd</servlet-name>
-  <servlet-class>br.com.gestor.web.util.ServletInformaProfessor</servlet-class>
-  <load-on-startup>1</load-on-startup>
+  	<servlet-name>asd</servlet-name>
+  	<servlet-class>br.com.gestor.web.util.ServletInformaProfessor</servlet-class>
+  	<load-on-startup>1</load-on-startup>
   </servlet>
-  
+   -->
 </web-app>

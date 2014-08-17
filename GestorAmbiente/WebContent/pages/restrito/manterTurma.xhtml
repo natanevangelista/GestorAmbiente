@@ -5,7 +5,7 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
-<ui:composition template="/templates/templateExterno.xhtml">
+<ui:composition template="/templates/templateInterno.xhtml">
 	<ui:define name="tituloPagina"><h:outputLabel value="#{turmaBean.acaoTituloPagina}" /> </ui:define>
 	
 	<ui:define name="corpo">	
@@ -16,14 +16,16 @@
 			<p:messages/>
 			
 			<h:panelGrid columns="2">
-		        <p:outputLabel value="Evento:" for="themePojo" />
-        		<p:autoComplete id="themePojo" value="#{turmaBean.turma.evento}" 
-        				completeMethod="#{eventoBean.completeTheme}"
+		        <p:outputLabel value="Evento:" />
+        		<p:autoComplete id="eventoPojo" value="#{turmaBean.turma.evento}" 
+        				completeMethod="#{eventoBean.completeEvento}"
                         var="evento" itemLabel="#{evento.nome}" itemValue="#{evento}" 
-                         forceSelection="true" />
+                         forceSelection="true" title="#{bundle.informe_evento}"> 
+					<p:tooltip id="toolTipFocus" for="eventoPojo"  showEffect="fade" showEvent="focus" hideEvent="blur" />
+                </p:autoComplete>
 				
 				<h:outputLabel value="Nome:" />
-				<p:inputText id="nome" value="#{turmaBean.turma.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
+				<p:inputText title="#{bundle.informe_evento}" id="nome" value="#{turmaBean.turma.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
 				
 				<h:outputLabel value="Descrição:" />
 				<p:inputText id="email" value="#{turmaBean.turma.descricao}"></p:inputText>
@@ -32,7 +34,7 @@
 				<p:inputText id="telefone" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
 				
 				<h:outputLabel value="Status:" />
-				<p:selectOneListbox></p:selectOneListbox>
+				<p:inputText style="color: #{turmaBean.turma.status == 'N' ? 'red' : turmaBean.turma.status == 'I' ? 'blue' : 'black' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" disabled="true" > </p:inputText>
 				
 				<h:outputLabel value="Observação" />
 				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
@@ -40,7 +42,7 @@
 				</p:inputTextarea>
 			</h:panelGrid>
 		
-			<p:commandButton value="Salvar" ajax="false" action="#{responsavelBean.salvar(responsavelBean.responsavel)}" ></p:commandButton>
+			<p:commandButton value="Salvar" ajax="false" action="#{turmaBean.salvar()}" ></p:commandButton>
 		
 		</h:form>	
 	</ui:define>

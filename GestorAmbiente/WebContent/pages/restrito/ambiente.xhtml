@@ -26,9 +26,11 @@
 				<p:column headerText="Identificação" filterBy="#{ambiente.identificacao}" filterMatchMode="contains">
 					<h:outputText value="#{ambiente.identificacao}" />
 				</p:column>
+				
 				<p:column headerText="Descrição" filterBy="#{ambiente.descricao}" filterMatchMode="contains">
 					<h:outputText value="#{ambiente.descricao}" />		
 				</p:column>
+				
 				<p:column headerText="Categoria" filterBy="#{ambiente.categoria}" filterMatchMode="contains">
 					<h:outputText value="#{ambiente.categoria.descricao}" />		
 				</p:column>

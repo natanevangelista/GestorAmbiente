@@ -18,15 +18,35 @@ public abstract class AbstractBean {
 		return pagina;
 	}
 	
+	/**
+	 * Método utilizado para retornar o Título da Página que será carregada.
+	 * @return
+	 */
 	public String getAcaoTituloPagina() {
 		return (String) ELFlash.getFlash().get(TITULO_PAGINA);
 	}
 	
+	/**
+	 * Método Utilizada para iniciar o Fluxo de Inserção de uma Entidade
+	 * @return
+	 */
 	public String novo(){
 		return null;
 	}
 	
+	/**
+	 * Método utilizado para persistência de uma Entidade
+	 * @return
+	 */
 	public String salvar(){
+		return null;
+	}
+	
+	/**
+	 * Método utilizado para chamar a exclusão de uma Entidade.
+	 * @return
+	 */
+	public String excluir(){
 		return null;
 	}
 }
