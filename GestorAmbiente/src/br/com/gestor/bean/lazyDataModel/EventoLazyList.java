@@ -57,7 +57,7 @@ public class EventoLazyList extends LazyDataModel<Evento>{
                         	fieldValue = fieldValue == "true" ? "Ativo" : "Inativo";
                         }
                         	
-                        if(filterValue == null || fieldValue.toUpperCase().startsWith(filterValue.toString().toUpperCase())) {
+                        if(filterValue == null || fieldValue.toUpperCase().contains(filterValue.toString().toUpperCase())) {
                             match = true;
                         } else {
                         	match = false;

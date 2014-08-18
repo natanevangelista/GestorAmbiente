@@ -4,13 +4,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
-import javax.faces.context.FacesContext;
-
-import org.primefaces.event.SelectEvent;
-import org.primefaces.event.UnselectEvent;
 
 import br.com.gestor.RN.TurmaRN;
 import br.com.gestor.entidade.Turma;
@@ -37,21 +32,24 @@ public class TurmaBean extends AbstractBean {
 	private static final Character INICIALIZADO_KEY = 'I';
 	private static final Character NAO_INICIALIZADO_KEY = 'N';
 	private static final Character FINALIZADO_KEY = 'F';
+	private static final Character SEM_AGENDA__KEY = 'S';
 	
 	private static final String INICIALIZADO = "INICIALIZADA";
 	private static final String NAO_INICIALIZADO = "NÃO INICIALIZADA";
 	private static final String FINALIZADO = "FINALIZADA";
+	private static final String SEM_AGENDA = "SEM AGENDAMENTO";
 	
 	
 	public TurmaBean() {
-		status.put(INICIALIZADO_KEY, INICIALIZADO);
-		status.put(NAO_INICIALIZADO_KEY, NAO_INICIALIZADO);
-		status.put(FINALIZADO_KEY, FINALIZADO);
+		status.put(INICIALIZADO_KEY, INICIALIZADO); //azul
+		status.put(NAO_INICIALIZADO_KEY, NAO_INICIALIZADO); //preta
+		status.put(FINALIZADO_KEY, FINALIZADO); // preta
+		status.put(SEM_AGENDA__KEY, SEM_AGENDA); //vermelha
 	}
 	
 	public String novo(){
 		this.turma = new Turma();
-		this.turma.setStatus(NAO_INICIALIZADO_KEY);
+		this.turma.setStatus(SEM_AGENDA__KEY);
 		criarNomeTurma(this.turma);
 		ELFlash.getFlash().put(SELECTED_TURMA, turma);
 		ELFlash.getFlash().put(TITULO_PAGINA, TITULO_CADASTRAR);
@@ -104,7 +102,6 @@ public class TurmaBean extends AbstractBean {
 		turmaRN = new TurmaRN();
 		lista = turmaRN.findByParametros(turma);
 		turmaPesquisa = new Turma();
-		System.out.println("cabuloso");
 	}
 	
 	public Turma getTurma() {
@@ -120,7 +117,7 @@ public class TurmaBean extends AbstractBean {
 		try{
 			 c = status.get(key).toString();
 		} catch(NullPointerException e){
-			return status.get('N').toString();
+			return status.get('S').toString();
 		}
 		return c;
 	}
@@ -133,17 +130,6 @@ public class TurmaBean extends AbstractBean {
 		this.turmaPesquisa = turmaPesquisa;
 	}
 
-	public void onRowSelect(SelectEvent event) {
-        FacesMessage msg = new FacesMessage("Car Selected"+ ((Turma) event.getObject()).getId());
-        FacesContext.getCurrentInstance().addMessage(null, msg);
-        turmaSelecionada = (Turma) event.getObject();
-    }
- 
-    public void onRowUnselect(UnselectEvent event) {
-        FacesMessage msg = new FacesMessage("Car Unselected"+ ((Turma) event.getObject()).getId());
-        FacesContext.getCurrentInstance().addMessage(null, msg);
-    }
-
 	public Turma getTurmaSelecionada() {
 		return turmaSelecionada;
 	}
@@ -151,6 +137,5 @@ public class TurmaBean extends AbstractBean {
 	public void setTurmaSelecionada(Turma turmaSelecionada) {
 		this.turmaSelecionada = turmaSelecionada;
 	}
-    
     
 }

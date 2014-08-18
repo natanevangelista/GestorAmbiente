@@ -41,9 +41,10 @@
 				
 				<p:selectOneMenu value="#{turmaPesquisaBean.turma.status}">
 		            <f:selectItem itemLabel="Todos" itemValue="T" />
-		            <f:selectItem itemLabel="Finalizada" itemValue="F" />
-		            <f:selectItem itemLabel="Inicializada" itemValue="I" />
-		            <f:selectItem itemLabel="Não Inicializada" itemValue="N" />
+		            <f:selectItem itemLabel="#{turmaBean.getStatusNome('F')}" itemValue="F" />
+		            <f:selectItem itemLabel="#{turmaBean.getStatusNome('I')}" itemValue="I" />
+		            <f:selectItem itemLabel="#{turmaBean.getStatusNome('N')}" itemValue="N" />
+		            <f:selectItem itemLabel="#{turmaBean.getStatusNome('S')}" itemValue="S" />
 		        </p:selectOneMenu>
 				
 				<p:commandButton  value="Pesquisar"  actionListener="#{turmaPesquisaBean.pesquisarTurma(turmaPesquisaBean.turma)}" update=":list">

@@ -76,3 +76,10 @@ img {
 .semBorda tr, .semBorda td {  
     border: none !important;  
 }
+
+.tituloPagina {
+	font-size: 15pt;
+	font-variant: small-caps;
+	font-weight: bold;
+	text-align: center;
+}

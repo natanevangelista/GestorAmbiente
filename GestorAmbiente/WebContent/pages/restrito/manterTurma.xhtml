@@ -35,7 +35,7 @@
 				<p:inputText id="qtdVagas" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
 				
 				<h:outputLabel value="Status:" />
-				<p:inputText id="texto" style="color: #{turmaBean.turma.status == 'N' ? 'black' : turmaBean.turma.status == 'I' ? 'blue' : 'red' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" disabled="true" > </p:inputText>
+				<p:inputText id="texto" style="color: #{turmaBean.turma.status == 'I' ? 'blue' : turmaBean.turma.status == 'S' ? 'red' : turmaBean.turma.status == 'F' ? 'green':'black' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" disabled="true" > </p:inputText>
 
 				<h:outputLabel value="Observação" />
 				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >

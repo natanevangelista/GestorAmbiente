@@ -1,12 +1,9 @@
 package br.com.gestor.DAOHibernate;
 
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.Query;
-import org.hibernate.criterion.Example;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
@@ -40,13 +37,37 @@ public class TurmaDAOHibernate extends GenericDAO<Turma>{
 
 	public List<Turma> findByParametros(Turma turma) {
 		Criteria criteria = session.createCriteria(Turma.class);
-		criteria.add(Restrictions.ilike("nome", turma.getNome()));
 		
+		//Trata o nome
+		if(!turma.getNome().equals("")){
+			criteria.add(Restrictions.eq("nome", turma.getNome()));
+		}
+
+		//Trata o Evento
+		if(turma.getEvento() != null){
+			criteria.add(Restrictions.eq("evento", turma.getEvento()));
+		}
 		
-//		Example example = Example.create(turma).ignoreCase();
+		//Trata a Descrição
+		if(!turma.getDescricao().equals("")){
+			criteria.add(Restrictions.ilike("descricao", turma.getDescricao(), MatchMode.ANYWHERE));
+		}
+		
+		//Trata o status
+		if(turma.getStatus() == 'T'){
+			List< Character> characters = new ArrayList<Character>();
+			characters.add('I');
+			characters.add('N');
+			characters.add('F');
+			characters.add('S');
+			criteria.add(Restrictions.in("status", characters));
+		} else {
+			criteria.add(Restrictions.eq("status", turma.getStatus()));
+		}
+		return criteria.list();
+		
+//		Example example = Example.create(turma);
 //		example.enableLike();
 //		return session.createCriteria(Turma.class).add(example).list();
-		
-		return criteria.list();
 	}
 }

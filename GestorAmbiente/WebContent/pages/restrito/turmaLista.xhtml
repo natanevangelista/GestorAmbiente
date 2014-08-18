@@ -8,37 +8,46 @@
 
 	<ui:composition >
 	<h:form id="list">
-		<p:messages></p:messages>
+		<p:growl id="mensagem"></p:growl>
 		<p:dataTable id="tabela" value="#{turmaPesquisaBean.lista}" var="turma" rendered="#{turmaPesquisaBean.lista.size() > 0}"  >
 			
 			<h:inputHidden value="#{turma.status}" />
 						
-			<p:column headerText="Evento da Turma">
-				<h:outputText value="#{turma.evento.nome}" />
-			</p:column>
 			<p:column headerText="Nome da Turma">
 				<h:outputText value="#{turma.nome}" />	
+			</p:column>
+			<p:column headerText="Evento da Turma">
+				<h:outputText value="#{turma.evento.nome}" />
 			</p:column>
 			<p:column headerText="Descrição da Turma">
 				<h:outputText value="#{turma.descricao}" />	
 			</p:column>
 			<p:column headerText="Status">
-				<h:outputText style="color: #{turma.status == 'N' ? 'black' : turma.status == 'I' ? 'blue' : 'red' };" value="#{turmaBean.getStatusNome(turma.status)}" />
+				<h:outputText style="color: #{turma.status == 'I' ? 'blue' : turma.status == 'S' ? 'red' : turma.status == 'F' ? 'green' : 'black' }" value="#{turmaBean.getStatusNome(turma.status)}" />
 			</p:column>
 			
-			<p:column  style="text-align: center;">
+			<p:column  style="text-align: center;" headerText="Manutenção">
 				<p:commandButton id="visualizar" icon="ui-icon-search" onclick="carDialog.show()" update=":list:carDetail"  >
 					<f:setPropertyActionListener target="#{turmaPesquisaBean.turmaSelecionada}" value="#{turma}"/>
 					<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
 				</p:commandButton>
 			
-				<p:commandButton action="#{turmaBean.editar('manterTurma')}" ajax="false" id="editar" icon="ui-icon-pencil" >
+				<p:commandButton action="#{turmaBean.editar('manterTurma')}" ajax="false" id="editar" icon="ui-icon-pencil" disabled="#{turma.status == 'F' ? 'true' : 'false'}" >
     				<p:ajax></p:ajax>
     				<f:param name="id" value="#{turma.id}"></f:param>
     				<f:setPropertyActionListener target="#{turmaBean.turma}" value="#{turma}"/>
 					<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"/>
 				</p:commandButton>
-			
+				
+				<p:commandButton id="excluir" icon="ui-icon-trash" onclick="cd.show()"  disabled="#{turma.status == 'F' ? 'true' : turma.status == 'I' ? 'true' : 'false' }"> 
+					<f:setPropertyActionListener target="#{turmaPesquisaBean.turmaSelecionada}" value="#{turma}" />
+					<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+				</p:commandButton>
+				<p:confirmDialog message="Confirma Exclusão da Turma?" 
+					header="Excluir Turma" severity="alert" widgetVar="cd"  >
+					<p:commandButton value="Confirmar"  ajax="false" oncomplete="cd.hide()" update="list" actionListener="#{turmaPesquisaBean.excluir()}" />
+					<p:commandButton value="Cancelar" onclick="cd.hide()" type="button" />
+				</p:confirmDialog>
 			</p:column>
 		</p:dataTable>
 		
@@ -59,7 +68,9 @@
 				<h:outputText value="#{turmaPesquisaBean.turmaSelecionada.qtdVagas}" />
 				
 				<h:outputText value="Status:" />
-				<h:outputText   value="#{turmaBean.getStatusNome(turmaPesquisaBean.turmaSelecionada.status)}" />
+				<h:outputText   value="#{turmaBean.getStatusNome(turmaPesquisaBean.turmaSelecionada.status)}"  
+								style="color: #{ turmaPesquisaBean.turmaSelecionada.status == 'I' ? 'blue' : 
+								turmaPesquisaBean.turmaSelecionada.status == 'S' ? 'red' : turmaPesquisaBean.turmaSelecionada.status == 'F' ? 'green' : 'black' }"  />
 				
                 <h:outputText value="Observação:"/>
 				<h:outputText value="#{turmaPesquisaBean.turmaSelecionada.observacao}"/>

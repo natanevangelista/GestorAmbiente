@@ -10,6 +10,7 @@ import javax.faces.bean.ViewScoped;
 import br.com.gestor.RN.TurmaRN;
 import br.com.gestor.entidade.Turma;
 import br.com.gestor.web.util.MensagemUtil;
+import br.com.gestor.web.util.RNException;
 
 @ManagedBean(name="turmaPesquisaBean")
 @ViewScoped
@@ -29,12 +30,27 @@ public class TurmaPesquisaBean implements Serializable{
 		lista = turmaRN.findByParametros(turma);
 		this.turma = new Turma();
 		if(lista.isEmpty()){
-			MensagemUtil.mensagemAtencao("operacao_sucesso");
+			MensagemUtil.mensagemAtencao("nenhum_registro");
 			return null;
 		}
 		return null;
 	}
 
+	public String excluir(){
+		turmaRN = new TurmaRN();
+		try{
+			turmaRN.excluir(this.turmaSelecionada);
+			MensagemUtil.mensagemAtencao("operacao_excluir_sucesso");
+			this.turmaSelecionada = null;
+			this.lista = null;
+			return null;
+		}catch(RNException e){
+			MensagemUtil.mensagemWarm(e.getMessage());
+			this.turma = null;
+			return null;
+		}
+	}
+	
 	public List<Turma> getLista() {
 		return lista;
 	}

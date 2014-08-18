@@ -10,18 +10,21 @@
 <ui:composition template="/templates/templateInterno.xhtml">
 	
 	<ui:define name="tituloPagina">Listagem de Ambientes</ui:define>
+
 	<ui:define name="corpo">
+
 		<h:form id="cadastrar">
 			<p:commandButton value="Cadastrar novo Ambiente" icon="ui-icon-plus" action="#{ambienteBean.novo()}" >	</p:commandButton>
 		</h:form>
 		<br />
+
 		<h:form id="listagem">
 			<p:growl id="mensagem"  />
 			<p:dataTable var="ambiente" value="#{ambienteBean.allAmbientes}" rendered="#{not empty ambienteBean.lista}" id="tabelaAmbiente" paginator="true" rows="10"
                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
                          rowsPerPageTemplate="5,10,15"   lazy="true" >
 				
-				<f:facet name="header">Listagem de Ambientes</f:facet>
+				
 				
 				<p:column headerText="Identificação" filterBy="#{ambiente.identificacao}" filterMatchMode="contains">
 					<h:outputText value="#{ambiente.identificacao}" />

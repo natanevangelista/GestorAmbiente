@@ -21,10 +21,7 @@
 			
 			<p:dataTable var="categoria" value="#{categoriaBean.allCategorias}" rendered="#{not empty categoriaBean.lista}" id="tabelaCategoria" paginator="true" rows="10"
                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
-                         rowsPerPageTemplate="5,10,15"   lazy="true" 
-                           >
-				<f:facet name="header">Listagem de Categorias</f:facet>
-				
+                         rowsPerPageTemplate="5,10,15"   lazy="true" >
 				<p:column headerText="Categoria" filterBy="#{categoria.descricao}">
 					<p:outputLabel id="descricao" value="#{categoria.descricao}" />
 				</p:column>
