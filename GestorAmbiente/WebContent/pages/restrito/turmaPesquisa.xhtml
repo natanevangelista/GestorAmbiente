@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -5,46 +6,52 @@
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
 
+<!-- chama o template -->
 <ui:composition template="/templates/templateInterno.xhtml">
 	
 	<ui:define name="tituloPagina">Listagem de Turmas</ui:define>
 
 	<ui:define name="corpo">
+	
 		<h:form id="cadastrar">
-			<p:commandButton value="Cadastrar nova Turma" icon="ui-icon-plus" action="#{turmaBean.novo()}" ajax="false"></p:commandButton>
+			<p:commandButton value="Cadastrar nova Turma" icon="ui-icon-plus" action="#{turmaBean.novo()}" ></p:commandButton>
 		</h:form>
-		<br />
+		
 		<p:separator></p:separator>
+		
 		<h:form id="pesquisa">
 			<p:growl id="mensagem"></p:growl>
-			<p:panelGrid columns="4" styleClass="semBorda" >
-				<p:outputLabel value="Evento"></p:outputLabel>
-				<p:outputLabel value="Nome"></p:outputLabel>
-				<p:outputLabel value="DescriÃ§Ã£o"></p:outputLabel>
-				<p:outputLabel value="Status"></p:outputLabel>
+			<p:panelGrid columns="5" styleClass="semBorda">
+				<p:outputLabel value="Nome da Turma"></p:outputLabel>
+				<p:outputLabel value="Evento da Turma"></p:outputLabel>
+				<p:outputLabel value="Descrição da Turma"></p:outputLabel>
+				<p:outputLabel value="Status da Turma"></p:outputLabel>
+				<h:outputLabel value=" " />
+	
+				<p:inputText value="#{turmaPesquisaBean.turma.nome}"></p:inputText>
 
-				<p:inputText value="#{turmaBean.turmaPesquisa.evento}"></p:inputText>
+				<p:autoComplete id="eventoPojo" value="#{turmaPesquisaBean.turma.evento}" 
+        				completeMethod="#{eventoBean.completeEvento}"
+                        var="evento" itemLabel="#{evento.nome}" itemValue="#{evento}" 
+                         forceSelection="true" title="#{bundle.informe_evento}"> 
+					<p:tooltip id="toolTipFocus" for="eventoPojo"  showEffect="fade" showEvent="focus" hideEvent="blur" />
+                </p:autoComplete>
 				
-				<p:inputText value="#{turmaBean.turmaPesquisa.nome}"></p:inputText>
+				<p:inputText value="#{turmaPesquisaBean.turma.descricao}"></p:inputText>
 				
-				<p:inputText value="#{turmaBean.turmaPesquisa.descricao}"></p:inputText>
-				
-				<p:selectOneMenu value="#{turmaBean.turmaPesquisa.status}">
-		            <f:selectItem itemLabel="Todos" itemValue="" />
+				<p:selectOneMenu value="#{turmaPesquisaBean.turma.status}">
+		            <f:selectItem itemLabel="Todos" itemValue="T" />
 		            <f:selectItem itemLabel="Finalizada" itemValue="F" />
 		            <f:selectItem itemLabel="Inicializada" itemValue="I" />
-		            <f:selectItem itemLabel="NÃ£o Inicializada" itemValue="N" />
+		            <f:selectItem itemLabel="Não Inicializada" itemValue="N" />
 		        </p:selectOneMenu>
 				
-				<p:commandButton value="Pesquisar"  >
-					<f:ajax render="@form "/>
+				<p:commandButton  value="Pesquisar"  actionListener="#{turmaPesquisaBean.pesquisarTurma(turmaPesquisaBean.turma)}" update=":list">
 				</p:commandButton>
 			</p:panelGrid>
-			<p:separator></p:separator>
 			
-			<ui:include src="/pages/restrito/turmaLista.xhtml" />
 		</h:form>
-
+		<ui:include src="/pages/restrito/turmaLista.xhtml" /> 
 
 	</ui:define>
 </ui:composition>

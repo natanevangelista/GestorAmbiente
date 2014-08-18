@@ -1,10 +1,16 @@
 package br.com.gestor.bean;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
+
+import org.primefaces.event.SelectEvent;
+import org.primefaces.event.UnselectEvent;
 
 import br.com.gestor.RN.TurmaRN;
 import br.com.gestor.entidade.Turma;
@@ -23,7 +29,8 @@ public class TurmaBean extends AbstractBean {
 
 	private Turma turma = new Turma();
 	private Turma turmaPesquisa = new Turma();
-	private List<Turma> lista;
+	private Turma turmaSelecionada;
+	private List<Turma> lista = new ArrayList<Turma>();
 	private TurmaRN turmaRN;
 	
 	private static final HashMap<Character, String> status = new HashMap<Character, String>();
@@ -46,7 +53,7 @@ public class TurmaBean extends AbstractBean {
 		this.turma = new Turma();
 		this.turma.setStatus(NAO_INICIALIZADO_KEY);
 		criarNomeTurma(this.turma);
-//		ELFlash.getFlash().put(SELECTED_TURMA, turma);
+		ELFlash.getFlash().put(SELECTED_TURMA, turma);
 		ELFlash.getFlash().put(TITULO_PAGINA, TITULO_CADASTRAR);
 		return "manterTurma";
 	}
@@ -56,6 +63,7 @@ public class TurmaBean extends AbstractBean {
 		turmaRN.salvar(this.turma);
 		MensagemUtil.mensagemAtencao("operacao_sucesso");
 		this.turma = null;
+		this.lista = null;
 		return "turmaPesquisa";
 	}
 	
@@ -95,6 +103,7 @@ public class TurmaBean extends AbstractBean {
 	public void pesquisarTurma(Turma turma){
 		turmaRN = new TurmaRN();
 		lista = turmaRN.findByParametros(turma);
+		turmaPesquisa = new Turma();
 		System.out.println("cabuloso");
 	}
 	
@@ -107,7 +116,13 @@ public class TurmaBean extends AbstractBean {
 	}
 
 	public String getStatusNome(Character key) {
-		return status.get(key).toString();
+		String c= null;
+		try{
+			 c = status.get(key).toString();
+		} catch(NullPointerException e){
+			return status.get('N').toString();
+		}
+		return c;
 	}
 
 	public Turma getTurmaPesquisa() {
@@ -118,5 +133,24 @@ public class TurmaBean extends AbstractBean {
 		this.turmaPesquisa = turmaPesquisa;
 	}
 
-	
+	public void onRowSelect(SelectEvent event) {
+        FacesMessage msg = new FacesMessage("Car Selected"+ ((Turma) event.getObject()).getId());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+        turmaSelecionada = (Turma) event.getObject();
+    }
+ 
+    public void onRowUnselect(UnselectEvent event) {
+        FacesMessage msg = new FacesMessage("Car Unselected"+ ((Turma) event.getObject()).getId());
+        FacesContext.getCurrentInstance().addMessage(null, msg);
+    }
+
+	public Turma getTurmaSelecionada() {
+		return turmaSelecionada;
+	}
+
+	public void setTurmaSelecionada(Turma turmaSelecionada) {
+		this.turmaSelecionada = turmaSelecionada;
+	}
+    
+    
 }

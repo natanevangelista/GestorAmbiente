@@ -16,6 +16,9 @@
 			<p:messages/>
 			
 			<h:panelGrid columns="2">
+				<h:outputLabel value="Nome:" />
+				<p:inputText style="font-weight: bold;" id="nome" value="#{turmaBean.turma.nome}"  disabled="true"></p:inputText>
+
 		        <p:outputLabel value="Evento:" />
         		<p:autoComplete id="eventoPojo" value="#{turmaBean.turma.evento}" 
         				completeMethod="#{eventoBean.completeEvento}"
@@ -24,8 +27,6 @@
 					<p:tooltip id="toolTipFocus" for="eventoPojo"  showEffect="fade" showEvent="focus" hideEvent="blur" />
                 </p:autoComplete>
 				
-				<h:outputLabel value="Nome:" />
-				<p:inputText style="font-weight: bold;" id="nome" value="#{turmaBean.turma.nome}" readonly="true" ></p:inputText>
 				
 				<h:outputLabel value="Descrição:" />
 				<p:inputText id="descricao" value="#{turmaBean.turma.descricao}"></p:inputText>
@@ -34,14 +35,15 @@
 				<p:inputText id="qtdVagas" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
 				
 				<h:outputLabel value="Status:" />
-				<p:inputText id="texto" style="color: #{turmaBean.turma.status == 'N' ? 'black' : turmaBean.turma.status == 'I' ? 'blue' : 'red' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" readonly="true" > </p:inputText>
-				
+				<p:inputText id="texto" style="color: #{turmaBean.turma.status == 'N' ? 'black' : turmaBean.turma.status == 'I' ? 'blue' : 'red' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" disabled="true" > </p:inputText>
+
 				<h:outputLabel value="Observação" />
 				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
 					<f:validateLength maximum="500"   />
 				</p:inputTextarea>
 			</h:panelGrid>
-		
+				<h:inputHidden value="#{turmaBean.turma.status}" />	
+				<h:inputHidden value="#{turmaBean.turma.nome}" />	
 			<p:commandButton value="Salvar" ajax="false" action="#{turmaBean.salvar()}" ></p:commandButton>
 		
 		</h:form>	

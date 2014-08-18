@@ -39,8 +39,14 @@ public class TurmaDAOHibernate extends GenericDAO<Turma>{
 	}
 
 	public List<Turma> findByParametros(Turma turma) {
-		Example example = Example.create(turma);
-		example.enableLike();
-		return session.createCriteria(Turma.class).add(example).list();
+		Criteria criteria = session.createCriteria(Turma.class);
+		criteria.add(Restrictions.ilike("nome", turma.getNome()));
+		
+		
+//		Example example = Example.create(turma).ignoreCase();
+//		example.enableLike();
+//		return session.createCriteria(Turma.class).add(example).list();
+		
+		return criteria.list();
 	}
 }

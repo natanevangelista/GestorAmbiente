@@ -1,9 +1,11 @@
 package br.com.gestor.bean;
 
+import java.io.Serializable;
+
 import com.sun.faces.context.flash.ELFlash;
 
 
-public abstract class AbstractBean {
+public abstract class AbstractBean implements Serializable{
 
 	public static final String TITULO_PAGINA = "tituloPagina";
 	private String acaoTituloPagina;

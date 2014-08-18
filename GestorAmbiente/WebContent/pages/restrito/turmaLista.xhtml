@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
@@ -6,24 +7,66 @@
       xmlns:p="http://primefaces.org/ui">
 
 	<ui:composition >
-	
-	<form id="listagem">
-		
-		<p:dataTable value="#{turmaBean.lista}" var="turma" rendered="not empty #{turmaBean.lista}">
-			<p:column headerText="Evento">
+	<h:form id="list">
+		<p:messages></p:messages>
+		<p:dataTable id="tabela" value="#{turmaPesquisaBean.lista}" var="turma" rendered="#{turmaPesquisaBean.lista.size() > 0}"  >
+			
+			<h:inputHidden value="#{turma.status}" />
+						
+			<p:column headerText="Evento da Turma">
 				<h:outputText value="#{turma.evento.nome}" />
 			</p:column>
-			
-			<p:column headerText="Nome">
+			<p:column headerText="Nome da Turma">
 				<h:outputText value="#{turma.nome}" />	
 			</p:column>
-			
-			<p:column headerText="DescriÃ§Ã£o">
+			<p:column headerText="Descrição da Turma">
 				<h:outputText value="#{turma.descricao}" />	
 			</p:column>
+			<p:column headerText="Status">
+				<h:outputText style="color: #{turma.status == 'N' ? 'black' : turma.status == 'I' ? 'blue' : 'red' };" value="#{turmaBean.getStatusNome(turma.status)}" />
+			</p:column>
 			
+			<p:column  style="text-align: center;">
+				<p:commandButton id="visualizar" icon="ui-icon-search" onclick="carDialog.show()" update=":list:carDetail"  >
+					<f:setPropertyActionListener target="#{turmaPesquisaBean.turmaSelecionada}" value="#{turma}"/>
+					<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+				</p:commandButton>
+			
+				<p:commandButton action="#{turmaBean.editar('manterTurma')}" ajax="false" id="editar" icon="ui-icon-pencil" >
+    				<p:ajax></p:ajax>
+    				<f:param name="id" value="#{turma.id}"></f:param>
+    				<f:setPropertyActionListener target="#{turmaBean.turma}" value="#{turma}"/>
+					<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"/>
+				</p:commandButton>
+			
+			</p:column>
 		</p:dataTable>
-		vai ser aqui a listagem
-	</form>
+		
+		
+		<p:dialog header="Turma" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+        <p:outputPanel id="carDetail" style="text-align:center;">
+            <p:panelGrid  columns="2"  columnClasses="label,value">
+                <h:outputText value="Nome:" />
+                <h:outputText value="#{turmaPesquisaBean.turmaSelecionada.nome}" />
+				
+				<h:outputText value="Evento:" />
+				<h:outputText value="#{turmaPesquisaBean.turmaSelecionada.evento.nome}" />
+
+                <h:outputText value="Descrição:" />
+                <h:outputText value="#{turmaPesquisaBean.turmaSelecionada.descricao}" />
+				
+				<h:outputText value="Alunos:" />
+				<h:outputText value="#{turmaPesquisaBean.turmaSelecionada.qtdVagas}" />
+				
+				<h:outputText value="Status:" />
+				<h:outputText   value="#{turmaBean.getStatusNome(turmaPesquisaBean.turmaSelecionada.status)}" />
+				
+                <h:outputText value="Observação:"/>
+				<h:outputText value="#{turmaPesquisaBean.turmaSelecionada.observacao}"/>
+	           
+	            </p:panelGrid>
+	        </p:outputPanel>
+	    </p:dialog>
+ 	 </h:form>
 	</ui:composition>
 </html>

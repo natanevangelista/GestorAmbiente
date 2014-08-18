@@ -11,8 +11,8 @@
 	
 	<ui:define name="tituloPagina">Listagem de Ambientes</ui:define>
 	<ui:define name="corpo">
-		<h:form>
-			<p:commandButton value="Cadastrar novo Ambiente" icon="ui-icon-plus" action="#{ambienteBean.novo()}" ajax="false"></p:commandButton>
+		<h:form id="cadastrar">
+			<p:commandButton value="Cadastrar novo Ambiente" icon="ui-icon-plus" action="#{ambienteBean.novo()}" >	</p:commandButton>
 		</h:form>
 		<br />
 		<h:form id="listagem">

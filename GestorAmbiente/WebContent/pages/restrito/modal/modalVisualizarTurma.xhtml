@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+	<p:dialog style="text-align:left" header="Visualizar Turma" id="modalTurma" widgetVar="modalTurmaDialog" modal="true" draggable="false" closable="true" resizable="false" height="200" width="500">
+		  <h:form id="modalTurmaForm">
+			<p:panelGrid columns="2" >
+				<h:outputText value="Identificação" />
+				<p:inputText disabled="true" value="#{turmaBean.turmaSelecionada.nome}"/> 
+				<h:outputText value="Situação:"/>
+				<p:inputText disabled="true" value="#{turmaBean.turmaSelecionada.descricao}" />
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+</html>
