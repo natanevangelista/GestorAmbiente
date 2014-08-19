@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="2.0.1" sequence="0" timestamp="1408148573964" analysisTimestamp="1408150138102" release="">
+<BugCollection version="2.0.1" sequence="0" timestamp="1408336521410" analysisTimestamp="1408336874232" release="">
   <Project>
     <Jar>C:\Users\Natan\workspaceKeppler\GestorAmbiente\build</Jar>
-    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs6402680949470586477.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs1106524493867187825.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs6109551380281391042.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs249991803171898130.jar</AuxClasspathEntry>
     <SrcDir>C:\Users\Natan\workspaceKeppler\GestorAmbiente\src</SrcDir>
   </Project>
   <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" abbrev="DLS" category="STYLE" instanceHash="dfc4a4432c63794e9ad4e787b0f466a5" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
@@ -26,29 +26,10 @@
     <SourceLine classname="br.com.gestor.RN.AgendamentoRN" primary="true" start="117" end="117" startBytecode="15" endBytecode="15" sourcefile="AgendamentoRN.java" sourcepath="br/com/gestor/RN/AgendamentoRN.java" relSourcepath="br\com\gestor\RN\AgendamentoRN.java">
       <Message>At AgendamentoRN.java:[line 117]</Message>
     </SourceLine>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="dataConvertida"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
-  </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" instanceHash="cb5e4e4a78978f54f77d80992928d0c7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
-    <ShortMessage>Unused field</ShortMessage>
-    <LongMessage>Unused field: br.com.gestor.bean.AbstractBean.acaoTituloPagina</LongMessage>
-    <Class classname="br.com.gestor.bean.AbstractBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.AbstractBean" start="6" end="30" sourcefile="AbstractBean.java" sourcepath="br/com/gestor/bean/AbstractBean.java" relSourcepath="br\com\gestor\bean\AbstractBean.java">
-        <Message>At AbstractBean.java:[lines 6-30]</Message>
-      </SourceLine>
-      <Message>In class br.com.gestor.bean.AbstractBean</Message>
-    </Class>
-    <Field classname="br.com.gestor.bean.AbstractBean" name="acaoTituloPagina" signature="Ljava/lang/String;" isStatic="false" primary="true">
-      <SourceLine classname="br.com.gestor.bean.AbstractBean" sourcefile="AbstractBean.java" sourcepath="br/com/gestor/bean/AbstractBean.java" relSourcepath="br\com\gestor\bean\AbstractBean.java">
-        <Message>In AbstractBean.java</Message>
-      </SourceLine>
-      <Message>Field br.com.gestor.bean.AbstractBean.acaoTituloPagina</Message>
-    </Field>
-    <SourceLine classname="br.com.gestor.bean.AbstractBean" sourcefile="AbstractBean.java" sourcepath="br/com/gestor/bean/AbstractBean.java" relSourcepath="br\com\gestor\bean\AbstractBean.java" synthetic="true">
-      <Message>In AbstractBean.java</Message>
-    </SourceLine>
   </BugInstance>
   <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE" instanceHash="1e663f13df39b9cef26a331a5c6064dd" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
@@ -149,23 +130,429 @@
       <Message>In AmbienteBean.java</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="UUF_UNUSED_FIELD" priority="2" abbrev="UuF" category="PERFORMANCE" instanceHash="9cba8fea6ac3ceb390ad442f7a2aff01" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
-    <ShortMessage>Unused field</ShortMessage>
-    <LongMessage>Unused field: br.com.gestor.bean.CategoriaBean.acaoTituloPagina</LongMessage>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="181a1731a5f370b06285fe5647864967" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.CategoriaBean defines non-transient non-serializable instance field categoria</LongMessage>
     <Class classname="br.com.gestor.bean.CategoriaBean" primary="true">
       <SourceLine classname="br.com.gestor.bean.CategoriaBean" start="21" end="106" sourcefile="CategoriaBean.java" sourcepath="br/com/gestor/bean/CategoriaBean.java" relSourcepath="br\com\gestor\bean\CategoriaBean.java">
         <Message>At CategoriaBean.java:[lines 21-106]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.CategoriaBean</Message>
     </Class>
-    <Field classname="br.com.gestor.bean.CategoriaBean" name="acaoTituloPagina" signature="Ljava/lang/String;" isStatic="false" primary="true">
+    <Field classname="br.com.gestor.bean.CategoriaBean" name="categoria" signature="Lbr/com/gestor/entidade/Categoria;" isStatic="false" primary="true">
       <SourceLine classname="br.com.gestor.bean.CategoriaBean" sourcefile="CategoriaBean.java" sourcepath="br/com/gestor/bean/CategoriaBean.java" relSourcepath="br\com\gestor\bean\CategoriaBean.java">
         <Message>In CategoriaBean.java</Message>
       </SourceLine>
-      <Message>Field br.com.gestor.bean.CategoriaBean.acaoTituloPagina</Message>
+      <Message>Field br.com.gestor.bean.CategoriaBean.categoria</Message>
     </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Categoria;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Categoria" start="16" end="82" sourcefile="Categoria.java" sourcepath="br/com/gestor/entidade/Categoria.java" relSourcepath="br\com\gestor\entidade\Categoria.java">
+        <Message>At Categoria.java:[lines 16-82]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Categoria</Message>
+    </Type>
     <SourceLine classname="br.com.gestor.bean.CategoriaBean" sourcefile="CategoriaBean.java" sourcepath="br/com/gestor/bean/CategoriaBean.java" relSourcepath="br\com\gestor\bean\CategoriaBean.java" synthetic="true">
       <Message>In CategoriaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="c9ac45bed8e984f6ecf700850a7ae406" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.CategoriaBean defines non-transient non-serializable instance field lista</LongMessage>
+    <Class classname="br.com.gestor.bean.CategoriaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.CategoriaBean" start="21" end="106" sourcefile="CategoriaBean.java" sourcepath="br/com/gestor/bean/CategoriaBean.java" relSourcepath="br\com\gestor\bean\CategoriaBean.java">
+        <Message>At CategoriaBean.java:[lines 21-106]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.CategoriaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.CategoriaBean" name="lista" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.CategoriaBean" sourcefile="CategoriaBean.java" sourcepath="br/com/gestor/bean/CategoriaBean.java" relSourcepath="br\com\gestor\bean\CategoriaBean.java">
+        <Message>In CategoriaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.CategoriaBean.lista</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Categoria;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Categoria" start="16" end="82" sourcefile="Categoria.java" sourcepath="br/com/gestor/entidade/Categoria.java" relSourcepath="br\com\gestor\entidade\Categoria.java">
+        <Message>At Categoria.java:[lines 16-82]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Categoria</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.CategoriaBean" sourcefile="CategoriaBean.java" sourcepath="br/com/gestor/bean/CategoriaBean.java" relSourcepath="br\com\gestor\bean\CategoriaBean.java" synthetic="true">
+      <Message>In CategoriaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="5e07eb022d35eb5345e26726b1159dd0" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.EventoBean defines non-transient non-serializable instance field allEventos</LongMessage>
+    <Class classname="br.com.gestor.bean.EventoBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" start="22" end="135" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>At EventoBean.java:[lines 22-135]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.EventoBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.EventoBean" name="allEventos" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>In EventoBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.EventoBean.allEventos</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Evento;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Evento" start="17" end="107" sourcefile="Evento.java" sourcepath="br/com/gestor/entidade/Evento.java" relSourcepath="br\com\gestor\entidade\Evento.java">
+        <Message>At Evento.java:[lines 17-107]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Evento</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java" synthetic="true">
+      <Message>In EventoBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="581f60b9d3a2eb5102856072f336a2e1" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.EventoBean defines non-transient non-serializable instance field evento</LongMessage>
+    <Class classname="br.com.gestor.bean.EventoBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" start="22" end="135" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>At EventoBean.java:[lines 22-135]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.EventoBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.EventoBean" name="evento" signature="Lbr/com/gestor/entidade/Evento;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>In EventoBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.EventoBean.evento</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Evento;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Evento" start="17" end="107" sourcefile="Evento.java" sourcepath="br/com/gestor/entidade/Evento.java" relSourcepath="br\com\gestor\entidade\Evento.java">
+        <Message>At Evento.java:[lines 17-107]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Evento</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java" synthetic="true">
+      <Message>In EventoBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="4a8dbe10440aed8e737533d3c1728b79" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.EventoBean defines non-transient non-serializable instance field eventoRN</LongMessage>
+    <Class classname="br.com.gestor.bean.EventoBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" start="22" end="135" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>At EventoBean.java:[lines 22-135]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.EventoBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.EventoBean" name="eventoRN" signature="Lbr/com/gestor/RN/EventoRN;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>In EventoBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.EventoBean.eventoRN</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/RN/EventoRN;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.RN.EventoRN" start="14" end="40" sourcefile="EventoRN.java" sourcepath="br/com/gestor/RN/EventoRN.java" relSourcepath="br\com\gestor\RN\EventoRN.java">
+        <Message>At EventoRN.java:[lines 14-40]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.RN.EventoRN</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java" synthetic="true">
+      <Message>In EventoBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="bdab16500f18dbc8d7896f751a089385" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.EventoBean defines non-transient non-serializable instance field lista</LongMessage>
+    <Class classname="br.com.gestor.bean.EventoBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" start="22" end="135" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>At EventoBean.java:[lines 22-135]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.EventoBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.EventoBean" name="lista" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java">
+        <Message>In EventoBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.EventoBean.lista</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Evento;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Evento" start="17" end="107" sourcefile="Evento.java" sourcepath="br/com/gestor/entidade/Evento.java" relSourcepath="br\com\gestor\entidade\Evento.java">
+        <Message>At Evento.java:[lines 17-107]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Evento</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.EventoBean" sourcefile="EventoBean.java" sourcepath="br/com/gestor/bean/EventoBean.java" relSourcepath="br\com\gestor\bean\EventoBean.java" synthetic="true">
+      <Message>In EventoBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="2aba5e223427ec2ea67d57824bd5582" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.ResponsavelBean defines non-transient non-serializable instance field lista</LongMessage>
+    <Class classname="br.com.gestor.bean.ResponsavelBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="15" end="74" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>At ResponsavelBean.java:[lines 15-74]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.ResponsavelBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.ResponsavelBean" name="lista" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>In ResponsavelBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.ResponsavelBean.lista</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Responsavel;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Responsavel" start="23" end="180" sourcefile="Responsavel.java" sourcepath="br/com/gestor/entidade/Responsavel.java" relSourcepath="br\com\gestor\entidade\Responsavel.java">
+        <Message>At Responsavel.java:[lines 23-180]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Responsavel</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java" synthetic="true">
+      <Message>In ResponsavelBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="a65c875aa8dc4f3c9fa3ec6ea7393f08" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.ResponsavelBean defines non-transient non-serializable instance field responsavel</LongMessage>
+    <Class classname="br.com.gestor.bean.ResponsavelBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="15" end="74" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>At ResponsavelBean.java:[lines 15-74]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.ResponsavelBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.ResponsavelBean" name="responsavel" signature="Lbr/com/gestor/entidade/Responsavel;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>In ResponsavelBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.ResponsavelBean.responsavel</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Responsavel;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Responsavel" start="23" end="180" sourcefile="Responsavel.java" sourcepath="br/com/gestor/entidade/Responsavel.java" relSourcepath="br\com\gestor\entidade\Responsavel.java">
+        <Message>At Responsavel.java:[lines 23-180]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Responsavel</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java" synthetic="true">
+      <Message>In ResponsavelBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="342400e63950577bf11d0c3dd46e0523" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaBean defines non-transient non-serializable instance field lista</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" start="25" end="139" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>At TurmaBean.java:[lines 25-139]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaBean" name="lista" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>In TurmaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaBean.lista</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java" synthetic="true">
+      <Message>In TurmaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="ec56822785e0377a19bc30aa3fc8dc7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaBean defines non-transient non-serializable instance field turma</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" start="25" end="139" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>At TurmaBean.java:[lines 25-139]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaBean" name="turma" signature="Lbr/com/gestor/entidade/Turma;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>In TurmaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaBean.turma</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java" synthetic="true">
+      <Message>In TurmaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="33d43ec9147d7e76491a0ef1e06cbf42" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaBean defines non-transient non-serializable instance field turmaPesquisa</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" start="25" end="139" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>At TurmaBean.java:[lines 25-139]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaBean" name="turmaPesquisa" signature="Lbr/com/gestor/entidade/Turma;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>In TurmaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaBean.turmaPesquisa</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java" synthetic="true">
+      <Message>In TurmaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="debc8fea5b07efc643be6aabd8214000" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaBean defines non-transient non-serializable instance field turmaRN</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" start="25" end="139" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>At TurmaBean.java:[lines 25-139]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaBean" name="turmaRN" signature="Lbr/com/gestor/RN/TurmaRN;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>In TurmaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaBean.turmaRN</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/RN/TurmaRN;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.RN.TurmaRN" start="15" end="56" sourcefile="TurmaRN.java" sourcepath="br/com/gestor/RN/TurmaRN.java" relSourcepath="br\com\gestor\RN\TurmaRN.java">
+        <Message>At TurmaRN.java:[lines 15-56]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.RN.TurmaRN</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java" synthetic="true">
+      <Message>In TurmaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="bdbe6b8b62724ae5892ff7346ea9ea4f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaBean defines non-transient non-serializable instance field turmaSelecionada</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" start="25" end="139" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>At TurmaBean.java:[lines 25-139]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaBean" name="turmaSelecionada" signature="Lbr/com/gestor/entidade/Turma;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java">
+        <Message>In TurmaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaBean.turmaSelecionada</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaBean" sourcefile="TurmaBean.java" sourcepath="br/com/gestor/bean/TurmaBean.java" relSourcepath="br\com\gestor\bean\TurmaBean.java" synthetic="true">
+      <Message>In TurmaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="BAD_PRACTICE" instanceHash="bef4b266070b42dd2842d6df45d5752c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field lista</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaPesquisaBean" name="lista" signature="Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>In TurmaPesquisaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaPesquisaBean.lista</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java" synthetic="true">
+      <Message>In TurmaPesquisaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="BAD_PRACTICE" instanceHash="d238f6dbf8f91f0af0ea0cb0282caa30" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field turma</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaPesquisaBean" name="turma" signature="Lbr/com/gestor/entidade/Turma;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>In TurmaPesquisaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaPesquisaBean.turma</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java" synthetic="true">
+      <Message>In TurmaPesquisaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="BAD_PRACTICE" instanceHash="babe60553af23fdf0cb0f495a4b7802" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field turmaRN</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaPesquisaBean" name="turmaRN" signature="Lbr/com/gestor/RN/TurmaRN;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>In TurmaPesquisaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaPesquisaBean.turmaRN</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/RN/TurmaRN;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.RN.TurmaRN" start="15" end="56" sourcefile="TurmaRN.java" sourcepath="br/com/gestor/RN/TurmaRN.java" relSourcepath="br\com\gestor\RN\TurmaRN.java">
+        <Message>At TurmaRN.java:[lines 15-56]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.RN.TurmaRN</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java" synthetic="true">
+      <Message>In TurmaPesquisaBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="BAD_PRACTICE" instanceHash="6d7087676ad1f62ee458a644faa826ba" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field turmaSelecionada</LongMessage>
+    <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.TurmaPesquisaBean" name="turmaSelecionada" signature="Lbr/com/gestor/entidade/Turma;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>In TurmaPesquisaBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.TurmaPesquisaBean.turmaSelecionada</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/entidade/Turma;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.entidade.Turma" start="15" end="99" sourcefile="Turma.java" sourcepath="br/com/gestor/entidade/Turma.java" relSourcepath="br\com\gestor\entidade\Turma.java">
+        <Message>At Turma.java:[lines 15-99]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.entidade.Turma</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java" synthetic="true">
+      <Message>In TurmaPesquisaBean.java</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="1" abbrev="ES" category="BAD_PRACTICE" instanceHash="2e11c03bb124011cfad04ed09a463a19" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="9">
@@ -780,14 +1167,6 @@ there is no easy way to eliminate these false positives.
 
     ]]></Details>
   </BugPattern>
-  <BugPattern type="UUF_UNUSED_FIELD" abbrev="UuF" category="PERFORMANCE">
-    <ShortDescription>Unused field</ShortDescription>
-    <Details><![CDATA[
-
-  <p> This field is never used.&nbsp; Consider removing it from the class.</p>
-
-    ]]></Details>
-  </BugPattern>
   <BugPattern type="REC_CATCH_EXCEPTION" abbrev="REC" category="STYLE" cweid="396">
     <ShortDescription>Exception is caught when Exception is not thrown</ShortDescription>
     <Details><![CDATA[
@@ -832,13 +1211,14 @@ there is no easy way to eliminate these false positives.
   <BugCode abbrev="EI">
     <Description>Method returning array may expose internal representation</Description>
   </BugCode>
-  <Errors errors="0" missingClasses="46">
+  <Errors errors="0" missingClasses="52">
     <MissingClass>com.sun.faces.context.flash.ELFlash</MissingClass>
     <MissingClass>javax.faces.application.Application</MissingClass>
     <MissingClass>javax.faces.application.FacesMessage</MissingClass>
     <MissingClass>javax.faces.application.FacesMessage$Severity</MissingClass>
     <MissingClass>javax.faces.bean.ManagedBean</MissingClass>
     <MissingClass>javax.faces.bean.RequestScoped</MissingClass>
+    <MissingClass>javax.faces.bean.SessionScoped</MissingClass>
     <MissingClass>javax.faces.bean.ViewScoped</MissingClass>
     <MissingClass>javax.faces.component.UIComponent</MissingClass>
     <MissingClass>javax.faces.context.FacesContext</MissingClass>
@@ -874,13 +1254,18 @@ there is no easy way to eliminate these false positives.
     <MissingClass>org.hibernate.Transaction</MissingClass>
     <MissingClass>org.hibernate.annotations.ForeignKey</MissingClass>
     <MissingClass>org.hibernate.cfg.Configuration</MissingClass>
+    <MissingClass>org.hibernate.criterion.Criterion</MissingClass>
+    <MissingClass>org.hibernate.criterion.MatchMode</MissingClass>
+    <MissingClass>org.hibernate.criterion.Order</MissingClass>
+    <MissingClass>org.hibernate.criterion.Restrictions</MissingClass>
+    <MissingClass>org.hibernate.criterion.SimpleExpression</MissingClass>
     <MissingClass>org.hibernate.exception.ConstraintViolationException</MissingClass>
     <MissingClass>org.junit.Test</MissingClass>
     <MissingClass>org.primefaces.event.SelectEvent</MissingClass>
     <MissingClass>org.primefaces.model.LazyDataModel</MissingClass>
     <MissingClass>org.primefaces.model.SortOrder</MissingClass>
   </Errors>
-  <FindBugsSummary timestamp="Fri, 15 Aug 2014 21:22:53 -0300" total_classes="55" referenced_classes="115" total_bugs="31" total_size="1623" num_packages="14" vm_version="24.51-b03" cpu_seconds="4.15" clock_seconds="3.85" peak_mbytes="99.25" alloc_mbytes="247.50" gc_seconds="0.38" priority_2="26" priority_1="5">
+  <FindBugsSummary timestamp="Mon, 18 Aug 2014 01:35:21 -0300" total_classes="56" referenced_classes="120" total_bugs="46" total_size="1767" num_packages="14" vm_version="24.51-b03" cpu_seconds="4.20" clock_seconds="3.19" peak_mbytes="99.40" alloc_mbytes="247.50" gc_seconds="0.38" priority_2="37" priority_1="9">
     <FileStats path="br/com/gestor/DAO/DAOFactory.java" bugCount="0" size="27"/>
     <FileStats path="br/com/gestor/DAO/GenericDAO.java" bugCount="0" size="31"/>
     <FileStats path="br/com/gestor/DAOHibernate/AgendamentoDAOHibernate.java" bugCount="0" size="18"/>
@@ -888,21 +1273,22 @@ there is no easy way to eliminate these false positives.
     <FileStats path="br/com/gestor/DAOHibernate/CategoriaDAOHibernate.java" bugCount="0" size="8"/>
     <FileStats path="br/com/gestor/DAOHibernate/EventoDAOHibernate.java" bugCount="0" size="8"/>
     <FileStats path="br/com/gestor/DAOHibernate/ResponsavelDAOHibernate.java" bugCount="0" size="5"/>
-    <FileStats path="br/com/gestor/DAOHibernate/TurmaDAOHibernate.java" bugCount="0" size="5"/>
+    <FileStats path="br/com/gestor/DAOHibernate/TurmaDAOHibernate.java" bugCount="0" size="29"/>
     <FileStats path="br/com/gestor/ListaEnum/PerfilAcesso.java" bugCount="0" size="11"/>
     <FileStats path="br/com/gestor/RN/AgendamentoRN.java" bugCount="1" size="65" bugHash="cb0b4afd2b1c7492747f7a09885a3067"/>
     <FileStats path="br/com/gestor/RN/AmbienteRN.java" bugCount="0" size="24"/>
     <FileStats path="br/com/gestor/RN/CategoriaRN.java" bugCount="0" size="22"/>
     <FileStats path="br/com/gestor/RN/EventoRN.java" bugCount="0" size="22"/>
     <FileStats path="br/com/gestor/RN/ResponsavelRN.java" bugCount="0" size="20"/>
-    <FileStats path="br/com/gestor/RN/TurmaRN.java" bugCount="0" size="18"/>
-    <FileStats path="br/com/gestor/bean/AbstractBean.java" bugCount="1" size="13" bugHash="80e53754d76ea51e262b7d5c30e501df"/>
+    <FileStats path="br/com/gestor/RN/TurmaRN.java" bugCount="0" size="30"/>
+    <FileStats path="br/com/gestor/bean/AbstractBean.java" bugCount="0" size="15"/>
     <FileStats path="br/com/gestor/bean/AgendamentoBean.java" bugCount="2" size="56" bugHash="c0bbfa9e38f9e35cc57ae9d675fdcf34"/>
     <FileStats path="br/com/gestor/bean/AmbienteBean.java" bugCount="2" size="80" bugHash="6b25d4302857cc30edd92af573a857f6"/>
-    <FileStats path="br/com/gestor/bean/CategoriaBean.java" bugCount="1" size="64" bugHash="07822b2d6b7c38377f9826ff7f765d7c"/>
-    <FileStats path="br/com/gestor/bean/EventoBean.java" bugCount="0" size="66"/>
-    <FileStats path="br/com/gestor/bean/ResponsavelBean.java" bugCount="0" size="45"/>
-    <FileStats path="br/com/gestor/bean/TurmaBean.java" bugCount="0" size="44"/>
+    <FileStats path="br/com/gestor/bean/CategoriaBean.java" bugCount="2" size="64" bugHash="8e0c1ddec13ef8afe5fe796674913d31"/>
+    <FileStats path="br/com/gestor/bean/EventoBean.java" bugCount="4" size="78" bugHash="7d11c5f8540b4661b317fc8c4c2a9759"/>
+    <FileStats path="br/com/gestor/bean/ResponsavelBean.java" bugCount="2" size="45" bugHash="3127977eeecf89366374c20dd5647239"/>
+    <FileStats path="br/com/gestor/bean/TurmaBean.java" bugCount="5" size="94" bugHash="50e5714048b502cd048ff55186c28f3d"/>
+    <FileStats path="br/com/gestor/bean/TurmaPesquisaBean.java" bugCount="4" size="44" bugHash="45424dd5af6d717cf7aee627bc8949b2"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/AmbienteLazyList.java" bugCount="3" size="46" bugHash="887d494ffc674d84cb86ce8994f02c71"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/AmbienteLazySorter.java" bugCount="1" size="17" bugHash="cf2a71380951bd5b144616d49b6d2190"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/CategoriaLazyList.java" bugCount="3" size="46" bugHash="95caab194f54cf4d826791a3d033d182"/>
@@ -940,33 +1326,34 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="br.com.gestor.DAO.DAOFactory" sourceFile="DAOFactory.java" interface="false" size="27" bugs="0"/>
       <ClassStats class="br.com.gestor.DAO.GenericDAO" sourceFile="GenericDAO.java" interface="false" size="31" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.DAOHibernate" total_bugs="0" total_types="6" total_size="52">
+    <PackageStats package="br.com.gestor.DAOHibernate" total_bugs="0" total_types="6" total_size="76">
       <ClassStats class="br.com.gestor.DAOHibernate.AgendamentoDAOHibernate" sourceFile="AgendamentoDAOHibernate.java" interface="false" size="18" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.AmbienteDAOHibernate" sourceFile="AmbienteDAOHibernate.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.CategoriaDAOHibernate" sourceFile="CategoriaDAOHibernate.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.EventoDAOHibernate" sourceFile="EventoDAOHibernate.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.ResponsavelDAOHibernate" sourceFile="ResponsavelDAOHibernate.java" interface="false" size="5" bugs="0"/>
-      <ClassStats class="br.com.gestor.DAOHibernate.TurmaDAOHibernate" sourceFile="TurmaDAOHibernate.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="br.com.gestor.DAOHibernate.TurmaDAOHibernate" sourceFile="TurmaDAOHibernate.java" interface="false" size="29" bugs="0"/>
     </PackageStats>
     <PackageStats package="br.com.gestor.ListaEnum" total_bugs="0" total_types="1" total_size="11">
       <ClassStats class="br.com.gestor.ListaEnum.PerfilAcesso" sourceFile="PerfilAcesso.java" interface="false" size="11" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.RN" total_bugs="1" total_types="6" total_size="171" priority_2="1">
+    <PackageStats package="br.com.gestor.RN" total_bugs="1" total_types="6" total_size="183" priority_2="1">
       <ClassStats class="br.com.gestor.RN.AgendamentoRN" sourceFile="AgendamentoRN.java" interface="false" size="65" bugs="1" priority_2="1"/>
       <ClassStats class="br.com.gestor.RN.AmbienteRN" sourceFile="AmbienteRN.java" interface="false" size="24" bugs="0"/>
       <ClassStats class="br.com.gestor.RN.CategoriaRN" sourceFile="CategoriaRN.java" interface="false" size="22" bugs="0"/>
       <ClassStats class="br.com.gestor.RN.EventoRN" sourceFile="EventoRN.java" interface="false" size="22" bugs="0"/>
       <ClassStats class="br.com.gestor.RN.ResponsavelRN" sourceFile="ResponsavelRN.java" interface="false" size="20" bugs="0"/>
-      <ClassStats class="br.com.gestor.RN.TurmaRN" sourceFile="TurmaRN.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="br.com.gestor.RN.TurmaRN" sourceFile="TurmaRN.java" interface="false" size="30" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.bean" total_bugs="6" total_types="7" total_size="368" priority_2="4" priority_1="2">
-      <ClassStats class="br.com.gestor.bean.AbstractBean" sourceFile="AbstractBean.java" interface="false" size="13" bugs="1" priority_2="1"/>
+    <PackageStats package="br.com.gestor.bean" total_bugs="21" total_types="8" total_size="476" priority_2="15" priority_1="6">
+      <ClassStats class="br.com.gestor.bean.AbstractBean" sourceFile="AbstractBean.java" interface="false" size="15" bugs="0"/>
       <ClassStats class="br.com.gestor.bean.AgendamentoBean" sourceFile="AgendamentoBean.java" interface="false" size="56" bugs="2" priority_2="2"/>
       <ClassStats class="br.com.gestor.bean.AmbienteBean" sourceFile="AmbienteBean.java" interface="false" size="80" bugs="2" priority_1="2"/>
-      <ClassStats class="br.com.gestor.bean.CategoriaBean" sourceFile="CategoriaBean.java" interface="false" size="64" bugs="1" priority_2="1"/>
-      <ClassStats class="br.com.gestor.bean.EventoBean" sourceFile="EventoBean.java" interface="false" size="66" bugs="0"/>
-      <ClassStats class="br.com.gestor.bean.ResponsavelBean" sourceFile="ResponsavelBean.java" interface="false" size="45" bugs="0"/>
-      <ClassStats class="br.com.gestor.bean.TurmaBean" sourceFile="TurmaBean.java" interface="false" size="44" bugs="0"/>
+      <ClassStats class="br.com.gestor.bean.CategoriaBean" sourceFile="CategoriaBean.java" interface="false" size="64" bugs="2" priority_2="2"/>
+      <ClassStats class="br.com.gestor.bean.EventoBean" sourceFile="EventoBean.java" interface="false" size="78" bugs="4" priority_2="4"/>
+      <ClassStats class="br.com.gestor.bean.ResponsavelBean" sourceFile="ResponsavelBean.java" interface="false" size="45" bugs="2" priority_2="2"/>
+      <ClassStats class="br.com.gestor.bean.TurmaBean" sourceFile="TurmaBean.java" interface="false" size="94" bugs="5" priority_2="5"/>
+      <ClassStats class="br.com.gestor.bean.TurmaPesquisaBean" sourceFile="TurmaPesquisaBean.java" interface="false" size="44" bugs="4" priority_1="4"/>
     </PackageStats>
     <PackageStats package="br.com.gestor.bean.lazyDataModel" total_bugs="12" total_types="6" total_size="189" priority_2="9" priority_1="3">
       <ClassStats class="br.com.gestor.bean.lazyDataModel.AmbienteLazyList" sourceFile="AmbienteLazyList.java" interface="false" size="46" bugs="3" priority_2="2" priority_1="1"/>
@@ -1020,25 +1407,36 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="com.model.Player" sourceFile="Player.java" interface="false" size="29" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="842" invocations="619" avgMicrosecondsPerInvocation="1361" maxMicrosecondsPerInvocation="67298" standardDeviationMircosecondsPerInvocation="5743"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="316" invocations="614" avgMicrosecondsPerInvocation="514" maxMicrosecondsPerInvocation="20251" standardDeviationMircosecondsPerInvocation="1632"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="189" invocations="337" avgMicrosecondsPerInvocation="563" maxMicrosecondsPerInvocation="104712" standardDeviationMircosecondsPerInvocation="5742"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="118" invocations="317" avgMicrosecondsPerInvocation="373" maxMicrosecondsPerInvocation="17826" standardDeviationMircosecondsPerInvocation="1302"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="105" invocations="331" avgMicrosecondsPerInvocation="318" maxMicrosecondsPerInvocation="12719" standardDeviationMircosecondsPerInvocation="1027"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="105" invocations="115" avgMicrosecondsPerInvocation="914" maxMicrosecondsPerInvocation="19695" standardDeviationMircosecondsPerInvocation="2336"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="103" invocations="326" avgMicrosecondsPerInvocation="316" maxMicrosecondsPerInvocation="9042" standardDeviationMircosecondsPerInvocation="854"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="82" invocations="326" avgMicrosecondsPerInvocation="253" maxMicrosecondsPerInvocation="5510" standardDeviationMircosecondsPerInvocation="576"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="72" invocations="115" avgMicrosecondsPerInvocation="632" maxMicrosecondsPerInvocation="9563" standardDeviationMircosecondsPerInvocation="1370"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="70" invocations="549" avgMicrosecondsPerInvocation="129" maxMicrosecondsPerInvocation="6381" standardDeviationMircosecondsPerInvocation="440"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="66" invocations="326" avgMicrosecondsPerInvocation="203" maxMicrosecondsPerInvocation="11262" standardDeviationMircosecondsPerInvocation="656"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="59" invocations="326" avgMicrosecondsPerInvocation="181" maxMicrosecondsPerInvocation="37662" standardDeviationMircosecondsPerInvocation="2087"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="55" invocations="115" avgMicrosecondsPerInvocation="480" maxMicrosecondsPerInvocation="8411" standardDeviationMircosecondsPerInvocation="1057"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="53" invocations="498" avgMicrosecondsPerInvocation="107" maxMicrosecondsPerInvocation="5531" standardDeviationMircosecondsPerInvocation="334"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="50" invocations="211" avgMicrosecondsPerInvocation="240" maxMicrosecondsPerInvocation="3821" standardDeviationMircosecondsPerInvocation="450"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="46" invocations="55" avgMicrosecondsPerInvocation="854" maxMicrosecondsPerInvocation="13407" standardDeviationMircosecondsPerInvocation="2391"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="38" invocations="158" avgMicrosecondsPerInvocation="244" maxMicrosecondsPerInvocation="14905" standardDeviationMircosecondsPerInvocation="1210"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="30" invocations="17" avgMicrosecondsPerInvocation="1817" maxMicrosecondsPerInvocation="29149" standardDeviationMircosecondsPerInvocation="6833"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="27" invocations="115" avgMicrosecondsPerInvocation="242" maxMicrosecondsPerInvocation="4970" standardDeviationMircosecondsPerInvocation="594"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="230" invocations="635" avgMicrosecondsPerInvocation="363" maxMicrosecondsPerInvocation="16635" standardDeviationMircosecondsPerInvocation="1001"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="202" invocations="349" avgMicrosecondsPerInvocation="581" maxMicrosecondsPerInvocation="105086" standardDeviationMircosecondsPerInvocation="5654"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="148" invocations="640" avgMicrosecondsPerInvocation="232" maxMicrosecondsPerInvocation="3641" standardDeviationMircosecondsPerInvocation="178"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="126" invocations="349" avgMicrosecondsPerInvocation="361" maxMicrosecondsPerInvocation="13957" standardDeviationMircosecondsPerInvocation="1103"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="117" invocations="340" avgMicrosecondsPerInvocation="346" maxMicrosecondsPerInvocation="16851" standardDeviationMircosecondsPerInvocation="1031"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="106" invocations="362" avgMicrosecondsPerInvocation="294" maxMicrosecondsPerInvocation="11209" standardDeviationMircosecondsPerInvocation="1005"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="98" invocations="356" avgMicrosecondsPerInvocation="276" maxMicrosecondsPerInvocation="13064" standardDeviationMircosecondsPerInvocation="825"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="97" invocations="120" avgMicrosecondsPerInvocation="812" maxMicrosecondsPerInvocation="16951" standardDeviationMircosecondsPerInvocation="1960"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="72" invocations="120" avgMicrosecondsPerInvocation="603" maxMicrosecondsPerInvocation="12373" standardDeviationMircosecondsPerInvocation="1433"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="69" invocations="349" avgMicrosecondsPerInvocation="200" maxMicrosecondsPerInvocation="11540" standardDeviationMircosecondsPerInvocation="647"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="60" invocations="120" avgMicrosecondsPerInvocation="503" maxMicrosecondsPerInvocation="9338" standardDeviationMircosecondsPerInvocation="1312"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="58" invocations="222" avgMicrosecondsPerInvocation="261" maxMicrosecondsPerInvocation="3865" standardDeviationMircosecondsPerInvocation="456"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="54" invocations="564" avgMicrosecondsPerInvocation="97" maxMicrosecondsPerInvocation="7619" standardDeviationMircosecondsPerInvocation="432"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="51" invocations="349" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="31406" standardDeviationMircosecondsPerInvocation="1678"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="49" invocations="540" avgMicrosecondsPerInvocation="92" maxMicrosecondsPerInvocation="2788" standardDeviationMircosecondsPerInvocation="224"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="38" invocations="168" avgMicrosecondsPerInvocation="231" maxMicrosecondsPerInvocation="15605" standardDeviationMircosecondsPerInvocation="1219"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="35" invocations="349" avgMicrosecondsPerInvocation="102" maxMicrosecondsPerInvocation="10955" standardDeviationMircosecondsPerInvocation="606"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="33" invocations="120" avgMicrosecondsPerInvocation="279" maxMicrosecondsPerInvocation="5116" standardDeviationMircosecondsPerInvocation="798"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="32" invocations="17" avgMicrosecondsPerInvocation="1908" maxMicrosecondsPerInvocation="30757" standardDeviationMircosecondsPerInvocation="7212"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="30" invocations="120" avgMicrosecondsPerInvocation="253" maxMicrosecondsPerInvocation="8111" standardDeviationMircosecondsPerInvocation="785"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="28" invocations="120" avgMicrosecondsPerInvocation="236" maxMicrosecondsPerInvocation="9248" standardDeviationMircosecondsPerInvocation="879"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="26" invocations="56" avgMicrosecondsPerInvocation="480" maxMicrosecondsPerInvocation="10613" standardDeviationMircosecondsPerInvocation="1423"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="24" invocations="3822" avgMicrosecondsPerInvocation="6" maxMicrosecondsPerInvocation="558" standardDeviationMircosecondsPerInvocation="17"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="23" invocations="56" avgMicrosecondsPerInvocation="423" maxMicrosecondsPerInvocation="5984" standardDeviationMircosecondsPerInvocation="977"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="23" invocations="56" avgMicrosecondsPerInvocation="417" maxMicrosecondsPerInvocation="1973" standardDeviationMircosecondsPerInvocation="427"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="22" invocations="56" avgMicrosecondsPerInvocation="400" maxMicrosecondsPerInvocation="3929" standardDeviationMircosecondsPerInvocation="584"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="22" invocations="56" avgMicrosecondsPerInvocation="396" maxMicrosecondsPerInvocation="3420" standardDeviationMircosecondsPerInvocation="487"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="21" invocations="56" avgMicrosecondsPerInvocation="376" maxMicrosecondsPerInvocation="4631" standardDeviationMircosecondsPerInvocation="687"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="19" invocations="56" avgMicrosecondsPerInvocation="352" maxMicrosecondsPerInvocation="1642" standardDeviationMircosecondsPerInvocation="280"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="18" invocations="56" avgMicrosecondsPerInvocation="333" maxMicrosecondsPerInvocation="2086" standardDeviationMircosecondsPerInvocation="396"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>
