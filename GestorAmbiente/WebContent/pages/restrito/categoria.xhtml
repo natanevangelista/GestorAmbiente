@@ -17,7 +17,6 @@
 		</h:form>
 		<br />
 		<h:form id="listagem">
-			<p:growl id="mensagem" closable="true"/>
 			
 			<p:dataTable var="categoria" value="#{categoriaBean.allCategorias}" rendered="#{not empty categoriaBean.lista}" id="tabelaCategoria" paginator="true" rows="10"
                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"

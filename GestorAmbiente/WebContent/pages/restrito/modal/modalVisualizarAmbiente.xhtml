@@ -11,24 +11,24 @@
 			<p:panelGrid columns="2" >
 				
 				<h:outputText value="Identificação:" />
-				<h:inputText disabled="true" value="#{ambienteBean.ambiente.identificacao}"/> 
+				<p:inputText readonly="true" value="#{ambienteBean.ambiente.identificacao}"/> 
 				
 				<h:outputText value="Quantidade Vagas:"/>
-				<h:inputText disabled="true" value="#{ambienteBean.ambiente.qtdVagas}"/>
+				<p:inputText readonly="true" value="#{ambienteBean.ambiente.qtdVagas}"/>
 				
 				
 				<h:outputText value="Descrição:"/>
-				<h:inputText disabled="true" value="#{ambienteBean.ambiente.descricao}"/>
+				<p:inputText readonly="true" value="#{ambienteBean.ambiente.descricao}"/>
 				
 				<h:outputText value="Observação:"/>
-				<h:inputTextarea disabled="true" value="#{ambienteBean.ambiente.observacao}" rows="11" cols="55"  
+				<p:inputTextarea readonly="true" value="#{ambienteBean.ambiente.observacao}" rows="11" cols="55"  
 									  style=" text-align: justify;" />
 				
 				<h:outputText value="Categoria:"/>
-				<h:inputText disabled="true" value="#{ambienteBean.ambiente.categoria.descricao}" />
+				<p:inputText readonly="true" value="#{ambienteBean.ambiente.categoria.descricao}" />
 				
 				<h:outputText value="Situação:"/>
-				<h:inputText disabled="true" value="#{ambiente.status == true ? 'Ativo' : 'Inativo' }"/>
+				<p:inputText readonly="true" value="#{ambiente.status == true ? 'Ativo' : 'Inativo' }"/>
 				
 			</p:panelGrid>
 		</h:form>

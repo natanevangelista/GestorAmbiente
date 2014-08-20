@@ -18,8 +18,6 @@
 		<br />
 		<h:form id="listagem">
 						
-			<p:growl id="mensagem"></p:growl>
-			
 			<p:dataTable var="evento" value="#{eventoBean.allEventos}" rendered="#{not empty eventoBean.lista}" id="tabelaEvento" paginator="true" rows="10"
 						 paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
                          rowsPerPageTemplate="5,10,15"   lazy="true" >			

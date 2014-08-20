@@ -8,7 +8,6 @@
 
 	<ui:composition >
 	<h:form id="list">
-		<p:growl id="mensagem"></p:growl>
 		<p:dataTable id="tabela" value="#{turmaPesquisaBean.lista}" var="turma" rendered="#{turmaPesquisaBean.lista.size() > 0}"  >
 			
 			<h:inputHidden value="#{turma.status}" />

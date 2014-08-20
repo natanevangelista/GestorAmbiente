@@ -13,7 +13,6 @@
 	<h:form id="cadastro">
 			<h:inputHidden value="#{turmaBean.turma.id}" />
 
-			<p:messages/>
 			
 			<h:panelGrid columns="2" styleClass="semBorda">
 				<h:outputLabel value="Nome:" />
@@ -43,8 +42,10 @@
 				</p:inputTextarea>
 			</h:panelGrid>
 				<h:inputHidden value="#{turmaBean.turma.status}" />	
-				<h:inputHidden value="#{turmaBean.turma.nome}" />	
-			<p:commandButton value="Salvar"  action="#{turmaBean.salvar()}" ></p:commandButton>
+				<h:inputHidden value="#{turmaBean.turma.nome}" />
+			<p:commandButton value="Salvar"  action="#{turmaBean.salvar()}" ajax="false">
+				<p:ajax></p:ajax>
+			</p:commandButton>
 		
 		</h:form>	
 	</ui:define>
