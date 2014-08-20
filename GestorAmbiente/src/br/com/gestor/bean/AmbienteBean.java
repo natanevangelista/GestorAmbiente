@@ -32,7 +32,6 @@ public class AmbienteBean extends AbstractBean implements Serializable{
 	private static final String TITULO_CADASTRAR = "Cadastrar Ambiente";
 	private static final String TITULO_EDITAR = "Editar Ambiente";
 	private static final String TITULO_PAGINA = "tituloPagina";
-	private String acaoTituloPagina;
 	private Ambiente ambiente;
 	private List<Ambiente> lista;
 	private LazyDataModel<Ambiente>  lazyAmbientes = null;

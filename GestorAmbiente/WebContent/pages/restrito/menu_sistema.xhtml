@@ -7,6 +7,7 @@
       
 	<ui:composition>
 	
+		<div id="barra-menu">
 		<h:form id="menu">
 			<p:menubar>
 				
@@ -15,21 +16,20 @@
 				<p:menuitem value="Agendamento" action="/pages/restrito/agendamento.xhtml" ajax="false"></p:menuitem>
 
 				<p:submenu label="Ambientes">
-					<p:menuitem value="Ambiente" action="/pages/restrito/ambiente.xhtml" ajax="false"></p:menuitem>
-					<p:menuitem value="Categoria" action="/pages/restrito/categoria.xhtml" ajax="false" ></p:menuitem>
+					<p:menuitem value="Ambiente" action="/pages/restrito/ambiente.xhtml" ></p:menuitem>
+					<p:menuitem value="Categoria" action="/pages/restrito/categoria.xhtml"  ></p:menuitem>
 				</p:submenu>
 
 				<p:submenu label="Turmas">
-					<p:menuitem value="Turma" action="/pages/restrito/turmaPesquisa.xhtml" ajax="false"></p:menuitem>
-					<p:menuitem value="Evento" action="/pages/restrito/evento.xhtml" ajax="false"></p:menuitem>
+					<p:menuitem value="Turma" action="/pages/restrito/turmaPesquisa.xhtml" ></p:menuitem>
+					<p:menuitem value="Evento" action="/pages/restrito/evento.xhtml" ></p:menuitem>
 				</p:submenu>
 						
-				<p:menuitem value="Responsável" action="/pages/restrito/responsavel.xhtml" ajax="false"></p:menuitem>
+				<p:menuitem value="Responsável" action="/pages/restrito/responsavel.xhtml" ></p:menuitem>
 												
-				<p:menuitem value="Sair" icon="ui-icon-close" action="/pages/restrito/ambiente.xhtml" ajax="false"></p:menuitem>
-				
 			</p:menubar>		
 		
 		</h:form>
+		</div>
 	</ui:composition>
 </html>

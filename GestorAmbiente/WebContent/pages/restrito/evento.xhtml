@@ -36,14 +36,15 @@
 					<p:commandButton  id="visualizar" icon="ui-icon-contact" oncomplete="modalEventoDialog.show()" update="modalEvento" >
 						<f:setPropertyActionListener target="#{eventoBean.evento}" value="#{evento}"/>
 						<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+						<p:ajax></p:ajax>
 						<ui:include src="/pages/restrito/modal/modalVisualizarEvento.xhtml" />
 					</p:commandButton>
 
-					<p:commandButton action="#{eventoBean.editar('manterEvento')}" ajax="false" id="editar" icon="ui-icon-pencil" update="listagem tabelaEvento">
-	    				<p:ajax></p:ajax>
+					<p:commandButton action="#{eventoBean.editar('manterEvento')}" ajax="" id="editar" icon="ui-icon-pencil" update="listagem tabelaEvento">
 	    				<f:param name="id" value="#{evento.id}"></f:param>
 	    				<f:setPropertyActionListener target="#{eventoBean.evento}" value="#{evento}"/>
 						<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"/>
+						<p:ajax></p:ajax>
 					</p:commandButton>
 
 					<p:commandButton id="excluir" icon="ui-icon-trash" onclick="cd.show()" > 

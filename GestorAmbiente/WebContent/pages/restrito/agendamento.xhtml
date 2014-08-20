@@ -15,7 +15,6 @@
 		<h:form>
 			<p:commandButton value="Cadastrar novo Agendamento" action="#{agendamentoBean.novo()}" ajax="false"></p:commandButton>
 		</h:form>
-		<p:messages  closable="true" />
 		<h:form id="listagem">
 				
 		<p:dataTable var="agendamento" value="#{agendamentoBean.lista}" rowKey="#{agendamento.id}" selectionMode="single" selection="#{agendamentoBean.agendamentoSelecionado}" paginator="true" rows="20"

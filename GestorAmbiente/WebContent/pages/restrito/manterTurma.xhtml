@@ -15,7 +15,7 @@
 
 			<p:messages/>
 			
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="2" styleClass="semBorda">
 				<h:outputLabel value="Nome:" />
 				<p:inputText style="font-weight: bold;" id="nome" value="#{turmaBean.turma.nome}"  disabled="true"></p:inputText>
 
@@ -44,7 +44,7 @@
 			</h:panelGrid>
 				<h:inputHidden value="#{turmaBean.turma.status}" />	
 				<h:inputHidden value="#{turmaBean.turma.nome}" />	
-			<p:commandButton value="Salvar" ajax="false" action="#{turmaBean.salvar()}" ></p:commandButton>
+			<p:commandButton value="Salvar"  action="#{turmaBean.salvar()}" ></p:commandButton>
 		
 		</h:form>	
 	</ui:define>

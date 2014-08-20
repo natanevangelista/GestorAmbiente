@@ -2,31 +2,27 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><ui:insert name="titulo">SIGAM - Sistema Gestor Ambiente</ui:insert></title>
 	<h:outputStylesheet library="css" name="estilo.css"/>
-	<style type="text/css">
-	#logotipo {
-		text-align: right; 
-		float: center;
-	}
-    </style>
 </h:head>
 
 <h:body>
+	
 	<ui:include src="/pages/restrito/modal/modalAjaxStatus.xhtml" /> 
 	<div id="container">
-		
-		<!-- logotipo interno-->
+		<p:growl></p:growl>
+		<!-- logotipo interno -->
 		<div id="logotipo">
-			<h:graphicImage library="imagens" name="logotipo.png"/>
+			<h:graphicImage library="imagens" name="SIGAM---MODELO-2.png"/>
 		</div>
 		<!-- barra de menu -->
 		<div id="barra_menu">
 	    	<ui:insert name="barra_menu">
-	    		<ui:include src="/pages/restrito/menu_sistema.xhtml"/>
+	    		<ui:include src="/pages/restrito/menu_sistema.xhtml" />
 	   		</ui:insert>   
 		</div>
 		<!-- titulo da funcionalidade -->

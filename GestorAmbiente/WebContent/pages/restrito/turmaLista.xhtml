@@ -22,7 +22,7 @@
 			<p:column headerText="Descrição da Turma">
 				<h:outputText value="#{turma.descricao}" />	
 			</p:column>
-			<p:column headerText="Status">
+			<p:column headerText="Status" style="text-align: center;">
 				<h:outputText style="color: #{turma.status == 'I' ? 'blue' : turma.status == 'S' ? 'red' : turma.status == 'F' ? 'green' : 'black' }" value="#{turmaBean.getStatusNome(turma.status)}" />
 			</p:column>
 			
@@ -32,7 +32,7 @@
 					<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
 				</p:commandButton>
 			
-				<p:commandButton action="#{turmaBean.editar('manterTurma')}" ajax="false" id="editar" icon="ui-icon-pencil" disabled="#{turma.status == 'F' ? 'true' : 'false'}" >
+				<p:commandButton action="#{turmaBean.editar('manterTurma')}"  id="editar" icon="ui-icon-pencil" disabled="#{turma.status == 'F' ? 'true' : 'false'}" >
     				<p:ajax></p:ajax>
     				<f:param name="id" value="#{turma.id}"></f:param>
     				<f:setPropertyActionListener target="#{turmaBean.turma}" value="#{turma}"/>
@@ -52,7 +52,7 @@
 		</p:dataTable>
 		
 		
-		<p:dialog header="Turma" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+		<p:dialog header="Turma" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="500">
         <p:outputPanel id="carDetail" style="text-align:center;">
             <p:panelGrid  columns="2"  columnClasses="label,value">
                 <h:outputText value="Nome:" />
@@ -68,7 +68,7 @@
 				<h:outputText value="#{turmaPesquisaBean.turmaSelecionada.qtdVagas}" />
 				
 				<h:outputText value="Status:" />
-				<h:outputText   value="#{turmaBean.getStatusNome(turmaPesquisaBean.turmaSelecionada.status)}"  
+				<h:outputText  value="#{turmaBean.getStatusNome(turmaPesquisaBean.turmaSelecionada.status)}"  
 								style="color: #{ turmaPesquisaBean.turmaSelecionada.status == 'I' ? 'blue' : 
 								turmaPesquisaBean.turmaSelecionada.status == 'S' ? 'red' : turmaPesquisaBean.turmaSelecionada.status == 'F' ? 'green' : 'black' }"  />
 				
