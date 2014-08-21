@@ -12,18 +12,4 @@ public class EventoFake {
 		this.modalidade = evento.getModalidade();
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getModalidade() {
-		return modalidade;
-	}
-	public void setModalidade(String modalidade) {
-		this.modalidade = modalidade;
-	}
-	
-	
 }

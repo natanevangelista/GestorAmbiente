@@ -8,13 +8,13 @@
 <ui:composition template="/templates/templateInterno.xhtml">
 	<ui:define name="tituloPagina"><h:outputLabel value="#{turmaBean.acaoTituloPagina}" /> </ui:define>
 	
-	<ui:define name="corpo">	
+	<ui:define name="corpo" >	
 	
-	<h:form id="cadastro">
+	<div align="left" style="background-color: #FAFFFF">
+		<h:form id="cadastro" >
 			<h:inputHidden value="#{turmaBean.turma.id}" />
 
-			
-			<h:panelGrid columns="2" styleClass="semBorda">
+			<p:panelGrid columns="2" styleClass="semBorda">
 				<h:outputLabel value="Nome:" />
 				<p:inputText style="font-weight: bold;" id="nome" value="#{turmaBean.turma.nome}"  disabled="true"></p:inputText>
 
@@ -30,24 +30,30 @@
 				<h:outputLabel value="Descrição:" />
 				<p:inputText id="descricao" value="#{turmaBean.turma.descricao}"></p:inputText>
 				
-				<h:outputLabel value="Quantidade de Vagas:" />
+				<h:outputLabel value="Quantidade Matriculados:" />
 				<p:inputText id="qtdVagas" value="#{turmaBean.turma.qtdVagas}"></p:inputText>
 				
 				<h:outputLabel value="Status:" />
 				<p:inputText id="texto" style="color: #{turmaBean.turma.status == 'I' ? 'blue' : turmaBean.turma.status == 'S' ? 'red' : turmaBean.turma.status == 'F' ? 'green':'black' }; text-align:left; display:block; font-weight: bold;" value="#{turmaBean.getStatusNome(turmaBean.turma.status)}" disabled="true" > </p:inputText>
 
 				<h:outputLabel value="Observação" />
-				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
+				<p:inputTextarea id="observacao" value="#{turmaBean.turma.observacao}" counter="display" maxlength="500" counterTemplate="{0} caracteres restantes." validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
 					<f:validateLength maximum="500"   />
 				</p:inputTextarea>
-			</h:panelGrid>
+				<h:outputText />
+				<h:outputText id="display" />
+			<br />
+			</p:panelGrid>
 				<h:inputHidden value="#{turmaBean.turma.status}" />	
 				<h:inputHidden value="#{turmaBean.turma.nome}" />
-			<p:commandButton value="Salvar"  action="#{turmaBean.salvar()}" ajax="false">
+			
+			<div align="center">
+			<p:commandButton value="Salvar"  action="#{turmaBean.salvar()}" ajax="false" >
 				<p:ajax></p:ajax>
 			</p:commandButton>
-		
+			</div>
 		</h:form>	
+	</div>
 	</ui:define>
 </ui:composition>
 </html>

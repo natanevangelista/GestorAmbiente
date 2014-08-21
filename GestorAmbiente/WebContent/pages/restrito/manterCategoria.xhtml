@@ -12,7 +12,7 @@
 	<ui:define name="tituloPagina"> <h:outputLabel value="#{categoriaBean.acaoTituloPagina}" /> </ui:define>
 	
 	<ui:define name="corpo">
-	
+	<div align="left" style="background-color: #FAFFFF">
 		<h:form id="cadastro">
 			<h:inputHidden value="#{categoriaBean.categoria.id}" />
 			
@@ -21,14 +21,21 @@
 				<h:outputLabel value="Categoria:" />
 				<p:inputText id="descricao" value="#{categoriaBean.categoria.descricao}" required="true" requiredMessage="É necessário informar o nome da Categoria."></p:inputText>
 				
-				<h:outputLabel value="Observação:" />
-				<p:inputText id="observacao" value="#{categoriaBean.categoria.observacao}" ></p:inputText>
+				<h:outputLabel value="Observação" />
+				<p:inputTextarea id="observacao" value="#{categoriaBean.categoria.observacao}" counter="display" maxlength="500" counterTemplate="{0} caracteres restantes." validatorMessage="500 #{bundle.maximo_caracteres}" cols="50" >
+					<f:validateLength maximum="500"   />
+				</p:inputTextarea>
+				<h:outputText />
+				<h:outputText id="display" />
 				
 			</h:panelGrid>
+			<div align="center">
 			<p:commandButton value="Salvar" icon="ui-icon-arrowstop-1-e" ajax="false" action="#{categoriaBean.salvar()}" >
 				<p:ajax></p:ajax>
 			</p:commandButton>
+			</div>
 		</h:form>
+	</div>
 	</ui:define>
 </ui:composition>	 
 </html>

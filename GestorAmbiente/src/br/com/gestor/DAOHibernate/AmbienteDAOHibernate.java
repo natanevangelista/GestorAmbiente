@@ -2,9 +2,7 @@ package br.com.gestor.DAOHibernate;
 
 import java.util.List;
 
-import org.hibernate.Criteria;
 import org.hibernate.Query;
-import org.hibernate.criterion.Projections;
 
 import br.com.gestor.DAO.GenericDAO;
 import br.com.gestor.entidade.Ambiente;

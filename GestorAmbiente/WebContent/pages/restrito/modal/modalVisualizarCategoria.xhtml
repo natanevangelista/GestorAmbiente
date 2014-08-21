@@ -10,10 +10,10 @@
 		  <h:form id="modalCategoriaForm">
 			<p:panelGrid columns="2" >
 				<h:outputText value="Descrição:" />
-				<p:inputText disabled="true" value="#{categoriaBean.categoria.descricao}"/> 
+				<p:inputText readonly="true" value="#{categoriaBean.categoria.descricao}"/> 
 				
 				<h:outputText value="Observação:"/>
-				<p:inputTextarea disabled="true" value="#{categoriaBean.categoria.observacao}" cols="50" rows="7"/>
+				<p:inputTextarea readonly="true" value="#{categoriaBean.categoria.observacao}" cols="55" rows="11"/>
 			</p:panelGrid>
 		</h:form>
 	</p:dialog>

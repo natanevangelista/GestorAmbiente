@@ -12,40 +12,44 @@
 	<ui:define name="tituloPagina"><h:outputLabel value="#{responsavelBean.acaoTituloPagina}" /></ui:define>
 	
 	<ui:define name="corpo">
-	
+	<div align="left" style="background-color: #FAFFFF">
 		<h:form id="cadastro">
 			<h:inputHidden value="#{responsavelBean.responsavel.id}" />
 
 			<p:messages/>
 			<h:panelGrid columns="2">
 				<h:outputLabel value="Nome:" />
-				<p:inputText id="nome" value="#{responsavelBean.responsavel.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
+				<p:inputText styleClass="tamanhoText" id="nome" value="#{responsavelBean.responsavel.nome}" required="true" requiredMessage="É necessário informar uma Identificação para o Responsavel"></p:inputText>
 				
 				<h:outputLabel value="Email:" />
-				<p:inputText id="email" value="#{responsavelBean.responsavel.email}"></p:inputText>
+				<p:inputText styleClass="tamanhoText" id="email" value="#{responsavelBean.responsavel.email}" />
 				
 				<h:outputLabel value="Telefone:" />
-				<p:inputText id="telefone" value="#{responsavelBean.responsavel.telefone}"></p:inputText>
+				<p:inputMask mask="(99) 9999-9999" id="telefone" value="#{responsavelBean.responsavel.telefone}" />
 				
 				<h:outputLabel value="Receber SMS:" />
-				<p:selectBooleanButton id="sms" value="#{responsavelBean.responsavel.sms}" onLabel="Sim" offLabel="Não" onIcon="ui-icon-check" offIcon="ui-icon-close"></p:selectBooleanButton>
+				<p:selectBooleanButton id="sms" value="#{responsavelBean.responsavel.sms}" onLabel="Sim" offLabel="Não" onIcon="ui-icon-check" offIcon="ui-icon-close"/>
 				
 				<h:outputLabel value="Status:" />
-				<p:selectBooleanButton id="status" value="#{responsavelBean.responsavel.status}" onLabel="Ativo" offLabel="Inativo" onIcon="ui-icon-check" offIcon="ui-icon-close"></p:selectBooleanButton>
+				<p:selectBooleanButton id="status" value="#{responsavelBean.responsavel.status}" onLabel="Ativo" offLabel="Inativo" onIcon="ui-icon-check" offIcon="ui-icon-close"/>
 			
 				<h:outputLabel value="Senha Atual:" />
-				<p:inputText id="senhaA" value="#{responsavelBean.responsavel.senha}"></p:inputText>
+				<p:inputText id="senhaA" value="#{responsavelBean.responsavel.senha}"/>
 				
 				<h:outputLabel value="Nova Senha:" />
-				<p:inputText id="senhaN" value="#{responsavelBean.responsavel.senha}"></p:inputText>
+				<p:inputText id="senhaN" value="#{responsavelBean.responsavel.senha}"/>
 				
 				<h:outputLabel value="Confirma Senha:" />
-				<p:inputText id="senhaNC" value="#{responsavelBean.responsavel.senha}"></p:inputText>
-				
+				<p:inputText id="senhaNC" value="#{responsavelBean.responsavel.senha}"/>
 			
 			</h:panelGrid>
-			<p:commandButton value="Salvar" ajax="false" action="#{responsavelBean.salvar(responsavelBean.responsavel)}" ></p:commandButton>
+			<div align="center">
+			<p:commandButton value="Salvar" ajax="false" action="#{responsavelBean.salvar()}" >
+				<p:ajax></p:ajax>
+			</p:commandButton>
+			</div>
 		</h:form>
+	</div>
 	</ui:define>
 </ui:composition>	 
 </html>

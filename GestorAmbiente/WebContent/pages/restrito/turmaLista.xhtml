@@ -7,8 +7,9 @@
       xmlns:p="http://primefaces.org/ui">
 
 	<ui:composition >
+	<br />
 	<h:form id="list">
-		<p:dataTable id="tabela" value="#{turmaPesquisaBean.lista}" var="turma" rendered="#{turmaPesquisaBean.lista.size() > 0}"  >
+		<p:dataTable id="tabela" value="#{turmaPesquisaBean.listaPesquisa}" var="turma" rendered="#{turmaPesquisaBean.listaPesquisa.size() > 0}"  >
 			
 			<h:inputHidden value="#{turma.status}" />
 						

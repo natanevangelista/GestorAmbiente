@@ -23,8 +23,6 @@
                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
                          rowsPerPageTemplate="5,10,15"   lazy="true" >
 				
-				
-				
 				<p:column headerText="Identificação" filterBy="#{ambiente.identificacao}" filterMatchMode="contains">
 					<h:outputText value="#{ambiente.identificacao}" />
 				</p:column>
@@ -38,11 +36,11 @@
 				</p:column>
 				
 				<p:column headerText="Situação" style="text-align:center" filterBy="#{ambiente.status}">
-						<p:commandLink action="#{ambienteBean.ativar()}" id="status" update="tabelaAmbiente" >
-							<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}"/>
-							<h:graphicImage  library="imagens" name="ativo_#{ambiente.status}.png" style="border:0" />
-						</p:commandLink>
-						<p:tooltip for="status" value="#{ambiente.status == true ? 'Inativar' : 'Ativar' }"></p:tooltip>
+					<p:commandLink action="#{ambienteBean.ativar()}" id="status" update="tabelaAmbiente" >
+						<f:setPropertyActionListener target="#{ambienteBean.ambiente}" value="#{ambiente}"/>
+						<h:graphicImage  library="imagens" name="ativo_#{ambiente.status}.png" style="border:0" />
+					</p:commandLink>
+					<p:tooltip for="status" value="#{ambiente.status == true ? 'Inativar' : 'Ativar' }"></p:tooltip>
 				</p:column>
 				
 				<p:column headerText="Manutenção" style="text-align:center">

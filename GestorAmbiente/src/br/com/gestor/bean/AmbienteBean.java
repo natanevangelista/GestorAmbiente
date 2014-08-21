@@ -1,15 +1,11 @@
 package br.com.gestor.bean;
 
-import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
-import javax.faces.context.FacesContext;
 
-import org.primefaces.event.SelectEvent;
 import org.primefaces.model.LazyDataModel;
 
 import br.com.gestor.RN.AmbienteRN;
@@ -22,7 +18,7 @@ import com.sun.faces.context.flash.ELFlash;
 
 @ManagedBean(name="ambienteBean")
 @ViewScoped
-public class AmbienteBean extends AbstractBean implements Serializable{
+public class AmbienteBean extends AbstractBean {
 	
 	/**
 	 * 
@@ -31,22 +27,22 @@ public class AmbienteBean extends AbstractBean implements Serializable{
 	private static final String SELECTED_AMBIENTE = "selectedAmbiente";
 	private static final String TITULO_CADASTRAR = "Cadastrar Ambiente";
 	private static final String TITULO_EDITAR = "Editar Ambiente";
-	private static final String TITULO_PAGINA = "tituloPagina";
 	private Ambiente ambiente;
+	private AmbienteRN ambienteRN;
 	private List<Ambiente> lista;
 	private LazyDataModel<Ambiente>  lazyAmbientes = null;
 
 	@PostConstruct
 	private void init() {
 		if(lazyAmbientes == null){
-			AmbienteRN ambienteRN = new AmbienteRN();
+			ambienteRN = new AmbienteRN();
 			lazyAmbientes = new AmbienteLazyList(ambienteRN.listarOrderByIdentificao());
 		}
 	}
 	
 	public LazyDataModel<Ambiente> getAllAmbientes(){
 		if(lazyAmbientes == null){
-			AmbienteRN ambienteRN = new AmbienteRN();
+			ambienteRN = new AmbienteRN();
 			lazyAmbientes = new AmbienteLazyList(ambienteRN.listarOrderByIdentificao());
 		}
 		return lazyAmbientes;
@@ -61,7 +57,7 @@ public class AmbienteBean extends AbstractBean implements Serializable{
 	}
 	
 	public String salvar(){
-		AmbienteRN ambienteRN = new AmbienteRN();	
+		ambienteRN = new AmbienteRN();	
 		ambienteRN.salvar(this.ambiente);           
 		MensagemUtil.mensagemAtencao("operacao_sucesso");
 		this.ambiente = null;
@@ -70,7 +66,7 @@ public class AmbienteBean extends AbstractBean implements Serializable{
 	}
 
 	public String excluir(){
-		AmbienteRN ambienteRN = new AmbienteRN();   
+		ambienteRN = new AmbienteRN();   
 		try{
 			ambienteRN.excluir(this.ambiente);         
 			MensagemUtil.mensagemAtencao("operacao_excluir_sucesso");
@@ -98,7 +94,7 @@ public class AmbienteBean extends AbstractBean implements Serializable{
 			this.ambiente.setStatus(true);
 		}
 		
-		AmbienteRN ambienteRN = new AmbienteRN();
+		ambienteRN = new AmbienteRN();
 		ambienteRN.salvar(this.ambiente);
 		return null;
 	}
@@ -119,18 +115,10 @@ public class AmbienteBean extends AbstractBean implements Serializable{
 	
 	public List<Ambiente> getLista(){
 		if(this.lista == null){
-			AmbienteRN ambienteRN = new AmbienteRN();
+			ambienteRN = new AmbienteRN();
 			this.lista = ambienteRN.listarOrderByIdentificao();
 		}
 		return this.lista;
 	}
 	
-	public String getAcaoTituloPagina() {
-		return (String) ELFlash.getFlash().get(TITULO_PAGINA);
-	}
-
-	public void onRowSelect(SelectEvent event) {
-        FacesMessage msg = new FacesMessage("Ambiente Selecionado", ((Ambiente)event.getObject()).getDescricao());
-        FacesContext.getCurrentInstance().addMessage(null, msg);
-    }
 }

@@ -1,7 +1,6 @@
 package br.com.gestor.bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
@@ -20,7 +19,7 @@ public class TurmaPesquisaBean implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private List<Turma> lista = new ArrayList<Turma>();
+	private List<Turma> lista;
 	private TurmaRN turmaRN;
 	private Turma turma = new Turma();
 	private Turma turmaSelecionada;
@@ -52,7 +51,15 @@ public class TurmaPesquisaBean implements Serializable{
 	}
 	
 	public List<Turma> getLista() {
-		return lista;
+		if(this.lista == null){
+			turmaRN = new TurmaRN();
+			this.lista = turmaRN.listar();
+		}
+		return this.lista;
+	}
+	
+	public List<Turma> getListaPesquisa() {
+		return this.lista;
 	}
 
 	public void setLista(List<Turma> lista) {

@@ -32,7 +32,7 @@
 						<ui:include src="/pages/restrito/modal/modalVisualizarCategoria.xhtml" />
 					</p:commandButton>
 					
-					<p:commandButton action="#{categoriaBean.editar('manterCategoria')}" ajax="false" id="editar" icon="ui-icon-pencil">
+					<p:commandButton action="#{categoriaBean.editar('manterCategoria')}"  id="editar" icon="ui-icon-pencil">
 	    				<f:setPropertyActionListener target="#{categoriaBean.categoria}" value="#{categoria}"/>
 						<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"></p:tooltip>
 					</p:commandButton>

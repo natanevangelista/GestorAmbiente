@@ -23,7 +23,7 @@ public class Categoria {
 	@Column(name="DESC_CATEGORIA", length=20)
 	private String descricao;
 	
-	@Column(name="OBS_CATEGORIA", length=20)
+	@Column(name="OBS_CATEGORIA", length=500)
 	private String observacao;
 	
 	public Long getId() {

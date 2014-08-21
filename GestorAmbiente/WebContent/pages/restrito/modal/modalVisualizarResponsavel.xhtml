@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui" >
+	<p:dialog style="text-align:left" header="Visualizar Professor" id="modalResponsavel" widgetVar="modalResponsavelDialog" modal="true" draggable="false" closable="true" resizable="false" height="300" width="500">
+		  <h:form id="modalResponsavelForm">
+			
+			<p:panelGrid columns="2" >
+				
+				<h:outputText value="Nome:" />
+				<p:inputText readonly="true" value="#{responsavelBean.responsavel.nome}" styleClass="tamanhoText"/> 
+				
+				<h:outputText value="Email:"/>
+				<p:inputText readonly="true" value="#{responsavelBean.responsavel.email}" styleClass="tamanhoText"/>
+				
+				<h:outputText value="Telefone:"/>
+				<p:inputMask readonly="true" mask="(99) 9999-9999" value="#{responsavelBean.responsavel.telefone}" />
+				
+				<h:outputText value="Situação:"/>
+				<p:inputText readonly="true" value="#{ambiente.status == true ? 'Ativo' : 'Inativo' }"/>
+				
+			</p:panelGrid>
+		</h:form>
+	</p:dialog>
+</html>

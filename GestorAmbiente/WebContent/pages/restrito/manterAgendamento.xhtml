@@ -23,17 +23,17 @@
 					<f:selectItem itemValue="N" itemLabel="Noturno"/>
 				</p:selectOneMenu>
 				
-				<h:outputLabel value="Pessoa" />
-				<p:selectOneMenu id="pessoa" value="#{agendamentoBean.agendamento.pessoa}" > 
-					<f:selectItems value="#{pessoaBean.lista}" var="pessoa" itemLabel="#{pessoa.nome}" />
+				<h:outputLabel value="Professor:" />
+				<p:selectOneMenu id="pessoa" value="#{agendamentoBean.agendamento.responsavel}" > 
+					<f:selectItems value="#{responsavelBean.lista}" var="responsavel" itemLabel="#{responsavel.nome}" />
 				</p:selectOneMenu>
 				
-				<h:outputLabel value="Evento" />
-				<p:selectOneMenu id="evento" value="#{agendamentoBean.agendamento.evento}" > 
-					<f:selectItems value="#{eventoBean.lista}" var="evento" itemLabel="#{evento.nome}" />
+				<h:outputLabel value="Turma:" />
+				<p:selectOneMenu id="turma" value="#{agendamentoBean.agendamento.turma}" > 
+					<f:selectItems value="#{turmaPesquisaBean.lista}" var="turma" itemLabel="#{turma.nome}" />
 				</p:selectOneMenu>
 				
-				<h:outputLabel value="Ambiente" />
+				<h:outputLabel value="Ambiente:" />
 				<p:selectOneMenu id="ambiente" value="#{agendamentoBean.agendamento.ambiente}" > 
 					<f:selectItems value="#{ambienteBean.lista}" var="ambiente" itemLabel="#{ambiente.identificacao}" />
 				</p:selectOneMenu>
@@ -48,7 +48,7 @@
 			<br/>
 			 
 			 <center>
-			 	<fieldset> <legend>Selecione os dias do evento</legend>
+			 	<fieldset> <legend>Selecione os dias da Turma</legend>
 				 	<p:selectManyCheckbox value="#{agendamentoBean.diasSemanaVetor}">
 					 	<f:selectItem itemLabel="Segunda" itemValue="2"/>
 					 	<f:selectItem itemLabel="Terça" itemValue="3"/>

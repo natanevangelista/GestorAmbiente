@@ -27,8 +27,8 @@ public class Evento {
 	@Column(name="MODALIDADE_EVENTO", length=50)
 	private String modalidade;   //modalidade do evento (ex: Qualificação, 1° Bimestre 2012)
 	
-	@Column(name="OBS_EVENTO", length=250)
-	private String observacao;   //detalhes do evento
+	@Column(name="OBS_EVENTO", length=500)
+	private String observacao;   
 
 	public Long getId() {
 		return id;

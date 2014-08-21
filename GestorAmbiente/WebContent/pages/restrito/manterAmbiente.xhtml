@@ -12,7 +12,7 @@
 	<ui:define name="tituloPagina"> <h:outputLabel value="#{ambienteBean.acaoTituloPagina}" /> </ui:define>
 	
 	<ui:define name="corpo">
-	
+	<div align="left" style="background-color: #FAFFFF">
 		<h:form id="cadastro">
 			<h:inputHidden value="#{ambienteBean.ambiente.id}" />
 			
@@ -48,12 +48,14 @@
 				</p:selectOneMenu>
 
 			</h:panelGrid>
-
+			
+			<div align="center">
 			<p:commandButton value="Salvar" ajax="false" icon="ui-icon-arrowstop-1-e"  action="#{ambienteBean.salvar()}" >
 				<p:ajax ></p:ajax>
 			</p:commandButton>
-
+			</div>
 		</h:form>
+	</div>
 	</ui:define>
 </ui:composition>	 
 </html>

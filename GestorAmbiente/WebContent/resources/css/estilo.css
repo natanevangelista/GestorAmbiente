@@ -5,9 +5,9 @@ body, td, th {
 }
 
 th {
-	background: url(#{resource['imagens:fundo_claro.png']}); 
 	min-height: 25px;
 	padding: 3px;
+	background: url(#{resource['imagens:fundo_claro.png']}); 
 }
 
 img {
@@ -51,11 +51,11 @@ img {
 }
 
 #rodape {
-	background: url(#{resource['imagens:fundo_barra_rodape.png']}) repeat-x;
 	height: 100px;
 	margin-top: 5px;
 	padding: 10px;
 	text-align: center;
+	background: url(#{resource['imagens:fundo_barra_rodape.png']}) repeat-x;
 }
 
 .info {
@@ -79,6 +79,7 @@ img {
 
 .semBorda tr, .semBorda td {  
     border: none !important;  
+    background-color: #FAFFFF;
 }
 
 .tituloPagina {
@@ -86,4 +87,12 @@ img {
 	font-variant: small-caps;
 	font-weight: bold;
 	text-align: center;
+}
+
+.tamanhoText {
+	width: 250px;
+}
+
+.tamanhoFieldBusca .ui-column-filter {
+	width: 50px; 
 }

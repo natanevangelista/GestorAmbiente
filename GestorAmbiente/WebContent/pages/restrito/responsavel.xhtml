@@ -9,53 +9,67 @@
 <!-- chama o template -->
 <ui:composition template="/templates/templateInterno.xhtml">
 	
-	<ui:define name="tituloPagina">Listagem de Responsável</ui:define>
+	<ui:define name="tituloPagina">Listagem de Professor</ui:define>
 	
 	<ui:define name="corpo">
-		<h:form>
-			<p:commandButton value="Cadastrar Responsável" action="#{responsavelBean.novo()}" ajax="false"></p:commandButton>
+		<h:form> 
+			<p:commandButton value="Cadastrar Professor" action="#{responsavelBean.novo()}" ></p:commandButton>
 		</h:form>
-		
+		<br />
 		<h:form id="listagem">
-			<p:messages id="mensagem" closable="true"/>
-			<p:dataTable var="responsavel" value="#{responsavelBean.lista}" id="tabelaResponsavel" rendered="#{!empty responsavelBean.lista}"  >
-				<f:facet name="caption">Relação de todos as Pessoas Cadastrados</f:facet>
-				<f:facet name="header">Listagem de Pessoas</f:facet>
-				<f:facet name="footer">Final da Listagem de Pessoas</f:facet>
+			<p:messages id="mensagem" closable="true"/> 
+			<p:dataTable var="responsavel" value="#{responsavelBean.allResponsaveis}" id="tabelaResponsavel" rendered="#{!empty responsavelBean.lista}"
+						paginator="true" rows="10"
+                        paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+                        rowsPerPageTemplate="5,10,15"   lazy="true" 
+                        styleClass="tamanhoFieldBusca"
+                        >
 				
-				<p:column headerText="Nome" filterBy="#{responsavel.nome}" footerText="contains" filterMatchMode="contains">
+				<p:column headerText="Nome" filterBy="#{responsavel.nome}" >
 					<h:outputText value="#{responsavel.nome}" />
 				</p:column>
+				
 				<p:column headerText="Email">
 					<h:outputText value="#{responsavel.email}" />		
 				</p:column>
-				<p:column headerText="Telefone">
-					<h:outputText value="#{responsavel.telefone}" />		
-				</p:column>
-
-				<p:column headerText="Situação" style="text-align:center">
-					<p:commandLink action="#{responsavelBean.ativar()}" id="status" update="tabelaResponsavel">
-						<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}" />
-						<p:selectBooleanButton onLabel="Ativo" offLabel="Inativo" value="#{responsavel.status}" />
-						<p:ajax></p:ajax>
-						<p:tooltip for="status" value="#{responsavel.status == true ? 'Inativar' : 'Ativar' }"></p:tooltip>
-					</p:commandLink>
-				</p:column>
-
-				<p:column headerText="Editar" style="text-align:center">
-					<p:commandButton action="#{responsavelBean.editar('manterResponsavel')}" id="editar" ajax="false" icon="ui-icon-pencil">
-	    				<p:ajax></p:ajax>	
-	    				<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}"/>
-					</p:commandButton>
-					<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade"></p:tooltip>
+				
+				<p:column headerText="Telefone" width="100">
+					<h:outputLabel   value="#{responsavel.telefone}"/>
 				</p:column>
 				
-				<p:column headerText="Excluir" style="text-align:center">
-					<p:commandButton id="excluir" icon="ui-icon-trash" ajax="false" update="listagem" action="#{responsavelBean.excluir()}" >
+				<p:column headerText="Situação" style="text-align:center" filterBy="#{responsavel.status}" styleClass="tamanhoFieldBusca">
+					<p:commandLink action="#{responsavelBean.ativar()}" id="status" update="tabelaResponsavel" >
+						<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}" />
+						<h:graphicImage  library="imagens" name="ativo_#{responsavel.status}.png" style="border:0" />
+					</p:commandLink>
+					<p:tooltip for="status" value="#{responsavel.status == true ? 'Inativar' : 'Ativar' }" />
+				</p:column>
+				
+				<p:column headerText="Manutenção" style="text-align:center">
+					<p:panelGrid columns="3" styleClass="semBorda">
+					<p:commandButton id="visualizar" icon="ui-icon-contact" oncomplete="modalResponsavelDialog.show()" update="modalResponsavel"  >
+						<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}"/>
+						<p:tooltip for="visualizar" value="Visualizar" showEffect="fade" hideEffect="fade"/>
+						<ui:include src="/pages/restrito/modal/modalVisualizarResponsavel.xhtml" />
+					</p:commandButton>
+
+					<p:commandButton icon="ui-icon-pencil" id="editar"  action="#{responsavelBean.editar('manterResponsavel')}"  >
+						<p:tooltip for="editar" value="Editar" showEffect="fade" hideEffect="fade" />
+    		  			<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}"/>       
+					</p:commandButton>
+
+					<p:commandButton id="excluir" icon="ui-icon-trash" onclick="cd.show()" > 
 						<f:setPropertyActionListener target="#{responsavelBean.responsavel}" value="#{responsavel}" />
 					</p:commandButton>
-					<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade"></p:tooltip>
+					<p:confirmDialog message="Confirma Exclusão do Responsável?" 
+						header="Excluir Responsável" severity="alert" widgetVar="cd"  >
+						<p:commandButton value="Confirmar"  ajax="false" oncomplete="cd.hide()" update="listagem" actionListener="#{responsavelBean.excluir()}" />
+						<p:commandButton value="Cancelar" onclick="cd.hide()" type="button" />
+					</p:confirmDialog>
+					<p:tooltip for="excluir" value="Excluir" showEffect="fade" hideEffect="fade" />
+					</p:panelGrid>
 				</p:column>
+				
 			</p:dataTable>
 		</h:form>
 	</ui:define>

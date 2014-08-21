@@ -22,7 +22,7 @@ public class AmbienteLazySorter implements Comparator<Ambiente> {
             Object value1 = Ambiente.class.getField(this.sortField).get(ambiente);
             Object value2 = Ambiente.class.getField(this.sortField).get(ambiente2);
 
-            int value = ((Comparable)value1).compareTo(value2);
+			int value = ((Comparable)value1).compareTo(value2);
             
             return SortOrder.ASCENDING.equals(sortOrder) ? value : -1 * value;
         }

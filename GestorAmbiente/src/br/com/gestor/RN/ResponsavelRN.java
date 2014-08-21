@@ -32,6 +32,10 @@ public class ResponsavelRN {
 		return (List<Responsavel>) this.responsavelDAO.listar();
 	}
 
+	public List<Responsavel> listarOrderByNome(){
+		return (List<Responsavel>) this.responsavelDAO.listarOrderByNome();
+	}
+	
 	public Responsavel carregar(Long responsavel) {
 		return (Responsavel) this.responsavelDAO.carregar(responsavel);
 	}

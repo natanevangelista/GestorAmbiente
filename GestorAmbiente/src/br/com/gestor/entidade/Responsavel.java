@@ -27,16 +27,16 @@ public class Responsavel {
 	@Column(name="COD_RESP")
 	private Long id;
 	
-	@Column(name="NOME_RESP", length=50)
+	@Column(name="NOME_RESP", length=60)
 	private String nome;
 	
-	@Column(name="TEL_RESP", length=50)
+	@Column(name="TEL_RESP", length=12)
 	private String telefone;
 	
-	@Column(name="EMAIL_RESP", length=50)
+	@Column(name="EMAIL_RESP", length=60)
 	private String email;
 	
-	@Column(name="SENHA_RESP", length=20)
+	@Column(name="SENHA_RESP", length=10)
 	private String senha;
 	
 	@Column(name="SMS_RESP")
@@ -47,7 +47,7 @@ public class Responsavel {
 	
 	@ElementCollection(targetClass = String.class)
 	@JoinTable(
-			name="GATB004USUARIO_PERMISSAO",
+			name="GATB004_USUARIO_PERMISSAO",
 			uniqueConstraints={@UniqueConstraint(columnNames={"USUARIO","PERMISSAO_RESP"})},
 			joinColumns= @JoinColumn(name="USUARIO"))
 	@Column(name="PERMISSAO_RESP", length=50)

@@ -4,9 +4,17 @@ import java.io.Serializable;
 
 import com.sun.faces.context.flash.ELFlash;
 
-
+/**
+ * Classe abstrata que representa todas as ações dos Beans.
+ * @author Natan
+ *
+ */
 public abstract class AbstractBean implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final String TITULO_PAGINA = "tituloPagina";
 	private String acaoTituloPagina;
 	
