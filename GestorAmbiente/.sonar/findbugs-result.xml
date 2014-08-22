@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<BugCollection version="2.0.1" sequence="0" timestamp="1408336521410" analysisTimestamp="1408336874232" release="">
+<BugCollection version="2.0.1" sequence="0" timestamp="1408596132514" analysisTimestamp="1408598257377" release="">
   <Project>
     <Jar>C:\Users\Natan\workspaceKeppler\GestorAmbiente\build</Jar>
-    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs6109551380281391042.jar</AuxClasspathEntry>
-    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs249991803171898130.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs1388908707774795203.jar</AuxClasspathEntry>
+    <AuxClasspathEntry>C:\Users\Natan\AppData\Local\Temp\findbugs5799177282866754147.jar</AuxClasspathEntry>
     <SrcDir>C:\Users\Natan\workspaceKeppler\GestorAmbiente\src</SrcDir>
   </Project>
   <BugInstance type="DLS_DEAD_LOCAL_STORE" priority="2" abbrev="DLS" category="STYLE" instanceHash="dfc4a4432c63794e9ad4e787b0f466a5" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
@@ -26,9 +26,9 @@
     <SourceLine classname="br.com.gestor.RN.AgendamentoRN" primary="true" start="117" end="117" startBytecode="15" endBytecode="15" sourcefile="AgendamentoRN.java" sourcepath="br/com/gestor/RN/AgendamentoRN.java" relSourcepath="br\com\gestor\RN\AgendamentoRN.java">
       <Message>At AgendamentoRN.java:[line 117]</Message>
     </SourceLine>
-    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.KILLED_BY_SUBSEQUENT_STORE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.LOCAL_NAME" value="dataConvertida"/>
+    <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.DEAD_OBJECT_STORE" value="true"/>
     <Property name="edu.umd.cs.findbugs.detect.DeadLocalStoreProperty.METHOD_RESULT" value="true"/>
   </BugInstance>
   <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE" instanceHash="1e663f13df39b9cef26a331a5c6064dd" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
@@ -80,12 +80,12 @@
       <Message>At AgendamentoBean.java:[line 113]</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="BAD_PRACTICE" instanceHash="183dadb281cd8e78db066e0a79c9a5a6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="183dadb281cd8e78db066e0a79c9a5a6" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.AmbienteBean defines non-transient non-serializable instance field ambiente</LongMessage>
     <Class classname="br.com.gestor.bean.AmbienteBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.AmbienteBean" start="25" end="136" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java">
-        <Message>At AmbienteBean.java:[lines 25-136]</Message>
+      <SourceLine classname="br.com.gestor.bean.AmbienteBean" start="21" end="121" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java">
+        <Message>At AmbienteBean.java:[lines 21-121]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.AmbienteBean</Message>
     </Class>
@@ -105,12 +105,37 @@
       <Message>In AmbienteBean.java</Message>
     </SourceLine>
   </BugInstance>
-  <BugInstance type="SE_BAD_FIELD" priority="1" abbrev="Se" category="BAD_PRACTICE" instanceHash="a4e6d5c2373e0e33d964e3f95bc56983" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="14">
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="c8e439c7021b6e70a7e66f62cbdb2f96" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.AmbienteBean defines non-transient non-serializable instance field ambienteRN</LongMessage>
+    <Class classname="br.com.gestor.bean.AmbienteBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.AmbienteBean" start="21" end="121" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java">
+        <Message>At AmbienteBean.java:[lines 21-121]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.AmbienteBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.AmbienteBean" name="ambienteRN" signature="Lbr/com/gestor/RN/AmbienteRN;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.AmbienteBean" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java">
+        <Message>In AmbienteBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.AmbienteBean.ambienteRN</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/RN/AmbienteRN;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.RN.AmbienteRN" start="19" end="54" sourcefile="AmbienteRN.java" sourcepath="br/com/gestor/RN/AmbienteRN.java" relSourcepath="br\com\gestor\RN\AmbienteRN.java">
+        <Message>At AmbienteRN.java:[lines 19-54]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.RN.AmbienteRN</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.AmbienteBean" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java" synthetic="true">
+      <Message>In AmbienteBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="a4e6d5c2373e0e33d964e3f95bc56983" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.AmbienteBean defines non-transient non-serializable instance field lista</LongMessage>
     <Class classname="br.com.gestor.bean.AmbienteBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.AmbienteBean" start="25" end="136" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java">
-        <Message>At AmbienteBean.java:[lines 25-136]</Message>
+      <SourceLine classname="br.com.gestor.bean.AmbienteBean" start="21" end="121" sourcefile="AmbienteBean.java" sourcepath="br/com/gestor/bean/AmbienteBean.java" relSourcepath="br\com\gestor\bean\AmbienteBean.java">
+        <Message>At AmbienteBean.java:[lines 21-121]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.AmbienteBean</Message>
     </Class>
@@ -284,8 +309,8 @@
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.ResponsavelBean defines non-transient non-serializable instance field lista</LongMessage>
     <Class classname="br.com.gestor.bean.ResponsavelBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="15" end="74" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
-        <Message>At ResponsavelBean.java:[lines 15-74]</Message>
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="21" end="117" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>At ResponsavelBean.java:[lines 21-117]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.ResponsavelBean</Message>
     </Class>
@@ -309,8 +334,8 @@
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.ResponsavelBean defines non-transient non-serializable instance field responsavel</LongMessage>
     <Class classname="br.com.gestor.bean.ResponsavelBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="15" end="74" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
-        <Message>At ResponsavelBean.java:[lines 15-74]</Message>
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="21" end="117" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>At ResponsavelBean.java:[lines 21-117]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.ResponsavelBean</Message>
     </Class>
@@ -325,6 +350,31 @@
         <Message>At Responsavel.java:[lines 23-180]</Message>
       </SourceLine>
       <Message>Actual type br.com.gestor.entidade.Responsavel</Message>
+    </Type>
+    <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java" synthetic="true">
+      <Message>In ResponsavelBean.java</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="SE_BAD_FIELD" priority="2" abbrev="Se" category="BAD_PRACTICE" instanceHash="5e6fd6b5d24262aa966a98d8fa1d2bb7" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="16">
+    <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
+    <LongMessage>Class br.com.gestor.bean.ResponsavelBean defines non-transient non-serializable instance field responsavelRN</LongMessage>
+    <Class classname="br.com.gestor.bean.ResponsavelBean" primary="true">
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" start="21" end="117" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>At ResponsavelBean.java:[lines 21-117]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.ResponsavelBean</Message>
+    </Class>
+    <Field classname="br.com.gestor.bean.ResponsavelBean" name="responsavelRN" signature="Lbr/com/gestor/RN/ResponsavelRN;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java">
+        <Message>In ResponsavelBean.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.bean.ResponsavelBean.responsavelRN</Message>
+    </Field>
+    <Type descriptor="Lbr/com/gestor/RN/ResponsavelRN;" role="TYPE_FOUND">
+      <SourceLine classname="br.com.gestor.RN.ResponsavelRN" start="14" end="40" sourcefile="ResponsavelRN.java" sourcepath="br/com/gestor/RN/ResponsavelRN.java" relSourcepath="br\com\gestor\RN\ResponsavelRN.java">
+        <Message>At ResponsavelRN.java:[lines 14-40]</Message>
+      </SourceLine>
+      <Message>Actual type br.com.gestor.RN.ResponsavelRN</Message>
     </Type>
     <SourceLine classname="br.com.gestor.bean.ResponsavelBean" sourcefile="ResponsavelBean.java" sourcepath="br/com/gestor/bean/ResponsavelBean.java" relSourcepath="br\com\gestor\bean\ResponsavelBean.java" synthetic="true">
       <Message>In ResponsavelBean.java</Message>
@@ -459,8 +509,8 @@
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field lista</LongMessage>
     <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
-        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="16" end="83" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 16-83]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
     </Class>
@@ -484,8 +534,8 @@
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field turma</LongMessage>
     <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
-        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="16" end="83" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 16-83]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
     </Class>
@@ -509,8 +559,8 @@
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field turmaRN</LongMessage>
     <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
-        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="16" end="83" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 16-83]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
     </Class>
@@ -534,8 +584,8 @@
     <ShortMessage>Non-transient non-serializable instance field in serializable class</ShortMessage>
     <LongMessage>Class br.com.gestor.bean.TurmaPesquisaBean defines non-transient non-serializable instance field turmaSelecionada</LongMessage>
     <Class classname="br.com.gestor.bean.TurmaPesquisaBean" primary="true">
-      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="17" end="76" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
-        <Message>At TurmaPesquisaBean.java:[lines 17-76]</Message>
+      <SourceLine classname="br.com.gestor.bean.TurmaPesquisaBean" start="16" end="83" sourcefile="TurmaPesquisaBean.java" sourcepath="br/com/gestor/bean/TurmaPesquisaBean.java" relSourcepath="br\com\gestor\bean\TurmaPesquisaBean.java">
+        <Message>At TurmaPesquisaBean.java:[lines 16-83]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.bean.TurmaPesquisaBean</Message>
     </Class>
@@ -798,6 +848,87 @@
       <Message>At EventoLazySorter.java:[line 29]</Message>
     </SourceLine>
   </BugInstance>
+  <BugInstance type="ES_COMPARING_STRINGS_WITH_EQ" priority="1" abbrev="ES" category="BAD_PRACTICE" instanceHash="bd0b324f620a7d0df04928ff2cd53d56" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="9">
+    <ShortMessage>Comparison of String objects using == or !=</ShortMessage>
+    <LongMessage>Comparison of String objects using == or != in br.com.gestor.bean.lazyDataModel.ResponsavelLazyList.load(int, int, String, SortOrder, Map) </LongMessage>
+    <Class classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" start="1" end="95" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java">
+        <Message>At ResponsavelLazyList.java:[lines 1-95]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.lazyDataModel.ResponsavelLazyList</Message>
+    </Class>
+    <Method classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" name="load" signature="(IILjava/lang/String;Lorg/primefaces/model/SortOrder;Ljava/util/Map;)Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" start="44" end="95" startBytecode="0" endBytecode="122" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java"/>
+      <Message>In method br.com.gestor.bean.lazyDataModel.ResponsavelLazyList.load(int, int, String, SortOrder, Map)</Message>
+    </Method>
+    <Type descriptor="Ljava/lang/String;" role="TYPE_FOUND">
+      <SourceLine classname="java.lang.String" start="108" end="3100" sourcefile="String.java" sourcepath="java/lang/String.java">
+        <Message>At String.java:[lines 108-3100]</Message>
+      </SourceLine>
+      <Message>Actual type String</Message>
+    </Type>
+    <String value="true" role="STRING_CONSTANT">
+      <Message>String constant &quot;true&quot;</Message>
+    </String>
+    <LocalVariable name="fieldValue" register="13" pc="132" role="LOCAL_VARIABLE_VALUE_OF">
+      <Message>Value loaded from fieldValue</Message>
+    </LocalVariable>
+    <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" primary="true" start="57" end="57" startBytecode="134" endBytecode="134" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java">
+      <Message>At ResponsavelLazyList.java:[line 57]</Message>
+    </SourceLine>
+    <Property name="edu.umd.cs.findbugs.detect.RefComparisonWarningProperty.DYNAMIC_AND_UNKNOWN" value="true"/>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" abbrev="REC" category="STYLE" instanceHash="1075914ad8a1e65125493880999102f1" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
+    <ShortMessage>Exception is caught when Exception is not thrown</ShortMessage>
+    <LongMessage>Exception is caught when Exception is not thrown in br.com.gestor.bean.lazyDataModel.ResponsavelLazyList.load(int, int, String, SortOrder, Map)</LongMessage>
+    <Class classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" start="1" end="95" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java">
+        <Message>At ResponsavelLazyList.java:[lines 1-95]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.lazyDataModel.ResponsavelLazyList</Message>
+    </Class>
+    <Method classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" name="load" signature="(IILjava/lang/String;Lorg/primefaces/model/SortOrder;Ljava/util/Map;)Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" start="44" end="95" startBytecode="0" endBytecode="866" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java"/>
+      <Message>In method br.com.gestor.bean.lazyDataModel.ResponsavelLazyList.load(int, int, String, SortOrder, Map)</Message>
+    </Method>
+    <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" primary="true" start="66" end="66" startBytecode="182" endBytecode="182" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java">
+      <Message>At ResponsavelLazyList.java:[line 66]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="WMI_WRONG_MAP_ITERATOR" priority="2" abbrev="WMI" category="PERFORMANCE" instanceHash="be5f26f20f184b255de64eb2c389909c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Inefficient use of keySet iterator instead of entrySet iterator</ShortMessage>
+    <LongMessage>br.com.gestor.bean.lazyDataModel.ResponsavelLazyList.load(int, int, String, SortOrder, Map) makes inefficient use of keySet iterator instead of entrySet iterator</LongMessage>
+    <Class classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" start="1" end="95" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java">
+        <Message>At ResponsavelLazyList.java:[lines 1-95]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.lazyDataModel.ResponsavelLazyList</Message>
+    </Class>
+    <Method classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" name="load" signature="(IILjava/lang/String;Lorg/primefaces/model/SortOrder;Ljava/util/Map;)Ljava/util/List;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" start="44" end="95" startBytecode="0" endBytecode="866" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java"/>
+      <Message>In method br.com.gestor.bean.lazyDataModel.ResponsavelLazyList.load(int, int, String, SortOrder, Map)</Message>
+    </Method>
+    <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" primary="true" start="54" end="54" startBytecode="76" endBytecode="76" sourcefile="ResponsavelLazyList.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazyList.java">
+      <Message>At ResponsavelLazyList.java:[line 54]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="REC_CATCH_EXCEPTION" priority="2" abbrev="REC" category="STYLE" instanceHash="53f4d712885dbe2ed4d4eeb4b16fa2f" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
+    <ShortMessage>Exception is caught when Exception is not thrown</ShortMessage>
+    <LongMessage>Exception is caught when Exception is not thrown in br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter.compare(Responsavel, Responsavel)</LongMessage>
+    <Class classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter" start="1" end="30" sourcefile="ResponsavelLazySorter.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazySorter.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazySorter.java">
+        <Message>At ResponsavelLazySorter.java:[lines 1-30]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter</Message>
+    </Class>
+    <Method classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter" name="compare" signature="(Lbr/com/gestor/entidade/Responsavel;Lbr/com/gestor/entidade/Responsavel;)I" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter" start="22" end="30" startBytecode="0" endBytecode="242" sourcefile="ResponsavelLazySorter.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazySorter.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazySorter.java"/>
+      <Message>In method br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter.compare(Responsavel, Responsavel)</Message>
+    </Method>
+    <SourceLine classname="br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter" primary="true" start="29" end="29" startBytecode="65" endBytecode="65" sourcefile="ResponsavelLazySorter.java" sourcepath="br/com/gestor/bean/lazyDataModel/ResponsavelLazySorter.java" relSourcepath="br\com\gestor\bean\lazyDataModel\ResponsavelLazySorter.java">
+      <Message>At ResponsavelLazySorter.java:[line 29]</Message>
+    </SourceLine>
+  </BugInstance>
   <BugInstance type="EI_EXPOSE_REP" priority="2" abbrev="EI" category="MALICIOUS_CODE" instanceHash="49e0f604d26d452ca16cb6427232df1b" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>May expose internal representation by returning reference to mutable object</ShortMessage>
     <LongMessage>br.com.gestor.entidade.Agendamento.getData() may expose internal representation by returning Agendamento.data</LongMessage>
@@ -877,8 +1008,8 @@
     <ShortMessage>Unread public/protected field</ShortMessage>
     <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.AmbienteFake.categoria</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="14" end="19" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+        <Message>At AmbienteFake.java:[lines 14-19]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
     </Class>
@@ -888,16 +1019,16 @@
       </SourceLine>
       <Message>Field br.com.gestor.entidade.fake.AmbienteFake.categoria</Message>
     </Field>
-    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="11" end="11" startBytecode="36" endBytecode="36" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-      <Message>At AmbienteFake.java:[line 11]</Message>
+    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="18" end="18" startBytecode="36" endBytecode="36" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+      <Message>At AmbienteFake.java:[line 18]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="4e3ebd6bdd2461b4a482399de7f8c3b9" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>Unread public/protected field</ShortMessage>
     <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.AmbienteFake.descricao</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="14" end="19" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+        <Message>At AmbienteFake.java:[lines 14-19]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
     </Class>
@@ -907,16 +1038,16 @@
       </SourceLine>
       <Message>Field br.com.gestor.entidade.fake.AmbienteFake.descricao</Message>
     </Field>
-    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="8" end="8" startBytecode="9" endBytecode="9" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-      <Message>At AmbienteFake.java:[line 8]</Message>
+    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="15" end="15" startBytecode="9" endBytecode="9" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+      <Message>At AmbienteFake.java:[line 15]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="c42d92dd6e10b738095ed9eb7e7fe0c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>Unread public/protected field</ShortMessage>
     <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.AmbienteFake.identificacao</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="14" end="19" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+        <Message>At AmbienteFake.java:[lines 14-19]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
     </Class>
@@ -926,16 +1057,16 @@
       </SourceLine>
       <Message>Field br.com.gestor.entidade.fake.AmbienteFake.identificacao</Message>
     </Field>
-    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="9" end="9" startBytecode="17" endBytecode="17" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-      <Message>At AmbienteFake.java:[line 9]</Message>
+    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="16" end="16" startBytecode="17" endBytecode="17" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+      <Message>At AmbienteFake.java:[line 16]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="e716f1329506507804c496545db94386" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
     <ShortMessage>Unread public/protected field</ShortMessage>
     <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.AmbienteFake.status</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="14" end="19" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+        <Message>At AmbienteFake.java:[lines 14-19]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
     </Class>
@@ -945,35 +1076,16 @@
       </SourceLine>
       <Message>Field br.com.gestor.entidade.fake.AmbienteFake.status</Message>
     </Field>
-    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="10" end="10" startBytecode="25" endBytecode="25" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-      <Message>At AmbienteFake.java:[line 10]</Message>
-    </SourceLine>
-  </BugInstance>
-  <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" instanceHash="f182856b19caaf7d4ad5639cb7041951" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
-    <ShortMessage>Unused public or protected field</ShortMessage>
-    <LongMessage>Unused public or protected field: br.com.gestor.entidade.fake.AmbienteFake.id</LongMessage>
-    <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
-      </SourceLine>
-      <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
-    </Class>
-    <Field classname="br.com.gestor.entidade.fake.AmbienteFake" name="id" signature="Ljava/lang/Long;" isStatic="false" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>In AmbienteFake.java</Message>
-      </SourceLine>
-      <Message>Field br.com.gestor.entidade.fake.AmbienteFake.id</Message>
-    </Field>
-    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java" synthetic="true">
-      <Message>In AmbienteFake.java</Message>
+    <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true" start="17" end="17" startBytecode="25" endBytecode="25" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+      <Message>At AmbienteFake.java:[line 17]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UuF" category="STYLE" instanceHash="989835db4d84c32a7c7856cb8868b920" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="17">
     <ShortMessage>Unused public or protected field</ShortMessage>
     <LongMessage>Unused public or protected field: br.com.gestor.entidade.fake.AmbienteFake.observacao</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="14" end="19" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+        <Message>At AmbienteFake.java:[lines 14-19]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
     </Class>
@@ -991,8 +1103,8 @@
     <ShortMessage>Unused public or protected field</ShortMessage>
     <LongMessage>Unused public or protected field: br.com.gestor.entidade.fake.AmbienteFake.qtdVagas</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.AmbienteFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="7" end="12" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
-        <Message>At AmbienteFake.java:[lines 7-12]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.AmbienteFake" start="14" end="19" sourcefile="AmbienteFake.java" sourcepath="br/com/gestor/entidade/fake/AmbienteFake.java" relSourcepath="br\com\gestor\entidade\fake\AmbienteFake.java">
+        <Message>At AmbienteFake.java:[lines 14-19]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.AmbienteFake</Message>
     </Class>
@@ -1010,8 +1122,8 @@
     <ShortMessage>Unread public/protected field</ShortMessage>
     <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.CategoriaFake.descricao</LongMessage>
     <Class classname="br.com.gestor.entidade.fake.CategoriaFake" primary="true">
-      <SourceLine classname="br.com.gestor.entidade.fake.CategoriaFake" start="7" end="9" sourcefile="CategoriaFake.java" sourcepath="br/com/gestor/entidade/fake/CategoriaFake.java" relSourcepath="br\com\gestor\entidade\fake\CategoriaFake.java">
-        <Message>At CategoriaFake.java:[lines 7-9]</Message>
+      <SourceLine classname="br.com.gestor.entidade.fake.CategoriaFake" start="9" end="11" sourcefile="CategoriaFake.java" sourcepath="br/com/gestor/entidade/fake/CategoriaFake.java" relSourcepath="br\com\gestor\entidade\fake\CategoriaFake.java">
+        <Message>At CategoriaFake.java:[lines 9-11]</Message>
       </SourceLine>
       <Message>In class br.com.gestor.entidade.fake.CategoriaFake</Message>
     </Class>
@@ -1021,8 +1133,84 @@
       </SourceLine>
       <Message>Field br.com.gestor.entidade.fake.CategoriaFake.descricao</Message>
     </Field>
-    <SourceLine classname="br.com.gestor.entidade.fake.CategoriaFake" primary="true" start="8" end="8" startBytecode="9" endBytecode="9" sourcefile="CategoriaFake.java" sourcepath="br/com/gestor/entidade/fake/CategoriaFake.java" relSourcepath="br\com\gestor\entidade\fake\CategoriaFake.java">
-      <Message>At CategoriaFake.java:[line 8]</Message>
+    <SourceLine classname="br.com.gestor.entidade.fake.CategoriaFake" primary="true" start="10" end="10" startBytecode="9" endBytecode="9" sourcefile="CategoriaFake.java" sourcepath="br/com/gestor/entidade/fake/CategoriaFake.java" relSourcepath="br\com\gestor\entidade\fake\CategoriaFake.java">
+      <Message>At CategoriaFake.java:[line 10]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="6c2232aac547c6b044186d93294c495a" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.EventoFake.modalidade</LongMessage>
+    <Class classname="br.com.gestor.entidade.fake.EventoFake" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.EventoFake" start="10" end="13" sourcefile="EventoFake.java" sourcepath="br/com/gestor/entidade/fake/EventoFake.java" relSourcepath="br\com\gestor\entidade\fake\EventoFake.java">
+        <Message>At EventoFake.java:[lines 10-13]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.entidade.fake.EventoFake</Message>
+    </Class>
+    <Field classname="br.com.gestor.entidade.fake.EventoFake" name="modalidade" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.EventoFake" sourcefile="EventoFake.java" sourcepath="br/com/gestor/entidade/fake/EventoFake.java" relSourcepath="br\com\gestor\entidade\fake\EventoFake.java">
+        <Message>In EventoFake.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.entidade.fake.EventoFake.modalidade</Message>
+    </Field>
+    <SourceLine classname="br.com.gestor.entidade.fake.EventoFake" primary="true" start="12" end="12" startBytecode="17" endBytecode="17" sourcefile="EventoFake.java" sourcepath="br/com/gestor/entidade/fake/EventoFake.java" relSourcepath="br\com\gestor\entidade\fake\EventoFake.java">
+      <Message>At EventoFake.java:[line 12]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="e4df6101a5e0461d1f4de9e2e6013c40" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.EventoFake.nome</LongMessage>
+    <Class classname="br.com.gestor.entidade.fake.EventoFake" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.EventoFake" start="10" end="13" sourcefile="EventoFake.java" sourcepath="br/com/gestor/entidade/fake/EventoFake.java" relSourcepath="br\com\gestor\entidade\fake\EventoFake.java">
+        <Message>At EventoFake.java:[lines 10-13]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.entidade.fake.EventoFake</Message>
+    </Class>
+    <Field classname="br.com.gestor.entidade.fake.EventoFake" name="nome" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.EventoFake" sourcefile="EventoFake.java" sourcepath="br/com/gestor/entidade/fake/EventoFake.java" relSourcepath="br\com\gestor\entidade\fake\EventoFake.java">
+        <Message>In EventoFake.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.entidade.fake.EventoFake.nome</Message>
+    </Field>
+    <SourceLine classname="br.com.gestor.entidade.fake.EventoFake" primary="true" start="11" end="11" startBytecode="9" endBytecode="9" sourcefile="EventoFake.java" sourcepath="br/com/gestor/entidade/fake/EventoFake.java" relSourcepath="br\com\gestor\entidade\fake\EventoFake.java">
+      <Message>At EventoFake.java:[line 11]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="1d0bb20f2e6480cb95fa50e5e173d9f4" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.ResponsavelFake.nome</LongMessage>
+    <Class classname="br.com.gestor.entidade.fake.ResponsavelFake" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.ResponsavelFake" start="10" end="13" sourcefile="ResponsavelFake.java" sourcepath="br/com/gestor/entidade/fake/ResponsavelFake.java" relSourcepath="br\com\gestor\entidade\fake\ResponsavelFake.java">
+        <Message>At ResponsavelFake.java:[lines 10-13]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.entidade.fake.ResponsavelFake</Message>
+    </Class>
+    <Field classname="br.com.gestor.entidade.fake.ResponsavelFake" name="nome" signature="Ljava/lang/String;" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.ResponsavelFake" sourcefile="ResponsavelFake.java" sourcepath="br/com/gestor/entidade/fake/ResponsavelFake.java" relSourcepath="br\com\gestor\entidade\fake\ResponsavelFake.java">
+        <Message>In ResponsavelFake.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.entidade.fake.ResponsavelFake.nome</Message>
+    </Field>
+    <SourceLine classname="br.com.gestor.entidade.fake.ResponsavelFake" primary="true" start="11" end="11" startBytecode="9" endBytecode="9" sourcefile="ResponsavelFake.java" sourcepath="br/com/gestor/entidade/fake/ResponsavelFake.java" relSourcepath="br\com\gestor\entidade\fake\ResponsavelFake.java">
+      <Message>At ResponsavelFake.java:[line 11]</Message>
+    </SourceLine>
+  </BugInstance>
+  <BugInstance type="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD" priority="2" abbrev="UrF" category="STYLE" instanceHash="d77b07c2f314fe4b23fdcd0583db6711" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="18">
+    <ShortMessage>Unread public/protected field</ShortMessage>
+    <LongMessage>Unread public/protected field: br.com.gestor.entidade.fake.ResponsavelFake.status</LongMessage>
+    <Class classname="br.com.gestor.entidade.fake.ResponsavelFake" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.ResponsavelFake" start="10" end="13" sourcefile="ResponsavelFake.java" sourcepath="br/com/gestor/entidade/fake/ResponsavelFake.java" relSourcepath="br\com\gestor\entidade\fake\ResponsavelFake.java">
+        <Message>At ResponsavelFake.java:[lines 10-13]</Message>
+      </SourceLine>
+      <Message>In class br.com.gestor.entidade.fake.ResponsavelFake</Message>
+    </Class>
+    <Field classname="br.com.gestor.entidade.fake.ResponsavelFake" name="status" signature="Z" isStatic="false" primary="true">
+      <SourceLine classname="br.com.gestor.entidade.fake.ResponsavelFake" sourcefile="ResponsavelFake.java" sourcepath="br/com/gestor/entidade/fake/ResponsavelFake.java" relSourcepath="br\com\gestor\entidade\fake\ResponsavelFake.java">
+        <Message>In ResponsavelFake.java</Message>
+      </SourceLine>
+      <Message>Field br.com.gestor.entidade.fake.ResponsavelFake.status</Message>
+    </Field>
+    <SourceLine classname="br.com.gestor.entidade.fake.ResponsavelFake" primary="true" start="12" end="12" startBytecode="17" endBytecode="17" sourcefile="ResponsavelFake.java" sourcepath="br/com/gestor/entidade/fake/ResponsavelFake.java" relSourcepath="br\com\gestor\entidade\fake\ResponsavelFake.java">
+      <Message>At ResponsavelFake.java:[line 12]</Message>
     </SourceLine>
   </BugInstance>
   <BugInstance type="SF_SWITCH_NO_DEFAULT" priority="2" abbrev="SF" category="STYLE" instanceHash="30d77603e089b13f8f74462eef49274c" instanceOccurrenceNum="0" instanceOccurrenceMax="0" rank="19">
@@ -1211,7 +1399,7 @@ there is no easy way to eliminate these false positives.
   <BugCode abbrev="EI">
     <Description>Method returning array may expose internal representation</Description>
   </BugCode>
-  <Errors errors="0" missingClasses="52">
+  <Errors errors="0" missingClasses="51">
     <MissingClass>com.sun.faces.context.flash.ELFlash</MissingClass>
     <MissingClass>javax.faces.application.Application</MissingClass>
     <MissingClass>javax.faces.application.FacesMessage</MissingClass>
@@ -1261,49 +1449,51 @@ there is no easy way to eliminate these false positives.
     <MissingClass>org.hibernate.criterion.SimpleExpression</MissingClass>
     <MissingClass>org.hibernate.exception.ConstraintViolationException</MissingClass>
     <MissingClass>org.junit.Test</MissingClass>
-    <MissingClass>org.primefaces.event.SelectEvent</MissingClass>
     <MissingClass>org.primefaces.model.LazyDataModel</MissingClass>
     <MissingClass>org.primefaces.model.SortOrder</MissingClass>
   </Errors>
-  <FindBugsSummary timestamp="Mon, 18 Aug 2014 01:35:21 -0300" total_classes="56" referenced_classes="120" total_bugs="46" total_size="1767" num_packages="14" vm_version="24.51-b03" cpu_seconds="4.20" clock_seconds="3.19" peak_mbytes="99.40" alloc_mbytes="247.50" gc_seconds="0.38" priority_2="37" priority_1="9">
+  <FindBugsSummary timestamp="Thu, 21 Aug 2014 01:42:12 -0300" total_classes="59" referenced_classes="123" total_bugs="55" total_size="1856" num_packages="14" vm_version="24.51-b03" cpu_seconds="4.26" clock_seconds="3.56" peak_mbytes="102.75" alloc_mbytes="247.50" gc_seconds="0.37" priority_2="47" priority_1="8">
     <FileStats path="br/com/gestor/DAO/DAOFactory.java" bugCount="0" size="27"/>
     <FileStats path="br/com/gestor/DAO/GenericDAO.java" bugCount="0" size="31"/>
     <FileStats path="br/com/gestor/DAOHibernate/AgendamentoDAOHibernate.java" bugCount="0" size="18"/>
     <FileStats path="br/com/gestor/DAOHibernate/AmbienteDAOHibernate.java" bugCount="0" size="8"/>
     <FileStats path="br/com/gestor/DAOHibernate/CategoriaDAOHibernate.java" bugCount="0" size="8"/>
     <FileStats path="br/com/gestor/DAOHibernate/EventoDAOHibernate.java" bugCount="0" size="8"/>
-    <FileStats path="br/com/gestor/DAOHibernate/ResponsavelDAOHibernate.java" bugCount="0" size="5"/>
+    <FileStats path="br/com/gestor/DAOHibernate/ResponsavelDAOHibernate.java" bugCount="0" size="8"/>
     <FileStats path="br/com/gestor/DAOHibernate/TurmaDAOHibernate.java" bugCount="0" size="29"/>
     <FileStats path="br/com/gestor/ListaEnum/PerfilAcesso.java" bugCount="0" size="11"/>
     <FileStats path="br/com/gestor/RN/AgendamentoRN.java" bugCount="1" size="65" bugHash="cb0b4afd2b1c7492747f7a09885a3067"/>
     <FileStats path="br/com/gestor/RN/AmbienteRN.java" bugCount="0" size="24"/>
     <FileStats path="br/com/gestor/RN/CategoriaRN.java" bugCount="0" size="22"/>
     <FileStats path="br/com/gestor/RN/EventoRN.java" bugCount="0" size="22"/>
-    <FileStats path="br/com/gestor/RN/ResponsavelRN.java" bugCount="0" size="20"/>
+    <FileStats path="br/com/gestor/RN/ResponsavelRN.java" bugCount="0" size="22"/>
     <FileStats path="br/com/gestor/RN/TurmaRN.java" bugCount="0" size="30"/>
-    <FileStats path="br/com/gestor/bean/AbstractBean.java" bugCount="0" size="15"/>
+    <FileStats path="br/com/gestor/bean/AbstractBean.java" bugCount="0" size="16"/>
     <FileStats path="br/com/gestor/bean/AgendamentoBean.java" bugCount="2" size="56" bugHash="c0bbfa9e38f9e35cc57ae9d675fdcf34"/>
-    <FileStats path="br/com/gestor/bean/AmbienteBean.java" bugCount="2" size="80" bugHash="6b25d4302857cc30edd92af573a857f6"/>
+    <FileStats path="br/com/gestor/bean/AmbienteBean.java" bugCount="3" size="73" bugHash="559a75627880be7b9309b4b3fea687f2"/>
     <FileStats path="br/com/gestor/bean/CategoriaBean.java" bugCount="2" size="64" bugHash="8e0c1ddec13ef8afe5fe796674913d31"/>
     <FileStats path="br/com/gestor/bean/EventoBean.java" bugCount="4" size="78" bugHash="7d11c5f8540b4661b317fc8c4c2a9759"/>
-    <FileStats path="br/com/gestor/bean/ResponsavelBean.java" bugCount="2" size="45" bugHash="3127977eeecf89366374c20dd5647239"/>
+    <FileStats path="br/com/gestor/bean/ResponsavelBean.java" bugCount="3" size="71" bugHash="c2e5933811b7986e7d3500120763c629"/>
     <FileStats path="br/com/gestor/bean/TurmaBean.java" bugCount="5" size="94" bugHash="50e5714048b502cd048ff55186c28f3d"/>
-    <FileStats path="br/com/gestor/bean/TurmaPesquisaBean.java" bugCount="4" size="44" bugHash="45424dd5af6d717cf7aee627bc8949b2"/>
+    <FileStats path="br/com/gestor/bean/TurmaPesquisaBean.java" bugCount="4" size="48" bugHash="45424dd5af6d717cf7aee627bc8949b2"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/AmbienteLazyList.java" bugCount="3" size="46" bugHash="887d494ffc674d84cb86ce8994f02c71"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/AmbienteLazySorter.java" bugCount="1" size="17" bugHash="cf2a71380951bd5b144616d49b6d2190"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/CategoriaLazyList.java" bugCount="3" size="46" bugHash="95caab194f54cf4d826791a3d033d182"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/CategoriaLazySorter.java" bugCount="1" size="17" bugHash="37aff6d0226473fe8598e185d543e17e"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/EventoLazyList.java" bugCount="3" size="46" bugHash="3e1319b0a99a2b68ec9d58ad3fe3d05b"/>
     <FileStats path="br/com/gestor/bean/lazyDataModel/EventoLazySorter.java" bugCount="1" size="17" bugHash="d81b7ceb534c1707dd6144bb710b29c6"/>
+    <FileStats path="br/com/gestor/bean/lazyDataModel/ResponsavelLazyList.java" bugCount="3" size="46" bugHash="fcf2295a1ac2d6ece4ef59bc692da1ba"/>
+    <FileStats path="br/com/gestor/bean/lazyDataModel/ResponsavelLazySorter.java" bugCount="1" size="17" bugHash="be0dc21a302150f742a7760a5ea650c7"/>
     <FileStats path="br/com/gestor/entidade/Agendamento.java" bugCount="3" size="48" bugHash="436ef629f3106460006eb2afccad8bad"/>
     <FileStats path="br/com/gestor/entidade/Ambiente.java" bugCount="0" size="98"/>
     <FileStats path="br/com/gestor/entidade/Categoria.java" bugCount="0" size="54"/>
     <FileStats path="br/com/gestor/entidade/Evento.java" bugCount="0" size="66"/>
     <FileStats path="br/com/gestor/entidade/Responsavel.java" bugCount="0" size="109"/>
     <FileStats path="br/com/gestor/entidade/Turma.java" bugCount="0" size="45"/>
-    <FileStats path="br/com/gestor/entidade/fake/AmbienteFake.java" bugCount="7" size="15" bugHash="45880ac9cc00da763351c0c5d845c84d"/>
-    <FileStats path="br/com/gestor/entidade/fake/CategoriaFake.java" bugCount="1" size="6" bugHash="84be9e9864fd756739950036bce54805"/>
-    <FileStats path="br/com/gestor/entidade/fake/EventoFake.java" bugCount="0" size="18"/>
+    <FileStats path="br/com/gestor/entidade/fake/AmbienteFake.java" bugCount="6" size="14" bugHash="81ad3d16670c08432fba67c8b627f273"/>
+    <FileStats path="br/com/gestor/entidade/fake/CategoriaFake.java" bugCount="1" size="6" bugHash="bd2a5920b4508c6331205d6df801563e"/>
+    <FileStats path="br/com/gestor/entidade/fake/EventoFake.java" bugCount="2" size="8" bugHash="90596902bf262e1858a9f28b93bfa8b7"/>
+    <FileStats path="br/com/gestor/entidade/fake/ResponsavelFake.java" bugCount="2" size="8" bugHash="5f7394c5547c04481407ae5ed33431d2"/>
     <FileStats path="br/com/gestor/mensagens/AumentarData.java" bugCount="0" size="17"/>
     <FileStats path="br/com/gestor/mensagens/TesteCalendar.java" bugCount="1" size="27" bugHash="f3a189f30d55f0b8499bde011b366a0c"/>
     <FileStats path="br/com/gestor/mensagens/TesteCalendarTest.java" bugCount="0" size="7"/>
@@ -1326,42 +1516,44 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="br.com.gestor.DAO.DAOFactory" sourceFile="DAOFactory.java" interface="false" size="27" bugs="0"/>
       <ClassStats class="br.com.gestor.DAO.GenericDAO" sourceFile="GenericDAO.java" interface="false" size="31" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.DAOHibernate" total_bugs="0" total_types="6" total_size="76">
+    <PackageStats package="br.com.gestor.DAOHibernate" total_bugs="0" total_types="6" total_size="79">
       <ClassStats class="br.com.gestor.DAOHibernate.AgendamentoDAOHibernate" sourceFile="AgendamentoDAOHibernate.java" interface="false" size="18" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.AmbienteDAOHibernate" sourceFile="AmbienteDAOHibernate.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.CategoriaDAOHibernate" sourceFile="CategoriaDAOHibernate.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.EventoDAOHibernate" sourceFile="EventoDAOHibernate.java" interface="false" size="8" bugs="0"/>
-      <ClassStats class="br.com.gestor.DAOHibernate.ResponsavelDAOHibernate" sourceFile="ResponsavelDAOHibernate.java" interface="false" size="5" bugs="0"/>
+      <ClassStats class="br.com.gestor.DAOHibernate.ResponsavelDAOHibernate" sourceFile="ResponsavelDAOHibernate.java" interface="false" size="8" bugs="0"/>
       <ClassStats class="br.com.gestor.DAOHibernate.TurmaDAOHibernate" sourceFile="TurmaDAOHibernate.java" interface="false" size="29" bugs="0"/>
     </PackageStats>
     <PackageStats package="br.com.gestor.ListaEnum" total_bugs="0" total_types="1" total_size="11">
       <ClassStats class="br.com.gestor.ListaEnum.PerfilAcesso" sourceFile="PerfilAcesso.java" interface="false" size="11" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.RN" total_bugs="1" total_types="6" total_size="183" priority_2="1">
+    <PackageStats package="br.com.gestor.RN" total_bugs="1" total_types="6" total_size="185" priority_2="1">
       <ClassStats class="br.com.gestor.RN.AgendamentoRN" sourceFile="AgendamentoRN.java" interface="false" size="65" bugs="1" priority_2="1"/>
       <ClassStats class="br.com.gestor.RN.AmbienteRN" sourceFile="AmbienteRN.java" interface="false" size="24" bugs="0"/>
       <ClassStats class="br.com.gestor.RN.CategoriaRN" sourceFile="CategoriaRN.java" interface="false" size="22" bugs="0"/>
       <ClassStats class="br.com.gestor.RN.EventoRN" sourceFile="EventoRN.java" interface="false" size="22" bugs="0"/>
-      <ClassStats class="br.com.gestor.RN.ResponsavelRN" sourceFile="ResponsavelRN.java" interface="false" size="20" bugs="0"/>
+      <ClassStats class="br.com.gestor.RN.ResponsavelRN" sourceFile="ResponsavelRN.java" interface="false" size="22" bugs="0"/>
       <ClassStats class="br.com.gestor.RN.TurmaRN" sourceFile="TurmaRN.java" interface="false" size="30" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.bean" total_bugs="21" total_types="8" total_size="476" priority_2="15" priority_1="6">
-      <ClassStats class="br.com.gestor.bean.AbstractBean" sourceFile="AbstractBean.java" interface="false" size="15" bugs="0"/>
+    <PackageStats package="br.com.gestor.bean" total_bugs="23" total_types="8" total_size="500" priority_2="19" priority_1="4">
+      <ClassStats class="br.com.gestor.bean.AbstractBean" sourceFile="AbstractBean.java" interface="false" size="16" bugs="0"/>
       <ClassStats class="br.com.gestor.bean.AgendamentoBean" sourceFile="AgendamentoBean.java" interface="false" size="56" bugs="2" priority_2="2"/>
-      <ClassStats class="br.com.gestor.bean.AmbienteBean" sourceFile="AmbienteBean.java" interface="false" size="80" bugs="2" priority_1="2"/>
+      <ClassStats class="br.com.gestor.bean.AmbienteBean" sourceFile="AmbienteBean.java" interface="false" size="73" bugs="3" priority_2="3"/>
       <ClassStats class="br.com.gestor.bean.CategoriaBean" sourceFile="CategoriaBean.java" interface="false" size="64" bugs="2" priority_2="2"/>
       <ClassStats class="br.com.gestor.bean.EventoBean" sourceFile="EventoBean.java" interface="false" size="78" bugs="4" priority_2="4"/>
-      <ClassStats class="br.com.gestor.bean.ResponsavelBean" sourceFile="ResponsavelBean.java" interface="false" size="45" bugs="2" priority_2="2"/>
+      <ClassStats class="br.com.gestor.bean.ResponsavelBean" sourceFile="ResponsavelBean.java" interface="false" size="71" bugs="3" priority_2="3"/>
       <ClassStats class="br.com.gestor.bean.TurmaBean" sourceFile="TurmaBean.java" interface="false" size="94" bugs="5" priority_2="5"/>
-      <ClassStats class="br.com.gestor.bean.TurmaPesquisaBean" sourceFile="TurmaPesquisaBean.java" interface="false" size="44" bugs="4" priority_1="4"/>
+      <ClassStats class="br.com.gestor.bean.TurmaPesquisaBean" sourceFile="TurmaPesquisaBean.java" interface="false" size="48" bugs="4" priority_1="4"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.bean.lazyDataModel" total_bugs="12" total_types="6" total_size="189" priority_2="9" priority_1="3">
+    <PackageStats package="br.com.gestor.bean.lazyDataModel" total_bugs="16" total_types="8" total_size="252" priority_2="12" priority_1="4">
       <ClassStats class="br.com.gestor.bean.lazyDataModel.AmbienteLazyList" sourceFile="AmbienteLazyList.java" interface="false" size="46" bugs="3" priority_2="2" priority_1="1"/>
       <ClassStats class="br.com.gestor.bean.lazyDataModel.AmbienteLazySorter" sourceFile="AmbienteLazySorter.java" interface="false" size="17" bugs="1" priority_2="1"/>
       <ClassStats class="br.com.gestor.bean.lazyDataModel.CategoriaLazyList" sourceFile="CategoriaLazyList.java" interface="false" size="46" bugs="3" priority_2="2" priority_1="1"/>
       <ClassStats class="br.com.gestor.bean.lazyDataModel.CategoriaLazySorter" sourceFile="CategoriaLazySorter.java" interface="false" size="17" bugs="1" priority_2="1"/>
       <ClassStats class="br.com.gestor.bean.lazyDataModel.EventoLazyList" sourceFile="EventoLazyList.java" interface="false" size="46" bugs="3" priority_2="2" priority_1="1"/>
       <ClassStats class="br.com.gestor.bean.lazyDataModel.EventoLazySorter" sourceFile="EventoLazySorter.java" interface="false" size="17" bugs="1" priority_2="1"/>
+      <ClassStats class="br.com.gestor.bean.lazyDataModel.ResponsavelLazyList" sourceFile="ResponsavelLazyList.java" interface="false" size="46" bugs="3" priority_2="2" priority_1="1"/>
+      <ClassStats class="br.com.gestor.bean.lazyDataModel.ResponsavelLazySorter" sourceFile="ResponsavelLazySorter.java" interface="false" size="17" bugs="1" priority_2="1"/>
     </PackageStats>
     <PackageStats package="br.com.gestor.entidade" total_bugs="3" total_types="6" total_size="420" priority_2="3">
       <ClassStats class="br.com.gestor.entidade.Agendamento" sourceFile="Agendamento.java" interface="false" size="48" bugs="3" priority_2="3"/>
@@ -1371,10 +1563,11 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="br.com.gestor.entidade.Responsavel" sourceFile="Responsavel.java" interface="false" size="109" bugs="0"/>
       <ClassStats class="br.com.gestor.entidade.Turma" sourceFile="Turma.java" interface="false" size="45" bugs="0"/>
     </PackageStats>
-    <PackageStats package="br.com.gestor.entidade.fake" total_bugs="8" total_types="3" total_size="39" priority_2="8">
-      <ClassStats class="br.com.gestor.entidade.fake.AmbienteFake" sourceFile="AmbienteFake.java" interface="false" size="15" bugs="7" priority_2="7"/>
+    <PackageStats package="br.com.gestor.entidade.fake" total_bugs="11" total_types="4" total_size="36" priority_2="11">
+      <ClassStats class="br.com.gestor.entidade.fake.AmbienteFake" sourceFile="AmbienteFake.java" interface="false" size="14" bugs="6" priority_2="6"/>
       <ClassStats class="br.com.gestor.entidade.fake.CategoriaFake" sourceFile="CategoriaFake.java" interface="false" size="6" bugs="1" priority_2="1"/>
-      <ClassStats class="br.com.gestor.entidade.fake.EventoFake" sourceFile="EventoFake.java" interface="false" size="18" bugs="0"/>
+      <ClassStats class="br.com.gestor.entidade.fake.EventoFake" sourceFile="EventoFake.java" interface="false" size="8" bugs="2" priority_2="2"/>
+      <ClassStats class="br.com.gestor.entidade.fake.ResponsavelFake" sourceFile="ResponsavelFake.java" interface="false" size="8" bugs="2" priority_2="2"/>
     </PackageStats>
     <PackageStats package="br.com.gestor.mensagens" total_bugs="1" total_types="4" total_size="79" priority_2="1">
       <ClassStats class="br.com.gestor.mensagens.AumentarData" sourceFile="AumentarData.java" interface="false" size="17" bugs="0"/>
@@ -1407,36 +1600,32 @@ there is no easy way to eliminate these false positives.
       <ClassStats class="com.model.Player" sourceFile="Player.java" interface="false" size="29" bugs="0"/>
     </PackageStats>
     <FindBugsProfile>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="230" invocations="635" avgMicrosecondsPerInvocation="363" maxMicrosecondsPerInvocation="16635" standardDeviationMircosecondsPerInvocation="1001"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="202" invocations="349" avgMicrosecondsPerInvocation="581" maxMicrosecondsPerInvocation="105086" standardDeviationMircosecondsPerInvocation="5654"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="148" invocations="640" avgMicrosecondsPerInvocation="232" maxMicrosecondsPerInvocation="3641" standardDeviationMircosecondsPerInvocation="178"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="126" invocations="349" avgMicrosecondsPerInvocation="361" maxMicrosecondsPerInvocation="13957" standardDeviationMircosecondsPerInvocation="1103"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="117" invocations="340" avgMicrosecondsPerInvocation="346" maxMicrosecondsPerInvocation="16851" standardDeviationMircosecondsPerInvocation="1031"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="106" invocations="362" avgMicrosecondsPerInvocation="294" maxMicrosecondsPerInvocation="11209" standardDeviationMircosecondsPerInvocation="1005"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="98" invocations="356" avgMicrosecondsPerInvocation="276" maxMicrosecondsPerInvocation="13064" standardDeviationMircosecondsPerInvocation="825"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="97" invocations="120" avgMicrosecondsPerInvocation="812" maxMicrosecondsPerInvocation="16951" standardDeviationMircosecondsPerInvocation="1960"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="72" invocations="120" avgMicrosecondsPerInvocation="603" maxMicrosecondsPerInvocation="12373" standardDeviationMircosecondsPerInvocation="1433"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="69" invocations="349" avgMicrosecondsPerInvocation="200" maxMicrosecondsPerInvocation="11540" standardDeviationMircosecondsPerInvocation="647"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="60" invocations="120" avgMicrosecondsPerInvocation="503" maxMicrosecondsPerInvocation="9338" standardDeviationMircosecondsPerInvocation="1312"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="58" invocations="222" avgMicrosecondsPerInvocation="261" maxMicrosecondsPerInvocation="3865" standardDeviationMircosecondsPerInvocation="456"/>
-      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="54" invocations="564" avgMicrosecondsPerInvocation="97" maxMicrosecondsPerInvocation="7619" standardDeviationMircosecondsPerInvocation="432"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="51" invocations="349" avgMicrosecondsPerInvocation="148" maxMicrosecondsPerInvocation="31406" standardDeviationMircosecondsPerInvocation="1678"/>
-      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="49" invocations="540" avgMicrosecondsPerInvocation="92" maxMicrosecondsPerInvocation="2788" standardDeviationMircosecondsPerInvocation="224"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="38" invocations="168" avgMicrosecondsPerInvocation="231" maxMicrosecondsPerInvocation="15605" standardDeviationMircosecondsPerInvocation="1219"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="35" invocations="349" avgMicrosecondsPerInvocation="102" maxMicrosecondsPerInvocation="10955" standardDeviationMircosecondsPerInvocation="606"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="33" invocations="120" avgMicrosecondsPerInvocation="279" maxMicrosecondsPerInvocation="5116" standardDeviationMircosecondsPerInvocation="798"/>
-      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="32" invocations="17" avgMicrosecondsPerInvocation="1908" maxMicrosecondsPerInvocation="30757" standardDeviationMircosecondsPerInvocation="7212"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="30" invocations="120" avgMicrosecondsPerInvocation="253" maxMicrosecondsPerInvocation="8111" standardDeviationMircosecondsPerInvocation="785"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="28" invocations="120" avgMicrosecondsPerInvocation="236" maxMicrosecondsPerInvocation="9248" standardDeviationMircosecondsPerInvocation="879"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNullDeref" totalMilliseconds="26" invocations="56" avgMicrosecondsPerInvocation="480" maxMicrosecondsPerInvocation="10613" standardDeviationMircosecondsPerInvocation="1423"/>
-      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="24" invocations="3822" avgMicrosecondsPerInvocation="6" maxMicrosecondsPerInvocation="558" standardDeviationMircosecondsPerInvocation="17"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="23" invocations="56" avgMicrosecondsPerInvocation="423" maxMicrosecondsPerInvocation="5984" standardDeviationMircosecondsPerInvocation="977"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="23" invocations="56" avgMicrosecondsPerInvocation="417" maxMicrosecondsPerInvocation="1973" standardDeviationMircosecondsPerInvocation="427"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindDeadLocalStores" totalMilliseconds="22" invocations="56" avgMicrosecondsPerInvocation="400" maxMicrosecondsPerInvocation="3929" standardDeviationMircosecondsPerInvocation="584"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.DefaultEncodingDetector" totalMilliseconds="22" invocations="56" avgMicrosecondsPerInvocation="396" maxMicrosecondsPerInvocation="3420" standardDeviationMircosecondsPerInvocation="487"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison" totalMilliseconds="21" invocations="56" avgMicrosecondsPerInvocation="376" maxMicrosecondsPerInvocation="4631" standardDeviationMircosecondsPerInvocation="687"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.UnreadFields" totalMilliseconds="19" invocations="56" avgMicrosecondsPerInvocation="352" maxMicrosecondsPerInvocation="1642" standardDeviationMircosecondsPerInvocation="280"/>
-      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="18" invocations="56" avgMicrosecondsPerInvocation="333" maxMicrosecondsPerInvocation="2086" standardDeviationMircosecondsPerInvocation="396"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="495" invocations="642" avgMicrosecondsPerInvocation="771" maxMicrosecondsPerInvocation="74439" standardDeviationMircosecondsPerInvocation="4726"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="248" invocations="637" avgMicrosecondsPerInvocation="389" maxMicrosecondsPerInvocation="18132" standardDeviationMircosecondsPerInvocation="1242"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="131" invocations="359" avgMicrosecondsPerInvocation="366" maxMicrosecondsPerInvocation="13378" standardDeviationMircosecondsPerInvocation="1099"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.TypeDataflowFactory" totalMilliseconds="117" invocations="366" avgMicrosecondsPerInvocation="320" maxMicrosecondsPerInvocation="13983" standardDeviationMircosecondsPerInvocation="1155"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.UnconditionalValueDerefDataflowFactory" totalMilliseconds="110" invocations="359" avgMicrosecondsPerInvocation="308" maxMicrosecondsPerInvocation="14385" standardDeviationMircosecondsPerInvocation="961"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindUseOfNonSerializableValue" totalMilliseconds="110" invocations="59" avgMicrosecondsPerInvocation="1871" maxMicrosecondsPerInvocation="101460" standardDeviationMircosecondsPerInvocation="13078"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.NullDerefAndRedundantComparisonFinder" totalMilliseconds="105" invocations="347" avgMicrosecondsPerInvocation="303" maxMicrosecondsPerInvocation="3699" standardDeviationMircosecondsPerInvocation="514"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="103" invocations="123" avgMicrosecondsPerInvocation="840" maxMicrosecondsPerInvocation="17697" standardDeviationMircosecondsPerInvocation="2273"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ValueNumberDataflowFactory" totalMilliseconds="85" invocations="372" avgMicrosecondsPerInvocation="228" maxMicrosecondsPerInvocation="10169" standardDeviationMircosecondsPerInvocation="684"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.ExplicitSerialization" totalMilliseconds="79" invocations="123" avgMicrosecondsPerInvocation="647" maxMicrosecondsPerInvocation="16867" standardDeviationMircosecondsPerInvocation="1902"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindRefComparison$SpecialTypeAnalysis" totalMilliseconds="78" invocations="237" avgMicrosecondsPerInvocation="330" maxMicrosecondsPerInvocation="15379" standardDeviationMircosecondsPerInvocation="1094"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.CFGFactory" totalMilliseconds="69" invocations="359" avgMicrosecondsPerInvocation="194" maxMicrosecondsPerInvocation="10693" standardDeviationMircosecondsPerInvocation="598"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="61" invocations="552" avgMicrosecondsPerInvocation="112" maxMicrosecondsPerInvocation="5329" standardDeviationMircosecondsPerInvocation="404"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="57" invocations="123" avgMicrosecondsPerInvocation="471" maxMicrosecondsPerInvocation="9138" standardDeviationMircosecondsPerInvocation="1241"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="55" invocations="567" avgMicrosecondsPerInvocation="97" maxMicrosecondsPerInvocation="8160" standardDeviationMircosecondsPerInvocation="427"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="51" invocations="359" avgMicrosecondsPerInvocation="143" maxMicrosecondsPerInvocation="31478" standardDeviationMircosecondsPerInvocation="1658"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="37" invocations="170" avgMicrosecondsPerInvocation="218" maxMicrosecondsPerInvocation="14159" standardDeviationMircosecondsPerInvocation="1104"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="29" invocations="123" avgMicrosecondsPerInvocation="237" maxMicrosecondsPerInvocation="9590" standardDeviationMircosecondsPerInvocation="912"/>
+      <ClassProfile name="edu.umd.cs.findbugs.ba.npe.TypeQualifierNullnessAnnotationDatabase" totalMilliseconds="28" invocations="4476" avgMicrosecondsPerInvocation="6" maxMicrosecondsPerInvocation="1605" standardDeviationMircosecondsPerInvocation="28"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindInconsistentSync2" totalMilliseconds="26" invocations="59" avgMicrosecondsPerInvocation="452" maxMicrosecondsPerInvocation="4158" standardDeviationMircosecondsPerInvocation="671"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.SerializableIdiom" totalMilliseconds="25" invocations="59" avgMicrosecondsPerInvocation="430" maxMicrosecondsPerInvocation="4401" standardDeviationMircosecondsPerInvocation="941"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.impl.ZipCodeBaseFactory" totalMilliseconds="25" invocations="17" avgMicrosecondsPerInvocation="1489" maxMicrosecondsPerInvocation="23616" standardDeviationMircosecondsPerInvocation="5532"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.ConstantDataflowFactory" totalMilliseconds="25" invocations="359" avgMicrosecondsPerInvocation="69" maxMicrosecondsPerInvocation="1779" standardDeviationMircosecondsPerInvocation="162"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.BuildObligationPolicyDatabase" totalMilliseconds="24" invocations="123" avgMicrosecondsPerInvocation="201" maxMicrosecondsPerInvocation="3274" standardDeviationMircosecondsPerInvocation="441"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="24" invocations="123" avgMicrosecondsPerInvocation="195" maxMicrosecondsPerInvocation="4126" standardDeviationMircosecondsPerInvocation="476"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.DumbMethods" totalMilliseconds="22" invocations="59" avgMicrosecondsPerInvocation="376" maxMicrosecondsPerInvocation="5005" standardDeviationMircosecondsPerInvocation="705"/>
     </FindBugsProfile>
   </FindBugsSummary>
   <ClassFeatures></ClassFeatures>

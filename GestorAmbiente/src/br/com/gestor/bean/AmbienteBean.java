@@ -11,6 +11,7 @@ import org.primefaces.model.LazyDataModel;
 import br.com.gestor.RN.AmbienteRN;
 import br.com.gestor.bean.lazyDataModel.AmbienteLazyList;
 import br.com.gestor.entidade.Ambiente;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.MensagemUtil;
 import br.com.gestor.web.util.RNException;
 
@@ -58,11 +59,15 @@ public class AmbienteBean extends AbstractBean {
 	
 	public String salvar(){
 		ambienteRN = new AmbienteRN();	
-		ambienteRN.salvar(this.ambiente);           
-		MensagemUtil.mensagemAtencao("operacao_sucesso");
-		this.ambiente = null;
-		lazyAmbientes = null;
-		return "ambiente";							
+		try{
+			ambienteRN.salvar(this.ambiente);           
+			MensagemUtil.mensagemAtencao("operacao_sucesso");
+			this.ambiente = null;
+			lazyAmbientes = null;
+			return "ambiente";							
+		} catch (DAOException e){
+			return null;
+		}
 	}
 
 	public String excluir(){
@@ -95,8 +100,14 @@ public class AmbienteBean extends AbstractBean {
 		}
 		
 		ambienteRN = new AmbienteRN();
-		ambienteRN.salvar(this.ambiente);
-		return null;
+		try {
+			ambienteRN.salvar(this.ambiente);
+			return null;
+		} catch (DAOException e) {
+			MensagemUtil.mensagemWarm(e.getMessage());
+			return null;
+		}
+		
 	}
 	
 	public String visualizar(){

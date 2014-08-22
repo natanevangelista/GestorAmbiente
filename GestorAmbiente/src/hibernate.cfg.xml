@@ -57,6 +57,10 @@
 		<mapping class="br.com.gestor.entidade.Evento"/>
 		<mapping class="br.com.gestor.entidade.Responsavel"/>
 		<mapping class="br.com.gestor.entidade.Turma"/>
+		<mapping class="br.com.gestor.entidade.Semestre"/>
+		<mapping class="br.com.gestor.entidade.Periodo"/>
+		<mapping class="br.com.gestor.entidade.Horario"/>
+		<mapping class="br.com.gestor.entidade.Materia"/>
 		
     </session-factory>
 </hibernate-configuration>

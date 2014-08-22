@@ -41,6 +41,16 @@ public class Turma {
 	@JoinColumn(name="COD_EVENTO", nullable=false)    		 
 	@ForeignKey(name="FK_EVENTO_TURMA")
 	private Evento evento;
+	
+	@ManyToOne                                               
+	@JoinColumn(name="COD_PERIODO", nullable=false)    		 
+	@ForeignKey(name="FK_PERIODO_TURMA")
+	private Periodo periodo;
+	
+	@ManyToOne                                               
+	@JoinColumn(name="COD_SEMESTRE", nullable=false)    		 
+	@ForeignKey(name="FK_SEMESTRE_TURMA")
+	private Semestre semestre;
 
 	public Long getId() {
 		return id;
@@ -97,6 +107,13 @@ public class Turma {
 	public void setStatus(char status) {
 		this.status = status;
 	}
-	
+
+	public Periodo getPeriodo() {
+		return periodo;
+	}
+
+	public void setPeriodo(Periodo periodo) {
+		this.periodo = periodo;
+	}
 	
 }

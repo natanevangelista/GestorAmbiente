@@ -27,27 +27,47 @@ public class Agendamento {
 	@Column(name="COD_AGENDAMENTO")
 	private Long id;
 	
+	/**
+	 * Todo agendamento realizado terá uma chave única, gerada no modelo:
+	 * número aleátório + número semestre + ano, exemplo: 112014, 212014.
+	 * 
+	 * Quando for realizar as consultas, facilitará para identificar os agendamentos de forma única.
+	 * 
+	 * Esta regra está sendo aplicada para atender puculiaridades da ETB.
+	 * 	 
+	 * */
+	@Column(name="CHAVE_AGENDAMENTO")
+	private String chave;
+	
+	
 	@Column(name="DT_AGENDAMENTO")
 	@Temporal(TemporalType.DATE)       //define a precisão para um campo tipo data(DATE=armazena somente a data)
 	private Date data;
 	
-	@Column(name="TURNO_AGENDAMENTO")
-	private char turno;
-
 	@ManyToOne                             
-	@JoinColumn(name="COD_AMBIENTE")    
-	@ForeignKey(name="FK_AMBIENTE_AGENDAMENTO")              
+	@JoinColumn(name="COD_HORARIO")
+	@ForeignKey(name="FK_HORARIO_AGENDAMENTO")
+	private Horario horario;
+
+	@ManyToOne
+	@JoinColumn(name="COD_AMBIENTE")
+	@ForeignKey(name="FK_AMBIENTE_AGENDAMENTO")
 	private Ambiente ambiente;
 	
-	@ManyToOne                             
+	@ManyToOne
 	@JoinColumn(name="COD_RESP")    
 	@ForeignKey(name="FK_RESPONSAVEL_AGENDAMENTO")
 	private Responsavel responsavel;
 	
-	@ManyToOne                             
-	@JoinColumn(name="COD_TURMA")    
+	@ManyToOne
+	@JoinColumn(name="COD_TURMA")
 	@ForeignKey(name="FK_TURMA_AGENDAMENTO")
 	private Turma turma;
+	
+	@ManyToOne
+	@JoinColumn(name="COD_MATERIA")
+	@ForeignKey(name="FK_MATERIA_AGENDAMENTO")
+	private Materia materia;
 	
 	
 	public Agendamento() {
@@ -67,7 +87,6 @@ public class Agendamento {
 		this.responsavel = responsavel;
 		this.turma = turma;
 		this.data = data;
-		this.turno = turno;
 	}
 	
 	
@@ -101,14 +120,6 @@ public class Agendamento {
 
 	public void setData(Date data) {
 		this.data = data;
-	}
-
-	public char getTurno() {
-		return turno;
-	}
-
-	public void setTurno(char turno) {
-		this.turno = turno;
 	}
 
 	public Turma getTurma() {

@@ -5,6 +5,7 @@ import java.util.List;
 import br.com.gestor.DAO.DAOFactory;
 import br.com.gestor.DAOHibernate.AmbienteDAOHibernate;
 import br.com.gestor.entidade.Ambiente;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.RNException;
 
 /**
@@ -23,8 +24,9 @@ public class AmbienteRN {
 	/**
 	 * metodo para inclusão de Ambiente no dependendo das regras aqui constantes
 	 * @param ambiente
+	 * @throws DAOException 
 	 */
-	public void salvar(Ambiente ambiente){
+	public void salvar(Ambiente ambiente) throws DAOException{
 		Long id = ambiente.getId();           //pega o código oculto na página
 		if(id == null || id == 0){               //se código nullo quer dizer inserção de novo ambiente
 			this.ambienteDAO.salvar(ambiente);   //chama o salvar no AmbienteDAO

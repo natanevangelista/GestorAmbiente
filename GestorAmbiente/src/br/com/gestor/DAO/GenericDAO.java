@@ -8,6 +8,7 @@ import javax.persistence.PersistenceException;
 import org.hibernate.Session;
 import org.hibernate.exception.ConstraintViolationException;
 
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.RNException;
 
 /**
@@ -40,8 +41,12 @@ public abstract class GenericDAO<T> implements Serializable {
 		this.session = session;
 	}
 
-	public void salvar(T entityClass) {
-		this.session.save(entityClass);
+	public void salvar(T entityClass) throws DAOException {
+		try{
+			this.session.save(entityClass);
+		}catch (Exception e){
+			throw new DAOException(e.getMessage(), e);
+		}
 	}
 
 	public void atualizar(T entityClass) {

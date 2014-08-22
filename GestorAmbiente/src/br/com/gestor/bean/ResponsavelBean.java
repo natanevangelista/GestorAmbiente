@@ -11,6 +11,7 @@ import org.primefaces.model.LazyDataModel;
 import br.com.gestor.RN.ResponsavelRN;
 import br.com.gestor.bean.lazyDataModel.ResponsavelLazyList;
 import br.com.gestor.entidade.Responsavel;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.MensagemUtil;
 import br.com.gestor.web.util.RNException;
 
@@ -58,11 +59,16 @@ public class ResponsavelBean extends AbstractBean{
 	
 	public String salvar(){
 		responsavelRN = new ResponsavelRN();
-		responsavelRN.salvar(this.responsavel);
-		MensagemUtil.mensagemAtencao("operacao_sucesso");
-		this.responsavel = null;
-		lazyResponsavel = null;
-		return "responsavel";
+		try{
+			responsavelRN.salvar(this.responsavel);
+			MensagemUtil.mensagemAtencao("operacao_sucesso");
+			this.responsavel = null;
+			lazyResponsavel = null;
+			return "responsavel";
+		}catch(DAOException e){
+			MensagemUtil.mensagemWarm(e.getMessage());
+			return null;
+		}
 	}
 
 	public String excluir(){
@@ -95,8 +101,13 @@ public class ResponsavelBean extends AbstractBean{
 		}
 		
 		responsavelRN = new ResponsavelRN();
-		responsavelRN.salvar(this.responsavel);
-		return null;
+		try{
+			responsavelRN.salvar(this.responsavel);
+			return null;
+		}catch(DAOException e){
+			MensagemUtil.mensagemWarm(e.getMessage());
+			return null;
+		}
 	}
 	
 	public Responsavel getResponsavel() {

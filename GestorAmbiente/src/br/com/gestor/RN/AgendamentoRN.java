@@ -10,6 +10,7 @@ import br.com.gestor.DAO.DAOFactory;
 import br.com.gestor.DAOHibernate.AgendamentoDAOHibernate;
 import br.com.gestor.entidade.Agendamento;
 import br.com.gestor.entidade.Ambiente;
+import br.com.gestor.web.util.DAOException;
 
 public class AgendamentoRN {
 
@@ -74,31 +75,31 @@ public class AgendamentoRN {
 			}
 
 			// grava o agendamento
-			if (dataGregorian.get(GregorianCalendar.DAY_OF_WEEK) == diasSemana[contador]) {
-				// objeto tipo DATE recebe a data GREGORIAN
-				dataDate = dataGregorian.getTime();
-				// faz consulta e retorna o agendamento Solicitado
-				List<Agendamento> list = this.listarParaGravar(agendamento.getAmbiente(), dataDate,	agendamento.getTurno());
-				// agend recebe os dados da consulta
-				for (Agendamento agend : list) {
-					// atribuição dos parametros perdidos na consulta
-					agend.setResponsavel(agendamento.getResponsavel());
-//					agend.setEvento(agendamento.getEvento());
-//					agend.setReservado(true);
-					this.agendamentoDAO.atualizar(agend);
-					
-					//armazena a quantidade de agendamentos gravados
-					gravados++;
-					
-					//armazena os agendamentos gravados
-					this.getAgendadosGravados().add(agend);
-					
-					qtdEventosPercorridos++;
-					dataGregorian.setTime(dataDate);
-					dataGregorian.add(Calendar.DATE, 1);
-					contador = 0;
-				}
-			}
+//			if (dataGregorian.get(GregorianCalendar.DAY_OF_WEEK) == diasSemana[contador]) {
+//				// objeto tipo DATE recebe a data GREGORIAN
+//				dataDate = dataGregorian.getTime();
+//				// faz consulta e retorna o agendamento Solicitado
+//				List<Agendamento> list = this.listarParaGravar(agendamento.getAmbiente(), dataDate,	agendamento.getTurno());
+//				// agend recebe os dados da consulta
+//				for (Agendamento agend : list) {
+//					// atribuição dos parametros perdidos na consulta
+//					agend.setResponsavel(agendamento.getResponsavel());
+////					agend.setEvento(agendamento.getEvento());
+////					agend.setReservado(true);
+//					this.agendamentoDAO.atualizar(agend);
+//					
+//					//armazena a quantidade de agendamentos gravados
+//					gravados++;
+//					
+//					//armazena os agendamentos gravados
+//					this.getAgendadosGravados().add(agend);
+//					
+//					qtdEventosPercorridos++;
+//					dataGregorian.setTime(dataDate);
+//					dataGregorian.add(Calendar.DATE, 1);
+//					contador = 0;
+//				}
+//			}
 		}
 	}
 
@@ -107,8 +108,9 @@ public class AgendamentoRN {
 	 * agendamento com todas as data de agendamento para o ambiente Cadastrado
 	 * 
 	 * @param ambiente
+	 * @throws DAOException 
 	 */
-	public void salvaAmbienteVazio(Ambiente ambiente) {
+	public void salvaAmbienteVazio(Ambiente ambiente) throws DAOException {
 		// foi utilizado o GregorianCalendar pela facilidade em aumentar dias
 		GregorianCalendar dataParaAumentar = new GregorianCalendar();
 		char turnoParaGravar;

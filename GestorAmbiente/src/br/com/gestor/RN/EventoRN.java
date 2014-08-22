@@ -5,6 +5,7 @@ import java.util.List;
 import br.com.gestor.DAO.DAOFactory;
 import br.com.gestor.DAOHibernate.EventoDAOHibernate;
 import br.com.gestor.entidade.Evento;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.RNException;
 
 public class EventoRN {
@@ -15,7 +16,7 @@ public class EventoRN {
 		this.eventoDAO = (EventoDAOHibernate) DAOFactory.criarEventoDAO();
 	}
 	
-	public void salvar(Evento evento){
+	public void salvar(Evento evento) throws DAOException{
 		Long id = evento.getId();
 		if(id == null || id == 0){
 			this.eventoDAO.salvar(evento);

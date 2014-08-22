@@ -11,6 +11,7 @@ import org.primefaces.model.LazyDataModel;
 import br.com.gestor.RN.CategoriaRN;
 import br.com.gestor.bean.lazyDataModel.CategoriaLazyList;
 import br.com.gestor.entidade.Categoria;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.MensagemUtil;
 import br.com.gestor.web.util.RNException;
 
@@ -25,10 +26,10 @@ public class CategoriaBean extends AbstractBean{
 	private static final String TITULO_CADASTRAR = "Cadastrar Categoria";
 	private static final String TITULO_EDITAR = "Editar Categoria";
 	private static final String TITULO_PAGINA = "tituloPagina";
-	private String acaoTituloPagina;
 	
 	private List<Categoria> lista;
 	private LazyDataModel<Categoria> lazyCategoria = null;
+	private CategoriaRN categoriaRN;
 	
 	@PostConstruct
 	private void init() {
@@ -54,12 +55,16 @@ public class CategoriaBean extends AbstractBean{
 	}
 	
 	public String salvar(){
-		lazyCategoria = null;
-		CategoriaRN categoriaRN = new CategoriaRN();
-		categoriaRN.salvar(this.categoria);
-		MensagemUtil.mensagemAtencao("operacao_sucesso");
-		this.categoria = null;
-		return "categoria";
+		categoriaRN = new CategoriaRN();
+		try{
+			categoriaRN.salvar(this.categoria);
+			MensagemUtil.mensagemAtencao("operacao_sucesso");
+			this.categoria = null;
+			lazyCategoria = null;
+			return "categoria";
+		}catch(DAOException e){
+			return null;
+		}
 	}
 	
 	public String excluir(){

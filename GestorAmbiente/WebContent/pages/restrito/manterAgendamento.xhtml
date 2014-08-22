@@ -17,7 +17,7 @@
 		
 			<h:panelGrid columns="4" >
 				<h:outputLabel value="Turno" />	
-				<p:selectOneMenu id="turno" value="#{agendamentoBean.agendamento.turno}">
+				<p:selectOneMenu id="turno" value="#{agendamentoBean.agendamento.turno}" onchange="#{agendamentoBean.sy()}" >
 					<f:selectItem itemValue="M" itemLabel="Matutino"/>
 					<f:selectItem itemValue="V" itemLabel="Vespertino"/>
 					<f:selectItem itemValue="N" itemLabel="Noturno"/>

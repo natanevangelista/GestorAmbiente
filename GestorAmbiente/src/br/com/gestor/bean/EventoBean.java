@@ -12,6 +12,7 @@ import org.primefaces.model.LazyDataModel;
 import br.com.gestor.RN.EventoRN;
 import br.com.gestor.bean.lazyDataModel.EventoLazyList;
 import br.com.gestor.entidade.Evento;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.MensagemUtil;
 import br.com.gestor.web.util.RNException;
 
@@ -57,12 +58,17 @@ public class EventoBean extends AbstractBean{
 	}
 	
 	public String salvar(){
-		lazyEvento = null;
 		eventoRN = new EventoRN();
-		eventoRN.salvar(this.evento);
-		MensagemUtil.mensagemAtencao("operacao_sucesso");
-		this.evento = null;
-		return "evento";
+		try{
+			eventoRN.salvar(this.evento);
+			MensagemUtil.mensagemAtencao("operacao_sucesso");
+			this.evento = null;
+			lazyEvento = null;
+			return "evento";
+		}catch(DAOException e){
+			MensagemUtil.mensagemWarm(e.getMessage());
+			return null;
+		}
 	}
 
 	public String excluir(){

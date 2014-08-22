@@ -42,7 +42,7 @@ public class TurmaPesquisaBean implements Serializable{
 			MensagemUtil.mensagemAtencao("operacao_excluir_sucesso");
 			this.turmaSelecionada = null;
 			this.lista = null;
-			return null;
+			return "turmaPesquisa";
 		}catch(RNException e){
 			MensagemUtil.mensagemWarm(e.getMessage());
 			this.turma = null;

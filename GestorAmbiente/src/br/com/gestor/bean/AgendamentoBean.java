@@ -38,6 +38,10 @@ public class AgendamentoBean extends MensagemUtil{
 		return "manterAgendamento";        	    //chama tela de cadastro de ambientes
 	}
 	
+	public void sy(){
+		System.out.println("foiiiiiiiiiiiiiiiiiiiiii");
+	}
+	
 //	public void testarIterator(){
 //		int u = 0;
 //		

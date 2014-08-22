@@ -5,6 +5,7 @@ import java.util.List;
 import br.com.gestor.DAO.DAOFactory;
 import br.com.gestor.DAOHibernate.CategoriaDAOHibernate;
 import br.com.gestor.entidade.Categoria;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.RNException;
 
 public class CategoriaRN {
@@ -15,7 +16,7 @@ public class CategoriaRN {
 		this.categoriaDAO = (CategoriaDAOHibernate) DAOFactory.criarCategoriaDAO();
 	}
 	
-	public void salvar(Categoria categoria){
+	public void salvar(Categoria categoria) throws DAOException{
 		Long id = categoria.getId();				//pega o código oculto na página
 		if(id == null || id == 0){					//se código nullo quer dizer inserção de novo ambiente
 			this.categoriaDAO.salvar(categoria);	//chama o salvar no AmbienteDAO	

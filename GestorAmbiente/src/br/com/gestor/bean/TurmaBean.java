@@ -9,6 +9,7 @@ import javax.faces.bean.SessionScoped;
 
 import br.com.gestor.RN.TurmaRN;
 import br.com.gestor.entidade.Turma;
+import br.com.gestor.web.util.DAOException;
 import br.com.gestor.web.util.MensagemUtil;
 import br.com.gestor.web.util.RNException;
 
@@ -18,6 +19,10 @@ import com.sun.faces.context.flash.ELFlash;
 @SessionScoped
 public class TurmaBean extends AbstractBean {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final String SELECTED_TURMA = "selectedTurma";
 	private static final String TITULO_CADASTRAR = "Cadastrar Turma";
 	private static final String TITULO_EDITAR = "Editar Turma";
@@ -28,11 +33,11 @@ public class TurmaBean extends AbstractBean {
 	private List<Turma> lista = new ArrayList<Turma>();
 	private TurmaRN turmaRN;
 	
-	private static final HashMap<Character, String> status = new HashMap<Character, String>();
+	private static final HashMap<Character, String> STATUS = new HashMap<Character, String>();
 	private static final Character INICIALIZADO_KEY = 'I';
 	private static final Character NAO_INICIALIZADO_KEY = 'N';
 	private static final Character FINALIZADO_KEY = 'F';
-	private static final Character SEM_AGENDA__KEY = 'S';
+	private static final Character SEM_AGENDA_KEY = 'S';
 	
 	private static final String INICIALIZADO = "INICIALIZADA";
 	private static final String NAO_INICIALIZADO = "NÃO INICIALIZADA";
@@ -41,15 +46,15 @@ public class TurmaBean extends AbstractBean {
 	
 	
 	public TurmaBean() {
-		status.put(INICIALIZADO_KEY, INICIALIZADO); //azul
-		status.put(NAO_INICIALIZADO_KEY, NAO_INICIALIZADO); //preta
-		status.put(FINALIZADO_KEY, FINALIZADO); // preta
-		status.put(SEM_AGENDA__KEY, SEM_AGENDA); //vermelha
+		STATUS.put(INICIALIZADO_KEY, INICIALIZADO); //azul
+		STATUS.put(NAO_INICIALIZADO_KEY, NAO_INICIALIZADO); //preta
+		STATUS.put(FINALIZADO_KEY, FINALIZADO); // VERDE
+		STATUS.put(SEM_AGENDA_KEY, SEM_AGENDA); //vermelha
 	}
 	
 	public String novo(){
 		this.turma = new Turma();
-		this.turma.setStatus(SEM_AGENDA__KEY);
+		this.turma.setStatus(SEM_AGENDA_KEY);
 		criarNomeTurma(this.turma);
 		ELFlash.getFlash().put(SELECTED_TURMA, turma);
 		ELFlash.getFlash().put(TITULO_PAGINA, TITULO_CADASTRAR);
@@ -58,11 +63,15 @@ public class TurmaBean extends AbstractBean {
 	
 	public String salvar(){
 		turmaRN = new TurmaRN();
-		turmaRN.salvar(this.turma);
-		MensagemUtil.mensagemAtencao("operacao_sucesso");
-		this.turma = null;
-		this.lista = null;
-		return "turmaPesquisa";
+		try{
+			turmaRN.salvar(this.turma);
+			MensagemUtil.mensagemAtencao("operacao_sucesso");
+			this.turma = null;
+			this.lista = null;
+			return "turmaPesquisa";
+		} catch(DAOException e){
+			return null;
+		}
 	}
 	
 	public String excluir(){
@@ -115,9 +124,9 @@ public class TurmaBean extends AbstractBean {
 	public String getStatusNome(Character key) {
 		String c= null;
 		try{
-			 c = status.get(key).toString();
+			 c = STATUS.get(key).toString();
 		} catch(NullPointerException e){
-			return status.get('S').toString();
+			return STATUS.get('S').toString();
 		}
 		return c;
 	}
