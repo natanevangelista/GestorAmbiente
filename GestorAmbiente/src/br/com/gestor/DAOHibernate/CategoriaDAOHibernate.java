@@ -11,7 +11,7 @@ public class CategoriaDAOHibernate extends GenericDAO<Categoria>{
 
 	
 	/**
-	 *  VErsion Add
+	 *  VErsion
 	 */
 	private static final long serialVersionUID = 1L;
 
