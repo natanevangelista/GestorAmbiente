@@ -6,7 +6,7 @@ import com.sun.faces.context.flash.ELFlash;
 
 /**
  * Classe abstrata que representa todas as ações dos Beans.
- * @author Natan
+ * @author Natan    sd
  *
  */
 public abstract class AbstractBean implements Serializable{
